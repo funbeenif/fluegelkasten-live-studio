@@ -122,13 +122,13 @@
         <label for="presetSelect" class="text-xs font-semibold text-[var(--muted-foreground)] shrink-0">Variante (25+1):</label>
         <select id="presetSelect" class="flex-1 min-w-[260px] font-medium"></select>
         <div class="flex flex-wrap items-center gap-1.5">
-          <button class="pill-btn" data-quick="K1.4" title="Standard & Bau-Tipp Konstant (64,5 g / 172,4 Pkt)">Konstant K1.4</button>
+          <button class="pill-btn" data-quick="K3.3" title="Empfehlung (Standard): Parallele Stege, Hybrid 0,8/1,0 mm, 66,9 g / 166,9 Pkt, w = 18,5/25,3 mm">★ Tipp K3.3</button>
+          <button class="pill-btn" data-quick="K1.4" title="Einfachbau-Top Konstant (64,5 g / 172,4 Pkt, 100 % Rechtecke)">Konstant K1.4</button>
           <button class="pill-btn" data-quick="K1.1" title="Einfachbau 1,0 mm, 8×8 ungeschliffen, 100-mm-Raster">8×8 K1.1</button>
           <button class="pill-btn" data-quick="K2.4" title="Nur Breitenverjüngung Top-Score (63,6 g / 174,6 Pkt)">Breite K2.4</button>
-          <button class="pill-btn" data-quick="K3.4" title="Nur Höhenverjüngung Top-Score (64,0 g / 173,7 Pkt)">Höhe K3.4</button>
           <button class="pill-btn" data-quick="K4.4" title="Gesamt-Champion Breite+Höhe (63,1 g / 176,0 Pkt)">Gesamt K4.4</button>
           <button class="pill-btn" data-quick="K4.2" title="Bester reiner 1,0-mm-Entwurf (67,0 g / 166,6 Pkt)">1,0-mm K4.2</button>
-          <button class="pill-btn" data-quick="K4.5" title="Erreicht w >= 20 mm direkt bei 3 GPa (20,27 mm)">w≥20@3GPa K4.5</button>
+          <button class="pill-btn" data-quick="K4.5" title="Erreicht w >= 20 mm direkt bei 3 GPa (20,27 mm, b=40 mm)">w≥20@3GPa K4.5</button>
           <button class="pill-btn" data-quick="K5.4" title="Gestuft x=400 Top-Score (63,1 g / 175,8 Pkt)">Gestuft K5.4</button>
           <button id="btnCopyParams" class="pill-btn" title="Aktuelle Parameter für Google Sheet 01_Grunddaten!G kopieren">Parameter kopieren</button>
         </div>
@@ -678,8 +678,8 @@ const DEFAULT_MAT = {
 
 const labState = { w_max: null, F_krit: null, m_vor: null, m_nach: null };
 
-let state = Object.assign({}, PRESETS[3].p, DEFAULT_MAT); // Default: K1.4
-let activePresetCode = 'K1.4';
+let state = Object.assign({}, PRESETS[12].p, DEFAULT_MAT); // Default: K3.3
+let activePresetCode = 'K3.3';
 let activeCatFilter = 'ALL';
 let squareLock = true;
 let cutX = 0;
@@ -2454,7 +2454,7 @@ function init() {
     if (!document.getElementById('view-plots').classList.contains('hidden')) drawPlots(lastResult);
   });
 
-  loadPreset('K1.4');
+  loadPreset('K3.3');
   renderMatrix();
 }
 
