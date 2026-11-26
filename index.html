@@ -314,12 +314,21 @@
               <button class="pill-btn cam-btn" data-cam="side">Seite X-Z</button>
               <button class="pill-btn cam-btn" data-cam="top">Draufsicht X-Y</button>
               <button class="pill-btn cam-btn" data-cam="front">Querschnitt Y-Z</button>
+              <button id="btnWallsTrans" class="pill-btn" title="Alle 4 Wände transparent schalten, um den Stringerverlauf zu sehen">Wände transparent</button>
             </div>
             <div class="text-xs text-[var(--muted-foreground)]">Ziehen = Drehen · Scroll = Zoom</div>
           </div>
 
           <!-- CAD TOGGLES BAR -->
           <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 px-3 py-2 border-b border-[var(--border)] bg-[var(--background)] text-xs">
+            <label class="flex items-center gap-1.5">
+              <span class="text-[var(--muted-foreground)]">Wände:</span>
+              <select id="selWalls" class="py-0.5 px-1.5 text-xs">
+                <option value="normal" selected>Normal</option>
+                <option value="trans">Transparent</option>
+                <option value="off">Aus (nur Gerüst)</option>
+              </select>
+            </label>
             <label class="flex items-center gap-1.5 cursor-pointer">
               <input id="chkTopSkin" type="checkbox" checked class="accent-[var(--primary)]" />
               <span>Deckhaut</span>
@@ -1122,6 +1131,9 @@ function draw3D(res) {
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, w, h);
 
+  const wallMode = document.getElementById('selWalls').value; // normal | trans | off
+  const wallsTrans = (wallMode === 'trans');
+  const wallsOff = (wallMode === 'off');
   const showTop = document.getElementById('chkTopSkin').checked;
   const frontWebMode = document.getElementById('selFrontWeb').value; // trans | solid | off
   const showEnd = document.getElementById('chkEndPlates').checked;
@@ -1184,17 +1196,17 @@ function draw3D(res) {
     });
   }
 
-  function addBoxSeg(x0, x1, y0a, y1a, z0a, z1a, y0b, y1b, z0b, z1b, hex, alpha = 1, skip = {}) {
+  function addBoxSeg(x0, x1, y0a, y1a, z0a, z1a, y0b, y1b, z0b, z1b, hex, alpha = 1, skip = {}, stroke = null, lw = 0.7) {
     const w0 = res.wAt(x0) * deformScale;
     const w1 = res.wAt(x1) * deformScale;
     const A0 = [x0, y0a, z0a + w0], A1 = [x0, y1a, z0a + w0], A2 = [x0, y1a, z1a + w0], A3 = [x0, y0a, z1a + w0];
     const B0 = [x1, y0b, z0b + w1], B1 = [x1, y1b, z0b + w1], B2 = [x1, y1b, z1b + w1], B3 = [x1, y0b, z1b + w1];
-    if (!skip.top) addQuad(A0, B0, B1, A1, hex, alpha);
-    if (!skip.bot) addQuad(A3, A2, B2, B3, hex, alpha);
-    if (!skip.front) addQuad(A1, B1, B2, A2, hex, alpha);
-    if (!skip.back) addQuad(A0, A3, B3, B0, hex, alpha);
-    if (!skip.left) addQuad(A0, A1, A2, A3, hex, alpha);
-    if (!skip.right) addQuad(B0, B3, B2, B1, hex, alpha);
+    if (!skip.top) addQuad(A0, B0, B1, A1, hex, alpha, stroke, lw);
+    if (!skip.bot) addQuad(A3, A2, B2, B3, hex, alpha, stroke, lw);
+    if (!skip.front) addQuad(A1, B1, B2, A2, hex, alpha, stroke, lw);
+    if (!skip.back) addQuad(A0, A3, B3, B0, hex, alpha, stroke, lw);
+    if (!skip.left) addQuad(A0, A1, A2, A3, hex, alpha, stroke, lw);
+    if (!skip.right) addQuad(B0, B3, B2, B1, hex, alpha, stroke, lw);
   }
 
   // Reference subtle floor axis line
@@ -1230,9 +1242,11 @@ function draw3D(res) {
   if (showEnd) {
     const g0 = res.geoAt(0), gL = res.geoAt(L);
     const epW = Math.max(g0.b + 34, 88), epH = Math.max(g0.h + 30, 108);
-    addBoxSeg(-9, 0, -epW / 2, epW / 2, -epH / 2, epH / 2, -epW / 2, epW / 2, -epH / 2, epH / 2, COL_END, 0.86);
+    const epA = (wallsTrans || wallsOff) ? 0.20 : 0.86;
+    const epStroke = (wallsTrans || wallsOff) ? 'rgba(100,116,139,0.38)' : null;
+    addBoxSeg(-9, 0, -epW / 2, epW / 2, -epH / 2, epH / 2, -epW / 2, epW / 2, -epH / 2, epH / 2, COL_END, epA, {}, epStroke, (wallsTrans || wallsOff) ? 0.6 : 0.7);
     const tipW = gL.b + 10, tipH = gL.h + 10;
-    addBoxSeg(L, L + 6, -tipW / 2, tipW / 2, -tipH / 2, tipH / 2, -tipW / 2, tipW / 2, -tipH / 2, tipH / 2, COL_END, 0.88);
+    addBoxSeg(L, L + 6, -tipW / 2, tipW / 2, -tipH / 2, tipH / 2, -tipW / 2, tipW / 2, -tipH / 2, tipH / 2, COL_END, epA, {}, epStroke, (wallsTrans || wallsOff) ? 0.6 : 0.7);
   }
 
   // Helper to get geometry just inside a segment [xa, xb] (handles stepped jumps cleanly!)
@@ -1245,6 +1259,9 @@ function draw3D(res) {
     return g;
   };
 
+  const strAlpha = (wallsTrans || wallsOff) ? 1.0 : 0.98;
+  const strLw = (wallsTrans || wallsOff) ? 1.05 : 0.7;
+
   // Draw segments: skins, webs, stringers
   for (const [xa, xb] of segs) {
     const xm = (xa + xb) / 2;
@@ -1252,66 +1269,119 @@ function draw3D(res) {
     const ga = geoEdge(xa, true, xa, xb);
     const gb = geoEdge(xb, false, xa, xb);
     const t_st = inTF ? (Number(state.t_st_tf) > 0 ? Number(state.t_st_tf) : state.t_st) : state.t_st, t_ho = state.t_ho, t_hu = state.t_hu;
+    const wa = res.wAt(xa) * deformScale;
+    const wb = res.wAt(xb) * deformScale;
 
-    // Bottom skin
-    addBoxSeg(xa, xb,
-      -ga.bi / 2, ga.bi / 2, ga.h / 2 - ga.heu - t_hu, ga.h / 2 - ga.heu,
-      -gb.bi / 2, gb.bi / 2, gb.h / 2 - gb.heu - t_hu, gb.h / 2 - gb.heu,
-      COL_SKIN, 0.94, { left: true, right: true });
+    if (!wallsOff) {
+      if (wallsTrans) {
+        // Single-sheet translucent glass hull so internal stringers stay sharp from every angle
+        const skinStroke = 'rgba(180,130,68,0.28)';
+        const webStroke = (inTF && showTF) ? 'rgba(220,38,38,0.46)' : 'rgba(160,115,60,0.28)';
+        const webCol = (inTF && showTF) ? COL_TF : COL_WEB;
+        const webAlpha = (inTF && showTF) ? 0.18 : 0.11;
 
-    // Top skin (toggleable)
-    if (showTop) {
-      addBoxSeg(xa, xb,
-        -ga.bi / 2, ga.bi / 2, -ga.h / 2 + ga.heo, -ga.h / 2 + ga.heo + t_ho,
-        -gb.bi / 2, gb.bi / 2, -gb.h / 2 + gb.heo, -gb.h / 2 + gb.heo + t_ho,
-        COL_SKIN, 0.82, { left: true, right: true });
-    }
+        // Bottom skin (mid-plane quad)
+        const zBa = ga.h / 2 - ga.heu - t_hu * 0.5 + wa, zBb = gb.h / 2 - gb.heu - t_hu * 0.5 + wb;
+        addQuad([xa, -ga.bi / 2, zBa], [xb, -gb.bi / 2, zBb], [xb, gb.bi / 2, zBb], [xa, ga.bi / 2, zBa], COL_SKIN, 0.11, skinStroke, 0.55);
 
-    // Back side web (y = -b/2)
-    const webCol = (inTF && showTF) ? COL_TF : COL_WEB;
-    const backAlpha = (inTF && showTF) ? 0.65 : 0.92;
-    addBoxSeg(xa, xb,
-      -ga.b / 2, -ga.bi / 2, -ga.h / 2, ga.h / 2,
-      -gb.b / 2, -gb.bi / 2, -gb.h / 2, gb.h / 2,
-      webCol, backAlpha, { left: true, right: true });
+        // Top skin (mid-plane quad)
+        if (showTop) {
+          const zTa = -ga.h / 2 + ga.heo + t_ho * 0.5 + wa, zTb = -gb.h / 2 + gb.heo + t_ho * 0.5 + wb;
+          addQuad([xa, -ga.bi / 2, zTa], [xb, -gb.bi / 2, zTb], [xb, gb.bi / 2, zTb], [xa, ga.bi / 2, zTa], COL_SKIN, 0.11, skinStroke, 0.55);
+        }
 
-    // Front side web (y = +b/2)
-    if (frontWebMode !== 'off') {
-      const fAlpha = frontWebMode === 'solid' ? ((inTF && showTF) ? 0.85 : 0.94) : ((inTF && showTF) ? 0.42 : 0.24);
-      if (inTF && showTF && res.m_beul_active < state.m_Pruef) {
-        // Subdivide testfield front web into 4x3 buckled wave grid!
-        const nx = 4, nz = 3;
-        const amp = Math.min(4.2, Math.max(1.2, (state.m_Pruef / res.m_beul_active - 1) * 3.2));
-        for (let ix = 0; ix < nx; ix++) {
-          for (let iz = 0; iz < nz; iz++) {
-            const u0 = ix / nx, u1 = (ix + 1) / nx, v0 = iz / nz, v1 = (iz + 1) / nz;
-            const pt = (u, v) => {
-              const x = xa + (xb - xa) * u;
-              const g = geoEdge(x, false, xa, xb);
-              const z = -g.h / 2 + g.h * v;
-              const wx = (x - 300) / 100;
-              const buckleY = amp * Math.sin(Math.PI * wx) * Math.sin(Math.PI * v) * Math.sin(Math.PI * (wx * 1.5 - v * 0.8));
-              return [x, g.b / 2 + buckleY, z + res.wAt(x) * deformScale];
-            };
-            addQuad(pt(u0, v0), pt(u1, v0), pt(u1, v1), pt(u0, v1), COL_TF, fAlpha, 'rgba(185,28,28,0.55)', 0.8);
+        // Back side web (outer plane quad)
+        addQuad([xa, -ga.b / 2, -ga.h / 2 + wa], [xb, -gb.b / 2, -gb.h / 2 + wb], [xb, -gb.b / 2, gb.h / 2 + wb], [xa, -ga.b / 2, ga.h / 2 + wa], webCol, webAlpha, webStroke, 0.55);
+
+        // Front side web
+        if (frontWebMode !== 'off') {
+          if (inTF && showTF && res.m_beul_active < state.m_Pruef) {
+            const nx = 4, nz = 3;
+            const amp = Math.min(4.2, Math.max(1.2, (state.m_Pruef / res.m_beul_active - 1) * 3.2));
+            for (let ix = 0; ix < nx; ix++) {
+              for (let iz = 0; iz < nz; iz++) {
+                const u0 = ix / nx, u1 = (ix + 1) / nx, v0 = iz / nz, v1 = (iz + 1) / nz;
+                const pt = (u, v) => {
+                  const x = xa + (xb - xa) * u;
+                  const g = geoEdge(x, false, xa, xb);
+                  const z = -g.h / 2 + g.h * v;
+                  const wx = (x - 300) / 100;
+                  const buckleY = amp * Math.sin(Math.PI * wx) * Math.sin(Math.PI * v) * Math.sin(Math.PI * (wx * 1.5 - v * 0.8));
+                  return [x, g.b / 2 + buckleY, z + res.wAt(x) * deformScale];
+                };
+                addQuad(pt(u0, v0), pt(u1, v0), pt(u1, v1), pt(u0, v1), COL_TF, 0.18, 'rgba(220,38,38,0.40)', 0.65);
+              }
+            }
+          } else {
+            addQuad([xa, ga.b / 2, -ga.h / 2 + wa], [xb, gb.b / 2, -gb.h / 2 + wb], [xb, gb.b / 2, gb.h / 2 + wb], [xa, ga.b / 2, ga.h / 2 + wa], webCol, webAlpha, webStroke, 0.55);
           }
         }
       } else {
+        // Bottom skin
         addBoxSeg(xa, xb,
-          ga.bi / 2, ga.b / 2, -ga.h / 2, ga.h / 2,
-          gb.bi / 2, gb.b / 2, -gb.h / 2, gb.h / 2,
-          webCol, fAlpha, { left: true, right: true });
+          -ga.bi / 2, ga.bi / 2, ga.h / 2 - ga.heu - t_hu, ga.h / 2 - ga.heu,
+          -gb.bi / 2, gb.bi / 2, gb.h / 2 - gb.heu - t_hu, gb.h / 2 - gb.heu,
+          COL_SKIN, 0.94, { left: true, right: true });
+
+        // Top skin (toggleable)
+        if (showTop) {
+          addBoxSeg(xa, xb,
+            -ga.bi / 2, ga.bi / 2, -ga.h / 2 + ga.heo, -ga.h / 2 + ga.heo + t_ho,
+            -gb.bi / 2, gb.bi / 2, -gb.h / 2 + gb.heo, -gb.h / 2 + gb.heo + t_ho,
+            COL_SKIN, 0.82, { left: true, right: true });
+        }
+
+        // Back side web (y = -b/2)
+        const webCol = (inTF && showTF) ? COL_TF : COL_WEB;
+        const backAlpha = (inTF && showTF) ? 0.65 : 0.92;
+        addBoxSeg(xa, xb,
+          -ga.b / 2, -ga.bi / 2, -ga.h / 2, ga.h / 2,
+          -gb.b / 2, -gb.bi / 2, -gb.h / 2, gb.h / 2,
+          webCol, backAlpha, { left: true, right: true });
+
+        // Front side web (y = +b/2)
+        if (frontWebMode !== 'off') {
+          const fAlpha = frontWebMode === 'solid' ? ((inTF && showTF) ? 0.85 : 0.94) : ((inTF && showTF) ? 0.42 : 0.24);
+          if (inTF && showTF && res.m_beul_active < state.m_Pruef) {
+            // Subdivide testfield front web into 4x3 buckled wave grid!
+            const nx = 4, nz = 3;
+            const amp = Math.min(4.2, Math.max(1.2, (state.m_Pruef / res.m_beul_active - 1) * 3.2));
+            for (let ix = 0; ix < nx; ix++) {
+              for (let iz = 0; iz < nz; iz++) {
+                const u0 = ix / nx, u1 = (ix + 1) / nx, v0 = iz / nz, v1 = (iz + 1) / nz;
+                const pt = (u, v) => {
+                  const x = xa + (xb - xa) * u;
+                  const g = geoEdge(x, false, xa, xb);
+                  const z = -g.h / 2 + g.h * v;
+                  const wx = (x - 300) / 100;
+                  const buckleY = amp * Math.sin(Math.PI * wx) * Math.sin(Math.PI * v) * Math.sin(Math.PI * (wx * 1.5 - v * 0.8));
+                  return [x, g.b / 2 + buckleY, z + res.wAt(x) * deformScale];
+                };
+                addQuad(pt(u0, v0), pt(u1, v0), pt(u1, v1), pt(u0, v1), COL_TF, fAlpha, 'rgba(185,28,28,0.55)', 0.8);
+              }
+            }
+          } else {
+            addBoxSeg(xa, xb,
+              ga.bi / 2, ga.b / 2, -ga.h / 2, ga.h / 2,
+              gb.bi / 2, gb.b / 2, -gb.h / 2, gb.h / 2,
+              webCol, fAlpha, { left: true, right: true });
+          }
+        }
       }
+    } else if (inTF && showTF) {
+      // Subtle red wireframe outline of Testfeld zone when walls are completely off
+      addQuad([xa, ga.b / 2, -ga.h / 2 + wa], [xb, gb.b / 2, -gb.h / 2 + wb], [xb, gb.b / 2, gb.h / 2 + wb], [xa, ga.b / 2, ga.h / 2 + wa], COL_TF, 0.04, 'rgba(220,38,38,0.45)', 0.75);
+      addQuad([xa, -ga.b / 2, -ga.h / 2 + wa], [xb, -gb.b / 2, -gb.h / 2 + wb], [xb, -gb.b / 2, gb.h / 2 + wb], [xa, -ga.b / 2, ga.h / 2 + wa], COL_TF, 0.04, 'rgba(220,38,38,0.35)', 0.65);
     }
 
     // 4 Corner stringers
     const skipLR = { left: xa > 0.1, right: xb < L - 0.1 };
     // Top-back & Top-front
-    addBoxSeg(xa, xb, -ga.bi / 2, -ga.bi / 2 + ga.beo, -ga.h / 2, -ga.h / 2 + ga.heo, -gb.bi / 2, -gb.bi / 2 + gb.beo, -gb.h / 2, -gb.h / 2 + gb.heo, COL_CORNER, 0.98, skipLR);
-    addBoxSeg(xa, xb, ga.bi / 2 - ga.beo, ga.bi / 2, -ga.h / 2, -ga.h / 2 + ga.heo, gb.bi / 2 - gb.beo, gb.bi / 2, -gb.h / 2, -gb.h / 2 + gb.heo, COL_CORNER, 0.98, skipLR);
+    addBoxSeg(xa, xb, -ga.bi / 2, -ga.bi / 2 + ga.beo, -ga.h / 2, -ga.h / 2 + ga.heo, -gb.bi / 2, -gb.bi / 2 + gb.beo, -gb.h / 2, -gb.h / 2 + gb.heo, COL_CORNER, strAlpha, skipLR, null, strLw);
+    addBoxSeg(xa, xb, ga.bi / 2 - ga.beo, ga.bi / 2, -ga.h / 2, -ga.h / 2 + ga.heo, gb.bi / 2 - gb.beo, gb.bi / 2, -gb.h / 2, -gb.h / 2 + gb.heo, COL_CORNER, strAlpha, skipLR, null, strLw);
     // Bottom-back & Bottom-front
-    addBoxSeg(xa, xb, -ga.bi / 2, -ga.bi / 2 + ga.beu, ga.h / 2 - ga.heu, ga.h / 2, -gb.bi / 2, -gb.bi / 2 + gb.beu, gb.h / 2 - gb.heu, gb.h / 2, COL_CORNER, 0.98, skipLR);
-    addBoxSeg(xa, xb, ga.bi / 2 - ga.beu, ga.bi / 2, ga.h / 2 - ga.heu, ga.h / 2, gb.bi / 2 - gb.beu, gb.bi / 2, gb.h / 2 - gb.heu, gb.h / 2, COL_CORNER, 0.98, skipLR);
+    addBoxSeg(xa, xb, -ga.bi / 2, -ga.bi / 2 + ga.beu, ga.h / 2 - ga.heu, ga.h / 2, -gb.bi / 2, -gb.bi / 2 + gb.beu, gb.h / 2 - gb.heu, gb.h / 2, COL_CORNER, strAlpha, skipLR, null, strLw);
+    addBoxSeg(xa, xb, ga.bi / 2 - ga.beu, ga.bi / 2, ga.h / 2 - ga.heu, ga.h / 2, gb.bi / 2 - gb.beu, gb.bi / 2, gb.h / 2 - gb.heu, gb.h / 2, COL_CORNER, strAlpha, skipLR, null, strLw);
 
     // Top intermediate stringers
     if (ga.nso > 0 && ga.bso > 0 && ga.hso > 0) {
@@ -1321,7 +1391,7 @@ function draw3D(res) {
       for (let s = 0; s < ga.nso; s++) {
         const ya0 = -ga.bi / 2 + ga.beo + gapA * (s + 1) + ga.bso * s;
         const yb0 = -gb.bi / 2 + gb.beo + gapB * (s + 1) + gb.bso * s;
-        addBoxSeg(xa, xb, ya0, ya0 + ga.bso, -ga.h / 2 + ga.heo - ga.hso, -ga.h / 2 + ga.heo, yb0, yb0 + gb.bso, -gb.h / 2 + gb.heo - gb.hso, -gb.h / 2 + gb.heo, COL_INTER, 0.98, skipLR);
+        addBoxSeg(xa, xb, ya0, ya0 + ga.bso, -ga.h / 2 + ga.heo - ga.hso, -ga.h / 2 + ga.heo, yb0, yb0 + gb.bso, -gb.h / 2 + gb.heo - gb.hso, -gb.h / 2 + gb.heo, COL_INTER, strAlpha, skipLR, null, strLw);
       }
     }
     // Bottom intermediate stringers
@@ -1332,18 +1402,19 @@ function draw3D(res) {
       for (let s = 0; s < ga.nsu; s++) {
         const ya0 = -ga.bi / 2 + ga.beu + gapA * (s + 1) + ga.bsu * s;
         const yb0 = -gb.bi / 2 + gb.beu + gapB * (s + 1) + gb.bsu * s;
-        addBoxSeg(xa, xb, ya0, ya0 + ga.bsu, ga.h / 2 - ga.heu, ga.h / 2 - ga.heu + ga.hsu, yb0, yb0 + gb.bsu, gb.h / 2 - gb.heu, gb.h / 2 - gb.heu + gb.hsu, COL_INTER, 0.98, skipLR);
+        addBoxSeg(xa, xb, ya0, ya0 + ga.bsu, ga.h / 2 - ga.heu, ga.h / 2 - ga.heu + ga.hsu, yb0, yb0 + gb.bsu, gb.h / 2 - gb.heu, gb.h / 2 - gb.heu + gb.hsu, COL_INTER, strAlpha, skipLR, null, strLw);
       }
     }
     // Optional mid-web stringers outside Testfeld (Folie 15: 0–300 & 400–800 mm)
     if (!inTF && state.b_sw_str > 0) {
       const sw = state.b_sw_str;
-      addBoxSeg(xa, xb, -ga.bi / 2, -ga.bi / 2 + sw, -sw / 2, sw / 2, -gb.bi / 2, -gb.bi / 2 + sw, -sw / 2, sw / 2, '#0d9488', 0.96, skipLR);
-      addBoxSeg(xa, xb, ga.bi / 2 - sw, ga.bi / 2, -sw / 2, sw / 2, gb.bi / 2 - sw, gb.bi / 2, -sw / 2, sw / 2, '#0d9488', 0.96, skipLR);
+      addBoxSeg(xa, xb, -ga.bi / 2, -ga.bi / 2 + sw, -sw / 2, sw / 2, -gb.bi / 2, -gb.bi / 2 + sw, -sw / 2, sw / 2, '#0d9488', strAlpha, skipLR, null, strLw);
+      addBoxSeg(xa, xb, ga.bi / 2 - sw, ga.bi / 2, -sw / 2, sw / 2, gb.bi / 2 - sw, gb.bi / 2, -sw / 2, sw / 2, '#0d9488', strAlpha, skipLR, null, strLw);
     }
   }
 
   // Draw Rib Plates (2 solid end ribs at 0 & L + internal ribs with lightening cutout)
+  const ribFade = (wallsTrans || wallsOff) ? 0.48 : 1.0;
   for (const xr of res.ribXs) {
     const isEnd = (xr < 0.5 || xr > L - 0.5);
     const isMand = !isEnd && (Math.abs(xr - 300) < 0.5 || Math.abs(xr - 400) < 0.5);
@@ -1356,14 +1427,14 @@ function draw3D(res) {
     const col = isEnd ? '#1e40af' : (isMand ? COL_RIB_TF : COL_RIB);
     const fFrac = Math.max(0, Math.min(0.65, state.f_Loch / 100));
     if (isEnd || fFrac < 0.04) {
-      addQuad([xDraw, yL, zT + wOff], [xDraw, yR, zT + wOff], [xDraw, yR, zB + wOff], [xDraw, yL, zB + wOff], col, isEnd ? 0.86 : (isMand ? 0.78 : 0.62), isEnd ? '#1e3a8a' : (isMand ? '#1d4ed8' : null), isEnd ? 1.4 : (isMand ? 1.2 : 0.8));
+      addQuad([xDraw, yL, zT + wOff], [xDraw, yR, zT + wOff], [xDraw, yR, zB + wOff], [xDraw, yL, zB + wOff], col, (isEnd ? 0.86 : (isMand ? 0.78 : 0.62)) * ribFade, isEnd ? '#1e3a8a' : (isMand ? '#1d4ed8' : null), isEnd ? 1.2 : (isMand ? 1.1 : 0.8));
     } else {
       // Frame with rectangular lightening cutout proportional to f_Loch!
       const k = Math.sqrt(fFrac);
       const hw = (yR - yL) * 0.5 * k;
       const hh = (zB - zT) * 0.5 * k;
       const zM = (zT + zB) * 0.5;
-      const a = isMand ? 0.80 : 0.66;
+      const a = (isMand ? 0.80 : 0.66) * ribFade;
       addQuad([xDraw, yL, zT + wOff], [xDraw, yR, zT + wOff], [xDraw, yR, zM - hh + wOff], [xDraw, yL, zM - hh + wOff], col, a);
       addQuad([xDraw, yL, zM + hh + wOff], [xDraw, yR, zM + hh + wOff], [xDraw, yR, zB + wOff], [xDraw, yL, zB + wOff], col, a);
       addQuad([xDraw, yL, zM - hh + wOff], [xDraw, -hw, zM - hh + wOff], [xDraw, -hw, zM + hh + wOff], [xDraw, yL, zM + hh + wOff], col, a);
@@ -1542,6 +1613,22 @@ function draw2DViews(res) {
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
+    // Corner stringers (top & bottom bands)
+    const ptsS = [];
+    for (let x = 0; x <= state.L; x += 4) {
+      const g = res.geoAt(x);
+      ptsS.push({ x, h: g.h, heo: g.heo, heu: g.heu });
+    }
+    ctx.fillStyle = 'rgba(180,83,9,0.52)';
+    ctx.beginPath();
+    ptsS.forEach((p, i) => i === 0 ? ctx.moveTo(X(p.x), Z(-p.h / 2)) : ctx.lineTo(X(p.x), Z(-p.h / 2)));
+    for (let i = ptsS.length - 1; i >= 0; i--) ctx.lineTo(X(ptsS[i].x), Z(-ptsS[i].h / 2 + ptsS[i].heo));
+    ctx.closePath(); ctx.fill();
+    ctx.beginPath();
+    ptsS.forEach((p, i) => i === 0 ? ctx.moveTo(X(p.x), Z(p.h / 2 - p.heu)) : ctx.lineTo(X(p.x), Z(p.h / 2 - p.heu)));
+    for (let i = ptsS.length - 1; i >= 0; i--) ctx.lineTo(X(ptsS[i].x), Z(ptsS[i].h / 2));
+    ctx.closePath(); ctx.fill();
+
     // Test field highlight (300–400)
     const h300 = res.geoAt(300.5).h, h400 = res.geoAt(399.5).h;
     ctx.beginPath();
@@ -1597,7 +1684,10 @@ function draw2DViews(res) {
     const Y = (y) => h * 0.5 + y * sy;
 
     const pts = [];
-    for (let x = 0; x <= state.L; x += 4) pts.push({ x, b: res.geoAt(x).b });
+    for (let x = 0; x <= state.L; x += 4) {
+      const g = res.geoAt(x);
+      pts.push({ x, b: g.b, bi: g.bi, be: Math.max(g.beo, g.beu) });
+    }
     ctx.beginPath();
     pts.forEach((p, i) => i === 0 ? ctx.moveTo(X(p.x), Y(-p.b / 2)) : ctx.lineTo(X(p.x), Y(-p.b / 2)));
     for (let i = pts.length - 1; i >= 0; i--) ctx.lineTo(X(pts[i].x), Y(pts[i].b / 2));
@@ -1607,6 +1697,17 @@ function draw2DViews(res) {
     ctx.strokeStyle = '#92400e';
     ctx.lineWidth = 1.5;
     ctx.stroke();
+
+    // Corner stringers (back & front edge bands)
+    ctx.fillStyle = 'rgba(180,83,9,0.52)';
+    ctx.beginPath();
+    pts.forEach((p, i) => i === 0 ? ctx.moveTo(X(p.x), Y(-p.bi / 2)) : ctx.lineTo(X(p.x), Y(-p.bi / 2)));
+    for (let i = pts.length - 1; i >= 0; i--) ctx.lineTo(X(pts[i].x), Y(-pts[i].bi / 2 + pts[i].be));
+    ctx.closePath(); ctx.fill();
+    ctx.beginPath();
+    pts.forEach((p, i) => i === 0 ? ctx.moveTo(X(p.x), Y(p.bi / 2 - p.be)) : ctx.lineTo(X(p.x), Y(p.bi / 2 - p.be)));
+    for (let i = pts.length - 1; i >= 0; i--) ctx.lineTo(X(pts[i].x), Y(pts[i].bi / 2));
+    ctx.closePath(); ctx.fill();
 
     // Draw intermediate stringers footprint (shows Abstufung 0-400!)
     const maxXInter = state.abstufung === 'abg' ? 400 : state.L;
@@ -2345,6 +2446,26 @@ function init() {
   });
 
   // 3D view controls
+  const selWallsEl = document.getElementById('selWalls');
+  const btnWallsTransEl = document.getElementById('btnWallsTrans');
+  const syncWallsBtn = () => {
+    btnWallsTransEl.classList.toggle('active', selWallsEl.value !== 'normal');
+  };
+  btnWallsTransEl.addEventListener('click', () => {
+    const next = selWallsEl.value === 'normal' ? 'trans' : 'normal';
+    selWallsEl.value = next;
+    if (next === 'trans') {
+      document.getElementById('chkTopSkin').checked = true;
+      const fw = document.getElementById('selFrontWeb');
+      if (fw.value === 'off') fw.value = 'trans';
+    }
+    syncWallsBtn();
+    lastResult && draw3D(lastResult);
+  });
+  selWallsEl.addEventListener('change', () => {
+    syncWallsBtn();
+    lastResult && draw3D(lastResult);
+  });
   ['chkTopSkin', 'selFrontWeb', 'chkEndPlates', 'chkTestField', 'selDeform'].forEach(id => {
     document.getElementById(id).addEventListener('change', () => lastResult && draw3D(lastResult));
   });
@@ -2360,6 +2481,8 @@ function init() {
       const p = camPresets[btn.dataset.cam];
       cam.yaw = p.yaw; cam.pitch = p.pitch; cam.zoom = p.zoom;
       if (btn.dataset.cam === 'cad') {
+        selWallsEl.value = 'normal';
+        syncWallsBtn();
         document.getElementById('chkTopSkin').checked = false;
         document.getElementById('selFrontWeb').value = 'off';
       } else if (btn.dataset.cam === 'iso') {
