@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flügelkasten Live-Studio · HFL WiSe 2026/27</title>
+  <title>Flügelkasten-Auslegung · HFL WiSe 2026/27</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root, :root.light {
@@ -106,8 +106,8 @@
         <div class="flex items-center gap-2.5 min-w-0">
           <div class="w-2.5 h-8 rounded-full bg-[var(--primary)] shrink-0"></div>
           <div class="min-w-0">
-            <h1 class="text-sm font-bold tracking-tight truncate">Flügelkasten Live-Studio · HFL WiSe 2026/27</h1>
-            <p class="text-xs text-[var(--muted-foreground)] truncate">HAW Hamburg · Gruppe 5 · 1:1 Rechenkern (E<sub>∥</sub> = 3.000 MPa, HSB 45111–45113, LN2015, DR1992)</p>
+            <h1 class="text-sm font-bold tracking-tight truncate">Flügelkasten-Auslegung · HFL WiSe 2026/27</h1>
+            <p class="text-xs text-[var(--muted-foreground)] truncate">HAW Hamburg · Gruppe 5 · Berechnungsmodell (E<sub>∥</sub> = 3.000 MPa, HSB 45111–45113, LN2015)</p>
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-1.5">
@@ -122,15 +122,15 @@
         <label for="presetSelect" class="text-xs font-semibold text-[var(--muted-foreground)] shrink-0">Variante (25+1):</label>
         <select id="presetSelect" class="flex-1 min-w-[260px] font-medium"></select>
         <div class="flex flex-wrap items-center gap-1.5">
-          <button class="pill-btn" data-quick="K3.3" title="Allround-Empfehlung (Standard): Parallele Stege, Hybrid 0,8/1,0 mm, 2-mm-Rippen, 69,5 g / 161,3 Pkt, w = 18,5/25,3 mm">★ Tipp K3.3</button>
-          <button class="pill-btn" data-quick="K5.4" title="Gesamt-Score-Champion (Gestuft x=400, 90°-Rechtecke, kein Schleifen 8→6, 65,3 g / 170,6 Pkt)">★ Gestuft K5.4</button>
-          <button class="pill-btn" data-quick="K5.3" title="Gestufter Beulfeld-Hybrid (1,0-mm-Reststege + 0,8-mm-Beulfeld, TF 3,5 < Neben 4,9 kg, 69,6 g / 161,1 Pkt)">TF 0,8 K5.3</button>
-          <button class="pill-btn" data-quick="K1.4" title="Einfachbau-Top Konstant (67,3 g / 165,9 Pkt, 100 % Rechtecke)">Konstant K1.4</button>
-          <button class="pill-btn" data-quick="K1.1" title="Einfachbau 1,0 mm, 8×8 ungeschliffen, 100-mm-Raster">8×8 K1.1</button>
-          <button class="pill-btn" data-quick="K2.4" title="Nur Breitenverjüngung Top-Score (65,9 g / 169,2 Pkt)">Breite K2.4</button>
-          <button class="pill-btn" data-quick="K4.2" title="Bester reiner 1,0-mm-Entwurf (68,8 g / 162,8 Pkt)">1,0-mm K4.2</button>
-          <button class="pill-btn" data-quick="K4.5" title="Erreicht w >= 20 mm direkt bei 3 GPa (20,27 mm, b=40 mm)">w≥20@3GPa K4.5</button>
-          <button id="btnCopyParams" class="pill-btn" title="Aktuelle Parameter für Google Sheet 01_Grunddaten!G kopieren">Parameter kopieren</button>
+          <button class="pill-btn" data-quick="K2.3" title="Breitenverjüngung 28→15 × 78 mm, 1,0-mm-Reststege + 0,8-mm-Beulfeld (69,9 g / 160,5 Pkt)">K2.3 (Breite TF 0,8)</button>
+          <button class="pill-btn" data-quick="K3.3" title="Höhenverjüngung 26 × 78→63 mm, 0,8/1,0 mm (69,5 g / 161,3 Pkt, w = 18,5/25,3 mm)">K3.3 (Höhe)</button>
+          <button class="pill-btn" data-quick="K1.4" title="Konstant 24×80 mm, 0,8 mm rundum (67,3 g / 165,9 Pkt)">K1.4 (Konstant 0,8)</button>
+          <button class="pill-btn" data-quick="K1.1" title="Konstant 26×74 mm, 1,0 mm, 8×8-Eckstringer durchgehend">K1.1 (8×8)</button>
+          <button class="pill-btn" data-quick="K2.4" title="Breitenverjüngung 28→15 × 80 mm, 0,8 mm rundum (65,9 g / 169,2 Pkt)">K2.4 (Breite 0,8)</button>
+          <button class="pill-btn" data-quick="K4.2" title="Breite + Höhe 28→15 × 78→64 mm, 1,0 mm rundum (68,8 g / 162,8 Pkt)">K4.2 (1,0 mm)</button>
+          <button class="pill-btn" data-quick="K4.5" title="Breite + Höhe 40→15 × 68→63 mm, w = 20,27 mm bei 3 GPa">K4.5 (20 mm @ 3 GPa)</button>
+          <button class="pill-btn" data-quick="K5.4" title="Gestuft ab x=400, 0,8 mm (65,3 g; Eckstringer-Sprung braucht ≥ 40 mm Überlappung)">K5.4 (Gestuft)</button>
+          <button id="btnCopyParams" class="pill-btn" title="Aktuelle Parameter für Google Sheet 02_Eingabe!E kopieren">Parameter kopieren</button>
         </div>
       </div>
       <div id="variantNote" class="text-xs text-[var(--muted-foreground)]"></div>
@@ -250,7 +250,7 @@
                 </select>
               </label>
               <label class="flex items-center justify-between gap-2">
-                <span class="font-medium">Prognose w<sub>prog</sub> (01!G89)</span>
+                <span class="font-medium">Prognose w<sub>prog</sub> (02!E47)</span>
                 <select id="in_progE" class="w-48">
                   <option value="E_Balsa">E_|| (Hauptprognose)</option>
                   <option value="E_Haut">E_Haut,längs [Her20]</option>
@@ -372,7 +372,7 @@
         <!-- LOWER ANALYSIS TABS -->
         <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl overflow-hidden">
           <div class="flex items-center gap-1 px-3 border-b border-[var(--border)] overflow-x-auto">
-            <button class="tab-btn active" data-viewtab="overview">Übersicht (Blatt 00)</button>
+            <button class="tab-btn active" data-viewtab="overview">Übersicht</button>
             <button class="tab-btn" data-viewtab="views2d">2D-Schnitte (Y-Z / X-Z / X-Y)</button>
             <button class="tab-btn" data-viewtab="plots">Biegelinie &amp; Sicherheiten</button>
             <button class="tab-btn" data-viewtab="chambers">Kammertabelle &amp; Beulen</button>
@@ -636,39 +636,39 @@
 // 1. ALL 25 VERIFIED E_|| = 3.000 MPa PRESETS (5×5, 1:1 FROM GOOGLE SHEET TAB 05)
 // =========================================================================
 const PRESETS = [
-  {code:'K1.1',cat:'K1',name:'K1.1 [Konstant]: Einfachbau (1,0 mm, 8×8)',note:'100 % Rechtecke, 1,0 mm rundum, 100-mm-Raster (8 K), Eckstringer 8×8 ungeschliffen — minimaler Bauaufwand',p:{L:800,b0:26,h0:74,hL:74,n_vor:2,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:26,abstufung:'abg',verj:'lin'}},
-  {code:'K1.2',cat:'K1',name:'K1.2 [Konstant]: 1,0-mm-Leichtbau',note:'Leichtester reiner 1,0-mm-Prismatiker (26×78 mm, 2-mm-Rippen + Endrippen): 73,9 g / 152,8 Pkt, Fall-III-sicher (5,8/9,6 kg)',p:{L:800,b0:26,h0:78,hL:78,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:26,abstufung:'abg',verj:'lin'}},
-  {code:'K1.3',cat:'K1',name:'K1.3 [Konstant]: Hybrid (0,8/1,0, TF 0,8)',note:'Prismatisch 26×78 mm, 1,0-mm-Reststege + abgesetztes 0,8-mm-Beulfeld: 71,8 g / 156,8 Pkt, TF (3,2/5,3 kg) beult sicher vor Nebenkammern (5,0 kg)',p:{L:800,b0:26,h0:78,hL:78,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:26,abstufung:'abg',verj:'lin'}},
-  {code:'K1.4',cat:'K1',name:'K1.4 [Konstant]: 0,8-mm-Top-Score',note:'100 % gerade 90°-Teile (24×80 mm, 0,8 mm, 2-mm-Rippen + Endrippen): 67,3 g / 165,9 Pkt, frühes Beulen (3,1/5,1 kg)',p:{L:800,b0:24,h0:80,hL:80,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:24,abstufung:'abg',verj:'lin'}},
-  {code:'K1.5',cat:'K1',name:'K1.5 [Konstant]: Durchbiegungs-Fokus (18,1 mm)',note:'Weichster konstanter Entwurf (40×68 mm, 2×6 durchgehend): 18,08 mm @ 3 GPa / 24,6 mm @ 2 GPa',p:{L:800,b0:40,h0:68,hL:68,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:2,b_so:6,h_so:6,n_su:2,b_su:6,h_su:6,b_Spitze:40,abstufung:'dur',verj:'lin'}},
-  {code:'K2.1',cat:'K2',name:'K2.1 [Breite]: Einfachbau (1,0 mm, 8×8)',note:'Konstante Seitenwandhöhe (74 mm) mit sanfter Breitenverjüngung (28→22 mm), 1,0 mm, 100-mm-Raster (8 K), 8×8 ungeschliffen',p:{L:800,b0:28,h0:74,hL:74,n_vor:2,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:22,abstufung:'abg',verj:'lin'}},
-  {code:'K2.2',cat:'K2',name:'K2.2 [Breite]: 1,0-mm-Leichtbau',note:'Reiner 1,0-mm-Träger mit Breitenverjüngung (30→15 × 76 mm, 2-mm-Rippen + Endrippen): 71,1 g / 158,1 Pkt',p:{L:800,b0:30,h0:76,hL:76,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
-  {code:'K2.3',cat:'K2',name:'K2.3 [Breite]: Hybrid (0,8/1,0, TF 0,8)',note:'Breitenverjüngung 28→15 × 78 mm, 1,0-mm-Reststege + 0,8-mm-Beulfeld: 69,9 g / 160,5 Pkt, TF (3,2/5,2 kg) < Neben (5,0 kg)',p:{L:800,b0:28,h0:78,hL:78,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
-  {code:'K2.4',cat:'K2',name:'K2.4 [Breite]: 0,8-mm-Top-Score',note:'Rechteckige 80-mm-Stege + Trapez-Häute (28→15 mm, 2-mm-Rippen + Endrippen): 65,9 g / 169,2 Pkt, Beulen (3,1/5,1 kg)',p:{L:800,b0:28,h0:80,hL:80,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
-  {code:'K2.5',cat:'K2',name:'K2.5 [Breite]: Durchbiegungs-Fokus (19,3 mm)',note:'Höchste Durchbiegung bei konstanter Höhe (40→15 × 68 mm): 19,28 mm @ 3 GPa / 26,4 mm @ 2 GPa',p:{L:800,b0:40,h0:68,hL:68,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:2,b_so:6,h_so:6,n_su:2,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
-  {code:'K3.1',cat:'K3',name:'K3.1 [Höhe]: Einfachbau (1,0 mm, 8×8)',note:'Parallele Seitenwände (b=26 mm), Höhe 74→68 mm, 1,0 mm rundum, 100-mm-Raster (8 K), 8×8 ungeschliffen',p:{L:800,b0:26,h0:74,hL:68,n_vor:2,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:26,abstufung:'abg',verj:'lin'}},
-  {code:'K3.2',cat:'K3',name:'K3.2 [Höhe]: 1,0-mm-Leichtbau',note:'Reiner 1,0-mm-Höhenverjüngungs-Träger (26 × 78→64 mm, 2-mm-Rippen + Endrippen): 71,2 g / 157,9 Pkt, w = 18,1/24,7 mm',p:{L:800,b0:26,h0:78,hL:64,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:26,abstufung:'abg',verj:'lin'}},
-  {code:'K3.3',cat:'K3',name:'K3.3 [Höhe]: Hybrid (0,8/1,0 mm)',note:'Allround-Empfehlung: Parallele 1,0-mm-Stege (78→63 mm), 0,8-mm-Rechteckhäute, 2-mm-Rippen + Endrippen: 69,5 g / 161,3 Pkt, w = 18,5/25,3 mm',p:{L:800,b0:26,h0:78,hL:63,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:26,abstufung:'abg',verj:'lin'}},
-  {code:'K3.4',cat:'K3',name:'K3.4 [Höhe]: 0,8-mm-Top-Score',note:'Leichtester Höhenverjüngungs-Entwurf (24 × 80→76 mm, 0,8 mm, 2-mm-Rippen + Endrippen): 66,7 g / 167,3 Pkt, Beulen 3,2/5,2 kg',p:{L:800,b0:24,h0:80,hL:76,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:24,abstufung:'abg',verj:'lin'}},
-  {code:'K3.5',cat:'K3',name:'K3.5 [Höhe]: Durchbiegungs-Fokus (19,0 mm)',note:'Parallele Seitenwände in reinem 1,0 mm (28 × 73→64 mm) mit maximaler Durchbiegung in K3: 19,02 mm @ 3 GPa / 26,0 mm @ 2 GPa',p:{L:800,b0:28,h0:73,hL:64,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:28,abstufung:'abg',verj:'lin'}},
-  {code:'K4.1',cat:'K4',name:'K4.1 [Beides]: Einfachbau (1,0 mm, 8×8)',note:'Vollverjüngt (28→22 × 74→68 mm) in reinem 1,0 mm mit 100-mm-Raster (8 K) und ungeschliffenen 8×8-Eckstringern',p:{L:800,b0:28,h0:74,hL:68,n_vor:2,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:22,abstufung:'abg',verj:'lin'}},
-  {code:'K4.2',cat:'K4',name:'K4.2 [Beides]: 1,0-mm-Score-Champion',note:'Bester reiner 1,0-mm-Entwurf insgesamt (28→15 × 78→64 mm, 2-mm-Rippen + Endrippen): 68,8 g / 162,8 Pkt, w = 18,2/24,9 mm',p:{L:800,b0:28,h0:78,hL:64,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
-  {code:'K4.3',cat:'K4',name:'K4.3 [Beides]: Hybrid (0,8/1,0, TF 0,8)',note:'Vollverjüngt 28→15 × 80→74 mm, 1,0-mm-Reststege + 0,8-mm-Beulfeld: 69,5 g / 161,2 Pkt, TF (3,2/5,3 kg) < Neben (4,9 kg)',p:{L:800,b0:28,h0:80,hL:74,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
-  {code:'K4.4',cat:'K4',name:'K4.4 [Beides]: 0,8-mm-Top-Score',note:'Leichtester vollverjüngter Entwurf (28→15 × 80→76 mm, 0,8 mm, 2-mm-Rippen + Endrippen): 65,3 g / 170,6 Pkt',p:{L:800,b0:28,h0:80,hL:76,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
-  {code:'K4.5',cat:'K4',name:'K4.5 [Beides]: w >= 20 mm @ 3 GPa (20,3 mm)',note:'Direkter 3-GPa-Volltreffer: erreicht w_ges = 20,27 mm >= 20,0 mm direkt bei E_|| = 3.000 MPa (27,8 mm @ 2 GPa)',p:{L:800,b0:40,h0:68,hL:63,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:2,b_so:6,h_so:6,n_su:2,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
-  {code:'K5.1',cat:'K5',name:'K5.1 [Gestuft]: Einfachbau (1,0 mm, 8×8)',note:'Stufe hinter Testfeld (x=400 mm): 100 % Rechtecke, 1,0 mm, 2-mm-Rippenplatten + Endrippen, 8×8 ungeschliffen (81,0 g)',p:{L:800,b0:28,h0:78,hL:68,n_vor:3,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:20,abstufung:'abg',verj:'s400'}},
-  {code:'K5.2',cat:'K5',name:'K5.2 [Gestuft]: 1,0-mm-Leichtbau',note:'Reiner 1,0-mm-Stufenträger (26→15 × 78→72 ab x=400, 2-mm-Rippen, 8×8→6×6 an Rippe ohne Schleifen): 70,6 g / 159,1 Pkt',p:{L:800,b0:26,h0:78,hL:72,n_vor:3,n_nach:4,t_R:2.0,f_Loch:50,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'s400'}},
-  {code:'K5.3',cat:'K5',name:'K5.3 [Gestuft]: Hybrid (0,8/1,0, TF 0,8)',note:'Gestuft ab x=400 (26→15 × 80→72, 90°-Rechtecke, kein Schleifen), 1,0-mm-Reststege + 0,8-mm-Beulfeld: 69,6 g / 161,1 Pkt, TF (3,5/5,6 kg) < Neben (4,9 kg)',p:{L:800,b0:26,h0:80,hL:72,n_vor:3,n_nach:4,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'s400'}},
-  {code:'K5.4',cat:'K5',name:'K5.4 [Gestuft]: 0,8-mm-Gesamt-Champion',note:'Gesamt-Score-Champion aller 25 Varianten: 100 % 90°-Rechtecke (24→15 × 80→76 ab x=400, 2-mm-Rippenplatten, kein Schleifen 8→6!), 65,3 g / 170,6 Pkt, Beulen 3,5/5,6 kg',p:{L:800,b0:24,h0:80,hL:76,n_vor:3,n_nach:4,t_R:2.0,f_Loch:50,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'s400'}},
-  {code:'K5.5',cat:'K5',name:'K5.5 [Gestuft]: Durchbiegungs-Fokus (17,9 mm)',note:'Reine Breitenstufe ab x=400 mm (42→15 × 72 mm) ohne Höhenknick: 17,92 mm @ 3 GPa / 24,6 mm @ 2 GPa',p:{L:800,b0:42,h0:72,hL:72,n_vor:3,n_nach:4,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:15,abstufung:'abg',verj:'s400'}}
+  {code:'K1.1',cat:'K1',name:'K1.1 – Konstant (1,0 mm, 8×8)',note:'Konstanter Querschnitt 26×74 mm, 1,0 mm, 8×8-Eckstringer durchgehend (ohne Verjüngung).',p:{L:800,b0:26,h0:74,hL:74,n_vor:2,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:26,abstufung:'abg',verj:'lin'}},
+  {code:'K1.2',cat:'K1',name:'K1.2 – Konstant (1,0 mm)',note:'Konstanter Querschnitt 26×78 mm, 1,0 mm, 8×8→6×6-Eckstringer, 2-mm-Rippenplatten.',p:{L:800,b0:26,h0:78,hL:78,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:26,abstufung:'abg',verj:'lin'}},
+  {code:'K1.3',cat:'K1',name:'K1.3 – Konstant (0,8/1,0, TF 0,8)',note:'Konstanter Querschnitt 26×78 mm, 0,8-mm-Häute, 1,0-mm-Reststege, 0,8-mm-Beulfeld (beult vor Nebenkammern).',p:{L:800,b0:26,h0:78,hL:78,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:26,abstufung:'abg',verj:'lin'}},
+  {code:'K1.4',cat:'K1',name:'K1.4 – Konstant (0,8 mm)',note:'Konstanter Querschnitt 24×80 mm, 0,8 mm rundum, 90°-Rechteckzuschnitte.',p:{L:800,b0:24,h0:80,hL:80,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:24,abstufung:'abg',verj:'lin'}},
+  {code:'K1.5',cat:'K1',name:'K1.5 – Konstant (weich, 18,1 mm)',note:'Konstanter Querschnitt 40×68 mm, 2× 6×6-Zwischenstringer durchgehend, hohe Durchbiegung (18,1 / 24,6 mm).',p:{L:800,b0:40,h0:68,hL:68,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:2,b_so:6,h_so:6,n_su:2,b_su:6,h_su:6,b_Spitze:40,abstufung:'dur',verj:'lin'}},
+  {code:'K2.1',cat:'K2',name:'K2.1 – Breite (1,0 mm, 8×8)',note:'Breitenverjüngung 28→22 × 74 mm, 1,0 mm, 8×8-Eckstringer durchgehend.',p:{L:800,b0:28,h0:74,hL:74,n_vor:2,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:22,abstufung:'abg',verj:'lin'}},
+  {code:'K2.2',cat:'K2',name:'K2.2 – Breite (1,0 mm)',note:'Breitenverjüngung 30→15 × 76 mm, 1,0 mm rundum, gerade Seitenwände.',p:{L:800,b0:30,h0:76,hL:76,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
+  {code:'K2.3',cat:'K2',name:'K2.3 – Breite (0,8/1,0, TF 0,8)',note:'Breitenverjüngung 28→15 × 78 mm, gerade 1,0-mm-Reststege + 0,8-mm-Beulfeld (3,2/5,2 kg < Neben 5,0 kg).',p:{L:800,b0:28,h0:78,hL:78,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
+  {code:'K2.4',cat:'K2',name:'K2.4 – Breite (0,8 mm)',note:'Breitenverjüngung 28→15 × 80 mm, 0,8 mm rundum, gerade Seitenwände.',p:{L:800,b0:28,h0:80,hL:80,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
+  {code:'K2.5',cat:'K2',name:'K2.5 – Breite (weich, 19,3 mm)',note:'Breitenverjüngung 40→15 × 68 mm, 2× 6×6-Zwischenstringer abgestuft, hohe Durchbiegung (19,3 / 26,4 mm).',p:{L:800,b0:40,h0:68,hL:68,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:2,b_so:6,h_so:6,n_su:2,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
+  {code:'K3.1',cat:'K3',name:'K3.1 – Höhe (1,0 mm, 8×8)',note:'Höhenverjüngung 26 × 74→68 mm, 1,0 mm, 8×8-Eckstringer durchgehend.',p:{L:800,b0:26,h0:74,hL:68,n_vor:2,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:26,abstufung:'abg',verj:'lin'}},
+  {code:'K3.2',cat:'K3',name:'K3.2 – Höhe (1,0 mm)',note:'Höhenverjüngung 26 × 78→64 mm, 1,0 mm rundum, rechteckige Häute.',p:{L:800,b0:26,h0:78,hL:64,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:26,abstufung:'abg',verj:'lin'}},
+  {code:'K3.3',cat:'K3',name:'K3.3 – Höhe (0,8/1,0 mm)',note:'Höhenverjüngung 26 × 78→63 mm, 0,8-mm-Rechteckhäute, 1,0-mm-Stege, w = 18,5 / 25,3 mm.',p:{L:800,b0:26,h0:78,hL:63,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:26,abstufung:'abg',verj:'lin'}},
+  {code:'K3.4',cat:'K3',name:'K3.4 – Höhe (0,8 mm)',note:'Höhenverjüngung 24 × 80→76 mm, 0,8 mm rundum, rechteckige Häute.',p:{L:800,b0:24,h0:80,hL:76,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:24,abstufung:'abg',verj:'lin'}},
+  {code:'K3.5',cat:'K3',name:'K3.5 – Höhe (weich, 19,0 mm)',note:'Höhenverjüngung 28 × 73→64 mm, 1,0 mm rundum, hohe Durchbiegung (19,0 / 26,0 mm).',p:{L:800,b0:28,h0:73,hL:64,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:28,abstufung:'abg',verj:'lin'}},
+  {code:'K4.1',cat:'K4',name:'K4.1 – Breite + Höhe (1,0 mm, 8×8)',note:'Breiten- und Höhenverjüngung 28→22 × 74→68 mm, 1,0 mm, 8×8-Eckstringer durchgehend.',p:{L:800,b0:28,h0:74,hL:68,n_vor:2,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:22,abstufung:'abg',verj:'lin'}},
+  {code:'K4.2',cat:'K4',name:'K4.2 – Breite + Höhe (1,0 mm)',note:'Breiten- und Höhenverjüngung 28→15 × 78→64 mm, 1,0 mm rundum, w = 18,2 / 24,9 mm.',p:{L:800,b0:28,h0:78,hL:64,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
+  {code:'K4.3',cat:'K4',name:'K4.3 – Breite + Höhe (0,8/1,0, TF 0,8)',note:'Breiten- und Höhenverjüngung 28→15 × 80→74 mm, 1,0-mm-Reststege + 0,8-mm-Beulfeld (TF 3,2 < Neben 4,9 kg).',p:{L:800,b0:28,h0:80,hL:74,n_vor:3,n_nach:3,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
+  {code:'K4.4',cat:'K4',name:'K4.4 – Breite + Höhe (0,8 mm)',note:'Breiten- und Höhenverjüngung 28→15 × 80→76 mm, 0,8 mm rundum (65,3 g).',p:{L:800,b0:28,h0:80,hL:76,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
+  {code:'K4.5',cat:'K4',name:'K4.5 – Breite + Höhe (20,3 mm @ 3 GPa)',note:'Breiten- und Höhenverjüngung 40→15 × 68→63 mm, erreicht w = 20,27 mm direkt bei E_|| = 3.000 MPa.',p:{L:800,b0:40,h0:68,hL:63,n_vor:3,n_nach:3,t_R:2.0,f_Loch:50,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:2,b_so:6,h_so:6,n_su:2,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'lin'}},
+  {code:'K5.1',cat:'K5',name:'K5.1 – Gestuft x=400 (1,0 mm, 8×8)',note:'Gestuft ab x=400 (28→20 × 78→68 mm, 1,0 mm, 8×8). Hinweis: Eckstringer-Sprung braucht ≥ 40 mm Längsüberlappung.',p:{L:800,b0:28,h0:78,hL:68,n_vor:3,n_nach:3,t_R:2.0,f_Loch:30,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:8,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:20,abstufung:'abg',verj:'s400'}},
+  {code:'K5.2',cat:'K5',name:'K5.2 – Gestuft x=400 (1,0 mm)',note:'Gestuft ab x=400 (26→15 × 78→72 mm, 1,0 mm). Hinweis: Eckstringer-Sprung braucht ≥ 40 mm Längsüberlappung.',p:{L:800,b0:26,h0:78,hL:72,n_vor:3,n_nach:4,t_R:2.0,f_Loch:50,t_ho:1.0,t_hu:1.0,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'s400'}},
+  {code:'K5.3',cat:'K5',name:'K5.3 – Gestuft x=400 (0,8/1,0, TF 0,8)',note:'Gestuft ab x=400 (26→15 × 80→72 mm, 1,0-mm-Reststege + 0,8-mm-TF). Hinweis: Eckstringer ≥ 40 mm überlappen.',p:{L:800,b0:26,h0:80,hL:72,n_vor:3,n_nach:4,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'s400'}},
+  {code:'K5.4',cat:'K5',name:'K5.4 – Gestuft x=400 (0,8 mm)',note:'Gestuft ab x=400 (24→15 × 80→76 mm, 0,8 mm, 65,3 g). Hinweis: Eckstringer-Sprung braucht ≥ 40 mm Längsüberlappung.',p:{L:800,b0:24,h0:80,hL:76,n_vor:3,n_nach:4,t_R:2.0,f_Loch:50,t_ho:0.8,t_hu:0.8,t_st:0.8,t_st_tf:0.8,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:6,h_so:6,n_su:1,b_su:6,h_su:6,b_Spitze:15,abstufung:'abg',verj:'s400'}},
+  {code:'K5.5',cat:'K5',name:'K5.5 – Gestuft x=400 (weich, 17,9 mm)',note:'Breitenstufe ab x=400 (42→15 × 72 mm, 17,9 / 24,6 mm). Hinweis: Eckstringer-Sprung braucht ≥ 40 mm Längsüberlappung.',p:{L:800,b0:42,h0:72,hL:72,n_vor:3,n_nach:4,t_R:2.0,f_Loch:40,t_ho:0.8,t_hu:0.8,t_st:1.0,t_st_tf:1.0,b_eo:8,h_eo:8,b_eu:8,h_eu:8,b_es:6,n_so:1,b_so:7,h_so:7,n_su:1,b_su:7,h_su:7,b_Spitze:15,abstufung:'abg',verj:'s400'}}
 ];
 
 const CAT_NAMES = {
-  K1: 'K1 – Konstant / Prismatisch (b & h konst.)',
-  K2: 'K2 – Nur Breitenverjüngung (b verj., h konst.)',
-  K3: 'K3 – Nur Höhenverjüngung (b konst., h verj.)',
-  K4: 'K4 – Voll-Verjüngung (Breite + Höhe)',
-  K5: 'K5 – Gestuft / Treppe (Stufe x = 400 mm)'
+  K1: 'K1 – Konstant (b & h konst.)',
+  K2: 'K2 – Breitenverjüngung (h konst.)',
+  K3: 'K3 – Höhenverjüngung (b konst.)',
+  K4: 'K4 – Breiten- und Höhenverjüngung',
+  K5: 'K5 – Gestuft ab x = 400 mm'
 };
 
 // =========================================================================
@@ -682,8 +682,8 @@ const DEFAULT_MAT = {
 
 const labState = { w_max: null, F_krit: null, m_vor: null, m_nach: null };
 
-let state = Object.assign({}, PRESETS[12].p, DEFAULT_MAT); // Default: K3.3
-let activePresetCode = 'K3.3';
+let state = Object.assign({}, PRESETS[7].p, DEFAULT_MAT); // Default: K2.3
+let activePresetCode = 'K2.3';
 let activeCatFilter = 'ALL';
 let squareLock = true;
 let cutX = 0;
@@ -1968,7 +1968,7 @@ function renderOverview(res) {
     {
       k: '8. Seitenwandbeulen außerhalb Testfeld (0–300 & 400–800 mm)', sym: 'm_Beul,Neben', val: nw ? fmt(nw.m_beul_web, 2) : '—', unit: 'kg',
       req: nw
-        ? `Kritisch: ${nw.label} (${Math.round(nw.B)}–${Math.round(nw.C)} mm)${state.b_sw_str > 0 ? ` mit ${state.b_sw_str}×${state.b_sw_str} Stegstr.` : ' · Tipp: Stegstr. (Folie 15)'}`
+        ? `Kritisch: ${nw.label} (${Math.round(nw.B)}–${Math.round(nw.C)} mm)${state.b_sw_str > 0 ? ` mit ${state.b_sw_str}×${state.b_sw_str} Stegstr.` : ' · optional Stegstr. (Folie 15)'}`
         : 'Keine Nebenkammern',
       st: nw
         ? (res.tfFirst
@@ -2039,14 +2039,14 @@ function renderOverview(res) {
   const devW = res.hasLabW ? (100 * (labState.w_max - res.w_prog) / Math.max(1e-6, res.w_prog)) : 0;
   document.getElementById('ov_pktw').innerHTML = res.hasLabW
     ? `<span style="color:${res.pktW >= 9.99 ? 'var(--success)' : 'var(--warning)'}">${fmt(res.pktW, 2)} Pkt</span> <span class="font-normal text-[var(--muted-foreground)]">(${devW >= 0 ? '+' : ''}${fmt(devW, 1)} %)</span>`
-    : `<span style="color:var(--success)">10,00 Pkt</span> <span class="font-normal text-[var(--muted-foreground)]">(Vorschau ±0 %)</span>`;
+    : `<span style="color:var(--success)">10,00 Pkt</span> <span class="font-normal text-[var(--muted-foreground)]">(offen)</span>`;
 
   document.getElementById('ov_fprog').textContent = String(res.F_prog);
   document.getElementById('ov_fprog_note').textContent = `Erste ganze Stufe ≥ ${fmt(res.m_beul_active, 2)} kg (${lagLbl})`;
   const devF = res.hasLabF ? (100 * (labState.F_krit - res.F_prog) / Math.max(1e-6, res.F_prog)) : 0;
   document.getElementById('ov_pktf').innerHTML = res.hasLabF
     ? `<span style="color:${res.pktF >= 9.99 ? 'var(--success)' : 'var(--warning)'}">${fmt(res.pktF, 2)} Pkt</span> <span class="font-normal text-[var(--muted-foreground)]">(${devF >= 0 ? '+' : ''}${fmt(devF, 1)} %)</span>`
-    : `<span style="color:var(--success)">10,00 Pkt</span> <span class="font-normal text-[var(--muted-foreground)]">(Vorschau ±0 %)</span>`;
+    : `<span style="color:var(--success)">10,00 Pkt</span> <span class="font-normal text-[var(--muted-foreground)]">(offen)</span>`;
 
   document.getElementById('ov_lab_mass').innerHTML = res.hasLabMass
     ? `Δm_Leim = <b>${fmt(res.m_Leim_eff, 2)} g</b> (${fmt(100 * res.m_Leim_eff / res.G_W_eff, 1)} %) · ρ_ist = <b>${fmt(res.rho_ist, 1)} kg/m³</b>`
@@ -2056,8 +2056,8 @@ function renderOverview(res) {
   document.getElementById('ov_gw_gl').textContent = `G_W = ${fmt(res.G_W_eff / 1000, 4)} kg | G_L = ${fmt(res.m_Leim_eff / 1000, 4)} kg`;
   document.getElementById('ov_score').textContent = fmt(res.Score_eff, 2);
   document.getElementById('ov_score_st').textContent = (res.hasLabW || res.hasLabF || res.hasLabMass)
-    ? 'Live-Labor-Score (mit Messwerten)'
-    : 'Prognose-Score (Labor offen)';
+    ? 'mit Laborwerten'
+    : 'mit Prognose (Labor offen)';
 
   // 4a. Seitenwandbeulen Kompakt-Strip (Fall I / II / III vs. Nebenkammer)
   const bCards = [
@@ -2223,7 +2223,7 @@ function updateAll() {
         <td class="py-1 px-2 text-right" style="color:${ch.AJ < state.S_min ? 'var(--error)' : ''}">${fmt(Math.min(ch.AJ, 99), 1)}</td>
         <td class="py-1 px-2 text-right" style="color:${ch.S_steg < state.S_min ? 'var(--error)' : ''}">${fmt(ch.S_steg, 2)}</td>
         <td class="py-1 px-2 text-right" style="color:${ch.S_leim < state.S_min ? 'var(--warning)' : ''}">${fmt(ch.S_leim, 2)}</td>
-        <td class="py-1 px-2 text-right font-semibold" style="color:${webCol}" title="${isTF ? 'Testfeld (gewolltes Beulen < 10 kg)' : (earlierThanTF ? 'Beult rechnerisch früher als Testfeld!' : 'Seitenwandbeulen Kammer')}">${fmt(ch.m_beul_web, 2)} kg${isTF ? ' ★' : (earlierThanTF ? ' !' : '')}</td>
+        <td class="py-1 px-2 text-right font-semibold" style="color:${webCol}" title="${isTF ? 'Testfeld (gewolltes Beulen < 10 kg)' : (earlierThanTF ? 'Beult rechnerisch früher als Testfeld!' : 'Seitenwandbeulen Kammer')}">${fmt(ch.m_beul_web, 2)} kg${isTF ? ' (TF)' : (earlierThanTF ? ' !' : '')}</td>
         <td class="py-1 px-2 text-center font-semibold" style="color:${ch.ch_ok ? 'var(--success)' : 'var(--error)'}">${ch.ch_ok ? 'ok' : 'prüfen'}</td>
       </tr>
     `;
@@ -2252,7 +2252,7 @@ function renderMatrix() {
         <td class="py-1.5 px-2">${v.name}</td>
         <td class="py-1.5 px-2 text-right">${fmt(r.G_W, 1)}</td>
         <td class="py-1.5 px-2 text-right">${fmt(r.Score, 1)}</td>
-        <td class="py-1.5 px-2 text-right" style="color:${r.w_ges >= 20 ? 'var(--success)' : ''}">${fmt(r.w_ges, 2)}${r.w_ges >= 20 ? ' ★' : ''}</td>
+        <td class="py-1.5 px-2 text-right" style="color:${r.w_ges >= 20 ? 'var(--success)' : ''}">${fmt(r.w_ges, 2)}</td>
         <td class="py-1.5 px-2 text-right">${fmt(r.w_Her20, 1)}</td>
         <td class="py-1.5 px-2 text-right">${fmt(r.m_beul_I, 1)} / ${fmt(r.m_beul_III, 1)}</td>
         <td class="py-1.5 px-2 text-right" style="color:${r.S_min_all >= state.S_min ? 'var(--success)' : 'var(--error)'}">${fmt(r.S_min_all, 2)}</td>
@@ -2473,7 +2473,7 @@ function init() {
     if (!document.getElementById('view-plots').classList.contains('hidden')) drawPlots(lastResult);
   });
 
-  loadPreset('K3.3');
+  loadPreset('K2.3');
   renderMatrix();
 }
 
