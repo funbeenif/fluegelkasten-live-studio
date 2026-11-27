@@ -90,7 +90,7 @@
           <div class="w-2.5 h-8 rounded-full bg-[var(--primary)] shrink-0"></div>
           <div class="min-w-0">
             <h1 class="text-sm font-bold tracking-tight truncate">Flügelkasten-Auslegung · HFL WiSe 2026/27</h1>
-            <p class="text-xs text-[var(--muted-foreground)] truncate">HAW Hamburg · Gruppe 5 · Timoshenko-Balken (exaktes κ), Außenhäute, 2 Treppenstufen (E<sub>∥</sub> = 3.000 MPa, R<sub>m</sub> = 10 MPa)</p>
+            <p class="text-xs text-[var(--muted-foreground)] truncate">HAW Hamburg · Gruppe 5 · Timoshenko-Balken (exaktes κ), Außenhäute, 2 Treppenstufen mit Schubfeld-Rahmen (E<sub>∥</sub> = 3.000 MPa, R<sub>m</sub> = 10 MPa)</p>
           </div>
         </div>
         <div class="flex items-center gap-2 flex-wrap"><a href="https://docs.google.com/spreadsheets/d/1gi5rIs2Xjz6FyS9RiyDAHATlva0w4nX3zDlcB-sQFHU/edit" target="_blank" rel="noopener" class="pill-btn no-underline">Google Sheet ↗</a><button id="btnThemeToggle" class="pill-btn" title="Hell/Dunkel umschalten">Dunkel</button><div id="globalBadge" class="px-2.5 py-1 rounded-full text-xs font-semibold border"></div></div>
@@ -101,12 +101,12 @@
         <label for="presetSelect" class="text-xs font-semibold text-[var(--muted-foreground)] shrink-0">Variante (50+1):</label>
         <select id="presetSelect" class="flex-1 min-w-[260px] font-medium"></select>
         <div class="flex flex-wrap items-center gap-1.5">
-          <button class="pill-btn" data-quick="K1.03" title="Standard: Unten gestuft 62→51→42 mm, 0,8/1,0 mm, TF 0,8 mm, b_s3=6 mm (104,6 g)">K1.03 (Unten TF 0,8)</button>
-          <button class="pill-btn" data-quick="K1.01" title="Unten gestuft 72→41→41 mm, TF 0,6 mm, b_s3=6 mm (107,7 g)">K1.01 (Unten TF 0,6)</button>
-          <button class="pill-btn" data-quick="K2.01" title="Oben gestuft (Druckgurt durchgehend glatt), TF 0,6 mm, b_s3=6 mm (107,7 g)">K2.01 (Oben glatt)</button>
-          <button class="pill-btn" data-quick="K3.03" title="Beidseitig symmetrisch gestuft (Δz_S = 0), TF 0,8 mm, b_s3=6 mm (105,7 g)">K3.03 (Beidseitig)</button>
-          <button class="pill-btn" data-quick="K4.09" title="Unten gestuft, konstante Breite b=52 mm, Testfeld 1,0 mm, b_s3=6 mm">K4.09 (TF 1,0 mm)</button>
-          <button class="pill-btn" data-quick="K5.04" title="S_Steg ≥ 2,0 überall (Steg 2,0 mm, TF 0,9 mm)">K5.04 (S_Steg ≥ 2,0)</button>
+          <button class="pill-btn" data-quick="K1.03" title="Standard: Unten gestuft 62→51→42 mm, 0,8/1,0 mm, TF 0,8 mm, b_s3=6 mm (108,2 g)">K1.03 (Unten TF 0,8)</button>
+          <button class="pill-btn" data-quick="K1.01" title="Unten gestuft 72→41→41 mm, TF 0,6 mm, b_s3=6 mm (110,8 g)">K1.01 (Unten TF 0,6)</button>
+          <button class="pill-btn" data-quick="K2.01" title="Oben gestuft (Druckgurt durchgehend glatt), TF 0,6 mm, b_s3=6 mm (111,5 g)">K2.01 (Oben glatt)</button>
+          <button class="pill-btn" data-quick="K3.03" title="Beidseitig symmetrisch gestuft (Δz_S = 0), TF 0,8 mm, b_s3=6 mm (110,7 g)">K3.03 (Beidseitig)</button>
+          <button class="pill-btn" data-quick="K4.09" title="Unten gestuft, konstante Breite b=52 mm, Testfeld 1,0 mm, b_s3=6 mm (113,3 g)">K4.09 (TF 1,0 mm)</button>
+          <button class="pill-btn" data-quick="K5.04" title="S_Steg ≥ 2,0 überall (Steg 2,0 mm, TF 0,9 mm; 149,9 g)">K5.04 (S_Steg ≥ 2,0)</button>
           <button class="pill-btn" data-quick="K5.10" title="Vergleichsreferenz: Thores Handrechnung (80→35→23 mm)">K5.10 (Ref Thore)</button>
           <button id="btnCopyParams" class="pill-btn" title="Aktuelle Parameter für Google Sheet 02_Eingabe kopieren">Parameter kopieren</button>
         </div>
@@ -366,7 +366,7 @@
               <span class="flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#ea580c"></span>Zw.-Stringer</span>
               <span class="flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#eab676"></span>Außenhäute</span>
               <span class="flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#1e40af"></span>End-/Stufenrippen</span>
-              <span class="flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#0d9488"></span>Vertikalsteifen</span>
+              <span class="flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#0d9488"></span>Schubfeld-Rahmen</span>
               <span class="flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#059669"></span>Knotenbleche</span>
               <span class="flex items-center gap-1"><span class="inline-block w-2.5 h-2.5 rounded-sm" style="background:#ef4444"></span>Testfeld</span>
             </div>
@@ -383,6 +383,7 @@
           <button class="tab-btn" data-viewtab="plots">Biegelinie (Timoshenko) &amp; Sicherheiten</button>
           <button class="tab-btn" data-viewtab="chambers">Kammertabelle &amp; κ</button>
           <button class="tab-btn" data-viewtab="matrix">Alle 50 Varianten</button>
+          <button class="tab-btn" data-viewtab="bom">Teileliste &amp; Bestellung (03.12.)</button>
         </div>
 
         <!-- TAB 0: OVERVIEW -->
@@ -411,7 +412,7 @@
 
           <div class="grid grid-cols-1 xl:grid-cols-12 gap-3 items-start">
             <div class="xl:col-span-5 space-y-1.5">
-              <div class="px-2.5 py-1.5 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold">2. Massenbilanz (inkl. Stufenrippen &amp; Vertikalsteifen)</div>
+              <div class="px-2.5 py-1.5 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold">2. Massenbilanz (inkl. Schubfeld-Rahmen &amp; Knotenbleche)</div>
               <div class="overflow-x-auto scroll-thin border border-[var(--border)] rounded-lg">
                 <table class="w-full text-xs border-collapse tabular-nums">
                   <thead>
@@ -429,7 +430,7 @@
 
             <div class="xl:col-span-7 space-y-1.5">
               <div class="flex flex-wrap items-center justify-between gap-2 px-2.5 py-1.5 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] font-semibold">
-                <span>3. Wertung (Folie 22–23) &amp; Labor-Abgleich</span>
+                <span>3. Wertung (Folie 22–23) &amp; LBL 3-Schritt-Wägeprotokoll</span>
                 <button id="btnResetLab" class="px-2 py-0.5 rounded bg-[var(--card)] text-[var(--foreground)] text-xs font-medium cursor-pointer border border-[var(--border)]">Labor-Felder leeren</button>
               </div>
               <div class="overflow-x-auto scroll-thin border border-[var(--border)] rounded-lg">
@@ -473,14 +474,21 @@
                       <td id="ov_pktf" class="py-1.5 px-2 font-semibold">—</td>
                     </tr>
                     <tr class="border-b border-[var(--border)]" style="background:color-mix(in srgb, var(--warning) 9%, transparent)">
-                      <td class="py-1.5 px-2">Laborwägung vor / nach Kleben</td>
-                      <td class="py-1.5 px-2 font-mono text-[var(--muted-foreground)]">m_vor / m_nach</td>
+                      <td class="py-1.5 px-2">LBL Schritt 1 &amp; 2 (Einzelteile / ohne Endpl.)</td>
+                      <td class="py-1.5 px-2 font-mono text-[var(--muted-foreground)]">m_1 / m_2</td>
                       <td class="py-1 px-2 text-right whitespace-nowrap">
-                        <input id="in_lab_mvor" type="number" step="0.1" min="0" placeholder="Holz" class="num-in" style="width:56px" />
-                        <input id="in_lab_mnach" type="number" step="0.1" min="0" placeholder="Kasten" class="num-in" style="width:56px" />
+                        <input id="in_lab_mvor" type="number" step="0.1" min="0" placeholder="Holz" class="num-in" style="width:58px" />
+                        <input id="in_lab_mnach" type="number" step="0.1" min="0" placeholder="Kasten" class="num-in" style="width:58px" />
                       </td>
                       <td class="py-1.5 px-2 text-[var(--muted-foreground)]">g</td>
                       <td id="ov_lab_mass" class="py-1.5 px-2 text-[var(--muted-foreground)]">—</td>
+                    </tr>
+                    <tr class="border-b border-[var(--border)]" style="background:color-mix(in srgb, var(--warning) 9%, transparent)">
+                      <td class="py-1.5 px-2">LBL Schritt 3 (Träger MIT Endplatten)</td>
+                      <td class="py-1.5 px-2 font-mono text-[var(--muted-foreground)]">m_ges,ist</td>
+                      <td class="py-1 px-2 text-right"><input id="in_lab_mges" type="number" step="0.1" min="0" placeholder="Gesamt" class="num-in" /></td>
+                      <td class="py-1.5 px-2 text-[var(--muted-foreground)]">g</td>
+                      <td id="ov_lab_end" class="py-1.5 px-2 text-[var(--muted-foreground)]">—</td>
                     </tr>
                     <tr class="border-b border-[var(--border)]">
                       <td class="py-1.5 px-2">Leichtbau-Anteil</td>
@@ -625,6 +633,79 @@
             </table>
           </div>
         </div>
+
+        <!-- TAB 5: BOM, ORDER EMAIL (03.12.) & PROF. LINKE CHECKLIST -->
+        <div id="view-bom" class="p-3 space-y-3 text-xs hidden">
+          <div class="flex flex-wrap items-center justify-between gap-2 px-2.5 py-2 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)]">
+            <div class="font-semibold">Teileliste &amp; Balsa-Bestellung · Frist an markus.linke@haw-hamburg.de: 03.12.2026, 18:00 Uhr</div>
+            <button id="btnCopyOrder" class="px-2.5 py-1 rounded bg-[var(--card)] text-[var(--foreground)] text-xs font-semibold cursor-pointer border border-[var(--border)]">Bestell-E-Mail kopieren</button>
+          </div>
+
+          <div class="grid grid-cols-1 xl:grid-cols-12 gap-3 items-start">
+            <div class="xl:col-span-7 space-y-2">
+              <div class="font-semibold text-[var(--muted-foreground)] uppercase tracking-wider">1. Bestell-Zusammenfassung (+30 % Verschnitt, Standard-Halbzeuge)</div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div class="overflow-x-auto scroll-thin border border-[var(--border)] rounded-lg">
+                  <table class="w-full text-xs border-collapse tabular-nums">
+                    <thead>
+                      <tr class="bg-[var(--background)] text-[var(--muted-foreground)] border-b border-[var(--border)]">
+                        <th class="py-1.5 px-2 text-left">Vierkantleisten (1.000 mm)</th>
+                        <th class="py-1.5 px-2 text-right">Netto [mm]</th>
+                        <th class="py-1.5 px-2 text-right">Bestellung</th>
+                      </tr>
+                    </thead>
+                    <tbody id="bomBarsTbody"></tbody>
+                  </table>
+                </div>
+                <div class="overflow-x-auto scroll-thin border border-[var(--border)] rounded-lg">
+                  <table class="w-full text-xs border-collapse tabular-nums">
+                    <thead>
+                      <tr class="bg-[var(--background)] text-[var(--muted-foreground)] border-b border-[var(--border)]">
+                        <th class="py-1.5 px-2 text-left">Balsabrettchen (100×1000)</th>
+                        <th class="py-1.5 px-2 text-right">Netto [cm²]</th>
+                        <th class="py-1.5 px-2 text-right">Bestellung</th>
+                      </tr>
+                    </thead>
+                    <tbody id="bomSheetsTbody"></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="bg-[var(--background)] border border-[var(--border)] rounded-lg p-2 space-y-1">
+                <div class="font-semibold text-[var(--muted-foreground)]">Versandfertiger E-Mail-Entwurf (an markus.linke@haw-hamburg.de):</div>
+                <pre id="bomEmailText" class="text-[11px] font-mono whitespace-pre-wrap leading-relaxed select-all m-0"></pre>
+              </div>
+            </div>
+
+            <div class="xl:col-span-5 space-y-2">
+              <div class="font-semibold text-[var(--muted-foreground)] uppercase tracking-wider">2. Bau-, Endplatten- &amp; LBL-Checkliste (Prof. Linke)</div>
+              <div id="bomChecklist" class="space-y-1.5"></div>
+            </div>
+          </div>
+
+          <div class="space-y-1.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-semibold text-[var(--muted-foreground)] uppercase tracking-wider">3. Einzelteilliste für LBL-Wägung Schritt 1 (vor Einbau · 1:1 mit Google Sheet Blatt 07)</span>
+              <span id="bomSumTag" class="font-mono font-semibold text-[var(--primary)]"></span>
+            </div>
+            <div class="overflow-x-auto scroll-thin border border-[var(--border)] rounded-lg">
+              <table class="w-full text-xs border-collapse tabular-nums">
+                <thead>
+                  <tr class="bg-[var(--background)] text-[var(--muted-foreground)] border-b border-[var(--border)]">
+                    <th class="py-1.5 px-2 text-center">Pos</th>
+                    <th class="py-1.5 px-2 text-left">Bauteil</th>
+                    <th class="py-1.5 px-2 text-left">Halbzeug</th>
+                    <th class="py-1.5 px-2 text-center">Querschnitt [mm]</th>
+                    <th class="py-1.5 px-2 text-center">Länge [mm]</th>
+                    <th class="py-1.5 px-2 text-center">Stk</th>
+                    <th class="py-1.5 px-2 text-right">Soll [g]</th>
+                    <th class="py-1.5 px-2 text-left">Fertigungshinweis</th>
+                  </tr>
+                </thead>
+                <tbody id="bomItemsTbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -636,8 +717,8 @@
         <div><b>LN2015</b> Linke/Nast: Festigkeitslehre für den Leichtbau, Springer 2015. Kap. 3.2–3.4, 4.2 (Bredt), 5.2.2 (Schubfluss Gl. 5.16), 6.9 (S), 7.6 (Timoshenko/PvK Gl. 7.87), 8.2.1 (Knicken), 8.4 (Beulen)</div>
         <div><b>HSB</b> Handbuch Strukturberechnung (IASB): 45111-01/04 (1969/70), 45112-01 (2012), 45113-01 (Schubbeulen)</div>
         <div><b>[Her20]</b> Herberhold (2020): Balsa-Kennwerte, Tab. 2 S. 28, S. 12, Abb. 20 · <b>Reinholz (2026)</b> Gruppe-5-Vorstudie (E = 3.000 MPa, R<sub>m</sub> = 10 MPa, 2-Stufen-Konzept)</div>
-        <div><b>Lehnert (2018)</b> Tab. 3.3 S. 20 (G<sub>xy</sub> = 98–159 MPa) · <b>Masterprojekt (2018)</b> Tab. 1.2 S. 5 (ρ, τ<sub>B</sub> = 1,9 MPa) · <b>HFL-Einführung</b> Folie 13–18, 22–23</div>
-        <div class="md:col-span-2">Vollständige Zuordnung je Blatt: Google Sheet, Blatt 06_Literatur. Nachweis w<sub>Timo</sub>(L) ≥ 20 mm gilt verbindlich bei E<sub>∥</sub> = 3.000 MPa; Mindest-Rippenhöhe h<sub>R,min</sub> ≥ 15 mm.</div>
+        <div><b>Lehnert (2018)</b> Tab. 3.3 S. 20 (G<sub>xy</sub> = 98–159 MPa) · <b>Masterprojekt (2018)</b> Tab. 1.2 S. 5 (ρ, τ<sub>B</sub> = 1,9 MPa) · <b>HFL-Einführung &amp; Ergänzungen Prof. Linke</b> (Endplatten, Schubfeld-Stufenrippen, 3-Schritt-Wägung)</div>
+        <div class="md:col-span-2">Vollständige Zuordnung je Blatt: Google Sheet, Blätter 06_Literatur &amp; 07_Teileliste_Waegung. Nachweis w<sub>Timo</sub>(L) ≥ 20 mm @ E<sub>∥</sub> = 3.000 MPa; Mindest-Stirnfläche A<sub>Stirn</sub> ≥ 1.000 mm²; Mindest-Rippenhöhe h<sub>R,min</sub> ≥ 15 mm.</div>
       </div>
     </details>
   </div>
@@ -646,7 +727,7 @@
 // =========================================================================
 // 1. 50 VERIFIED 2-STEP TIMOSHENKO PRESETS (1:1 WITH GOOGLE SHEET _Varianten)
 // =========================================================================
-const PRESETS = [{"code": "K1.01", "cat": "K1", "name": "K1.01 – Unten gestuft (Leichtbau, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=61 mm, h=72→41→41 mm (h_R,min=27,8 mm), t=0,6/0,6/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,20), w_Timo=21,28 mm (κ=0,08), S_Z/D=2,00, S_Steg=1,41, TF=2,12 < Neb=6,96 kg, G_W=107,7 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 61, "b2": 61, "b3": 61, "h1": 72, "h2": 41, "h3": 41, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 3, "nsu1": 3, "nsu2": 4, "nsu3": 3, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.02", "cat": "K1", "name": "K1.02 – Unten gestuft (0,8/1,0, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=40 mm, h=63→45→39 mm (h_R,min=25,4 mm), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,45), w_Timo=21,86 mm (κ=0,08), S_Z/D=2,02, S_Steg=1,32, TF=2,61 < Neb=8,82 kg, G_W=103,4 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 40, "b2": 40, "b3": 40, "h1": 63, "h2": 45, "h3": 39, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 1, "nsu1": 3, "nsu2": 3, "nsu3": 1, "bs1": 7, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.03", "cat": "K1", "name": "K1.03 – Unten gestuft (0,8/1,0, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=46 mm, h=62→51→42 mm (h_R,min=28,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,10), w_Timo=20,77 mm (κ=0,10), S_Z/D=2,01, S_Steg=1,43, TF=6,08 < Neb=9,13 kg, G_W=104,6 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 46, "b2": 46, "b3": 46, "h1": 62, "h2": 51, "h3": 42, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 2, "nso3": 2, "nsu1": 3, "nsu2": 2, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.04", "cat": "K1", "name": "K1.04 – Unten gestuft (Steg 1,5, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=46 mm, h=61→38→34 mm (h_R,min=16,8 mm), t=0,6/0,6/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,27), w_Timo=21,99 mm (κ=0,09), S_Z/D=2,00, S_Steg=1,63, TF=6,10 < Neb=25,77 kg, G_W=123,3 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 46, "b2": 46, "b3": 46, "h1": 61, "h2": 38, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.05", "cat": "K1", "name": "K1.05 – Unten gestuft (Steg 2,0, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=55 mm, h=62→38→29 mm (h_R,min=15,4 mm), t=0,8/0,8/2,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,31), w_Timo=21,59 mm (κ=0,11), S_Z/D=2,00, S_Steg=1,75, TF=6,02 < Neb=47,56 kg, G_W=121,8 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 55, "b2": 55, "b3": 55, "h1": 62, "h2": 38, "h3": 29, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 2.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.06", "cat": "K1", "name": "K1.06 – Unten gestuft (1,0-mm-Haut, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=40 mm, h=62→46→41 mm (h_R,min=27,0 mm), t=1,0/1,0/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=3,04), w_Timo=21,34 mm (κ=0,10), S_Z/D=2,01, S_Steg=1,39, TF=6,16 < Neb=9,28 kg, G_W=107,9 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 40, "b2": 40, "b3": 40, "h1": 62, "h2": 46, "h3": 41, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 7, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.07", "cat": "K1", "name": "K1.07 – Unten gestuft (8×8 durchgehend)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=53 mm, h=62→44→34 mm (h_R,min=16,4 mm), t=0,8/0,8/1,2 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,22), w_Timo=21,87 mm (κ=0,09), S_Z/D=2,01, S_Steg=1,32, TF=2,72 < Neb=15,05 kg, G_W=113,8 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 62, "h2": 44, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 8, "nso1": 5, "nso2": 2, "nso3": 2, "nsu1": 5, "nsu2": 2, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.08", "cat": "K1", "name": "K1.08 – Unten gestuft (weich, ≥ 22 mm)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=60 mm, h=64→38→35 mm (h_R,min=21,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,27), w_Timo=22,57 mm (κ=0,08), S_Z/D=2,01, S_Steg=1,41, TF=5,78 < Neb=13,40 kg, G_W=118,6 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 60, "b2": 60, "b3": 60, "h1": 64, "h2": 38, "h3": 35, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 3, "nsu1": 3, "nsu2": 4, "nsu3": 3, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.09", "cat": "K1", "name": "K1.09 – Unten gestuft (Reserve S ≥ 2,15)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=50 mm, h=59→39→31 mm (h_R,min=15,8 mm), t=0,6/0,6/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,37), w_Timo=22,18 mm (κ=0,09), S_Z/D=2,16, S_Steg=1,49, TF=6,61 < Neb=28,53 kg, G_W=126,0 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 50, "b2": 50, "b3": 50, "h1": 59, "h2": 39, "h3": 31, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 7, "nso1": 5, "nso2": 4, "nso3": 2, "nsu1": 5, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.10", "cat": "K1", "name": "K1.10 – Unten gestuft (100-mm-Rippenraster)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=52 mm, h=62→42→39 mm (h_R,min=23,4 mm), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,17), w_Timo=22,47 mm (κ=0,08), S_Z/D=2,00, S_Steg=1,31, TF=2,72 < Neb=9,27 kg, G_W=112,8 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 62, "h2": 42, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.01", "cat": "K2", "name": "K2.01 – Oben gestuft (Leichtbau, TF 0,6)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=46 mm, h=62→51→39 mm (h_R,min=25,4 mm), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,10), w_Timo=21,46 mm (κ=0,08), S_Z/D=2,01, S_Steg=1,31, TF=2,68 < Neb=9,13 kg, G_W=107,7 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 46, "b2": 46, "b3": 46, "h1": 62, "h2": 51, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 2, "nso3": 3, "nsu1": 3, "nsu2": 2, "nsu3": 3, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.02", "cat": "K2", "name": "K2.02 – Oben gestuft (0,8/1,0, TF 0,6)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=43 mm, h=62→47→39 mm (h_R,min=23,4 mm), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,99), w_Timo=21,79 mm (κ=0,08), S_Z/D=2,01, S_Steg=1,30, TF=2,70 < Neb=9,15 kg, G_W=107,1 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 43, "b2": 43, "b3": 43, "h1": 62, "h2": 47, "h3": 39, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 6, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.03", "cat": "K2", "name": "K2.03 – Oben gestuft (0,8/1,0, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=56 mm, h=66→44→39 mm (h_R,min=23,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,22), w_Timo=21,10 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,31, TF=5,51 < Neb=8,37 kg, G_W=108,1 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 56, "b2": 56, "b3": 56, "h1": 66, "h2": 44, "h3": 39, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 7, "nso1": 4, "nso2": 2, "nso3": 2, "nsu1": 4, "nsu2": 2, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.04", "cat": "K2", "name": "K2.04 – Oben gestuft (asym. Haut 0,6/1,0)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=50 mm, h=62→46→38 mm (h_R,min=24,4 mm), t=0,6/1,0/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,15), w_Timo=20,63 mm (κ=0,10), S_Z/D=2,03, S_Steg=1,54, TF=6,05 < Neb=14,35 kg, G_W=111,8 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 50, "b2": 50, "b3": 50, "h1": 62, "h2": 46, "h3": 38, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 1.0, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.05", "cat": "K2", "name": "K2.05 – Oben gestuft (Steg 1,5, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=53 mm, h=62→41→37 mm (h_R,min=23,8 mm), t=0,6/0,6/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,21), w_Timo=21,17 mm (κ=0,11), S_Z/D=2,00, S_Steg=1,77, TF=6,00 < Neb=24,85 kg, G_W=117,5 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 62, "h2": 41, "h3": 37, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 5, "nso2": 4, "nso3": 3, "nsu1": 5, "nsu2": 4, "nsu3": 3, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.06", "cat": "K2", "name": "K2.06 – Oben gestuft (Steg 2,0, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=59 mm, h=64→36→33 mm (h_R,min=15,4 mm), t=0,8/0,8/2,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=3,14), w_Timo=20,48 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,80, TF=5,69 < Neb=44,06 kg, G_W=128,8 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 59, "b2": 59, "b3": 59, "h1": 64, "h2": 36, "h3": 33, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 2.0, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 2, "nso2": 5, "nso3": 2, "nsu1": 2, "nsu2": 5, "nsu3": 2, "bs1": 7, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.07", "cat": "K2", "name": "K2.07 – Oben gestuft (asym. Druckstringer)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=61 mm, h=62→42→39 mm (h_R,min=23,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,15), w_Timo=21,76 mm (κ=0,08), S_Z/D=2,00, S_Steg=1,31, TF=6,03 < Neb=8,99 kg, G_W=119,2 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 61, "b2": 61, "b3": 61, "h1": 62, "h2": 42, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 7, "nso1": 2, "nso2": 2, "nso3": 0, "nsu1": 3, "nsu2": 4, "nsu3": 4, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.08", "cat": "K2", "name": "K2.08 – Oben gestuft (8×8 durchgehend)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=48 mm, h=63→40→34 mm (h_R,min=16,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,20), w_Timo=22,07 mm (κ=0,09), S_Z/D=2,00, S_Steg=1,31, TF=5,96 < Neb=14,53 kg, G_W=116,3 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 48, "b2": 48, "b3": 48, "h1": 63, "h2": 40, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 5, "nso2": 3, "nso3": 2, "nsu1": 5, "nsu2": 3, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.09", "cat": "K2", "name": "K2.09 – Oben gestuft (weich, ≥ 22 mm)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=76 mm, h=56→40→40 mm (h_R,min=24,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=3,13), w_Timo=24,59 mm (κ=0,08), S_Z/D=2,00, S_Steg=1,37, TF=6,96 < Neb=12,05 kg, G_W=123,5 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 76, "b2": 76, "b3": 76, "h1": 56, "h2": 40, "h3": 40, "n_vor": 3, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 6, "nso2": 4, "nso3": 3, "nsu1": 6, "nsu2": 4, "nsu3": 3, "bs1": 5, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.10", "cat": "K2", "name": "K2.10 – Oben gestuft (Reserve S ≥ 2,15)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=52 mm, h=65→39→33 mm (h_R,min=19,8 mm), t=0,6/0,6/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,35), w_Timo=21,87 mm (κ=0,08), S_Z/D=2,15, S_Steg=1,31, TF=5,64 < Neb=13,83 kg, G_W=121,7 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 65, "h2": 39, "h3": 33, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 6, "nso1": 4, "nso2": 4, "nso3": 3, "nsu1": 4, "nsu2": 4, "nsu3": 3, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.01", "cat": "K3", "name": "K3.01 – Beidseitig gestuft (Leichtbau, TF 0,6)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=53 mm, h=62→40→40 mm (h_R,min=22,4 mm), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,22), w_Timo=22,83 mm (κ=0,08), S_Z/D=2,02, S_Steg=1,31, TF=2,70 < Neb=9,23 kg, G_W=114,3 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 62, "h2": 40, "h3": 40, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.02", "cat": "K3", "name": "K3.02 – Beidseitig gestuft (0,8/1,0, TF 0,6)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=52 mm, h=62→45→40 mm (h_R,min=26,4 mm), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,18), w_Timo=21,99 mm (κ=0,08), S_Z/D=2,03, S_Steg=1,31, TF=2,70 < Neb=9,21 kg, G_W=111,9 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 62, "h2": 45, "h3": 40, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.03", "cat": "K3", "name": "K3.03 – Beidseitig gestuft (0,8/1,0, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=44 mm, h=62→52→39 mm (h_R,min=25,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,12), w_Timo=21,04 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,32, TF=6,06 < Neb=9,10 kg, G_W=105,7 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 44, "b2": 44, "b3": 44, "h1": 62, "h2": 52, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 2, "nso3": 2, "nsu1": 3, "nsu2": 2, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.04", "cat": "K3", "name": "K3.04 – Beidseitig gestuft (Steg 1,5, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=55 mm, h=62→38→35 mm (h_R,min=21,4 mm), t=0,8/0,8/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,26), w_Timo=21,77 mm (κ=0,09), S_Z/D=2,00, S_Steg=1,73, TF=6,01 < Neb=24,51 kg, G_W=122,3 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 55, "b2": 55, "b3": 55, "h1": 62, "h2": 38, "h3": 35, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 2, "nso2": 4, "nso3": 2, "nsu1": 2, "nsu2": 4, "nsu3": 2, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.05", "cat": "K3", "name": "K3.05 – Beidseitig gestuft (Steg 2,0, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=53 mm, h=58→39→30 mm (h_R,min=16,4 mm), t=0,8/0,8/2,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,22), w_Timo=22,25 mm (κ=0,09), S_Z/D=2,00, S_Steg=1,62, TF=6,76 < Neb=57,11 kg, G_W=126,2 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 58, "h2": 39, "h3": 30, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 2.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.06", "cat": "K3", "name": "K3.06 – Beidseitig gestuft (1,0-mm-Haut, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=59 mm, h=64→42→36 mm (h_R,min=22,0 mm), t=1,0/1,0/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,21), w_Timo=21,15 mm (κ=0,11), S_Z/D=2,01, S_Steg=1,46, TF=5,92 < Neb=14,36 kg, G_W=114,2 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 59, "b2": 59, "b3": 59, "h1": 64, "h2": 42, "h3": 36, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.07", "cat": "K3", "name": "K3.07 – Beidseitig gestuft (8×8 durchgehend)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=53 mm, h=60→40→34 mm (h_R,min=16,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=3,11), w_Timo=22,82 mm (κ=0,09), S_Z/D=2,01, S_Steg=1,32, TF=6,47 < Neb=15,60 kg, G_W=122,3 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 60, "h2": 40, "h3": 34, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 4, "nso2": 4, "nso3": 2, "nsu1": 4, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.08", "cat": "K3", "name": "K3.08 – Beidseitig gestuft (weich, ≥ 22 mm)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=58 mm, h=50→41→34 mm (h_R,min=18,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,19), w_Timo=26,19 mm (κ=0,05), S_Z/D=2,01, S_Steg=1,34, TF=8,28 < Neb=24,53 kg, G_W=133,8 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 58, "b2": 58, "b3": 58, "h1": 50, "h2": 41, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.09", "cat": "K3", "name": "K3.09 – Beidseitig gestuft (Reserve S ≥ 2,15)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=52 mm, h=64→41→39 mm (h_R,min=23,4 mm), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,39), w_Timo=21,59 mm (κ=0,08), S_Z/D=2,15, S_Steg=1,31, TF=2,60 < Neb=8,82 kg, G_W=120,5 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 64, "h2": 41, "h3": 39, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 4, "nso3": 2, "nsu1": 4, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.10", "cat": "K3", "name": "K3.10 – Beidseitig gestuft (kompakt, b ≤ 44)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=41 mm, h=62→43→34 mm (h_R,min=20,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,16), w_Timo=21,95 mm (κ=0,08), S_Z/D=2,00, S_Steg=1,34, TF=6,05 < Neb=14,95 kg, G_W=120,9 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 41, "b2": 41, "b3": 41, "h1": 62, "h2": 43, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 4, "nsu1": 3, "nsu2": 3, "nsu3": 4, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.01", "cat": "K4", "name": "K4.01 – Stufen 400/550 (unten, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/550 mm, b=56 mm, h=66→45→41 mm (h_R,min=27,4 mm), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=3,01), w_Timo=21,33 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,40, TF=2,46 < Neb=8,37 kg, G_W=108,0 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 550, "b1": 56, "b2": 56, "b3": 56, "h1": 66, "h2": 45, "h3": 41, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 6, "nso1": 4, "nso2": 3, "nso3": 3, "nsu1": 4, "nsu2": 3, "nsu3": 3, "bs1": 5, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.02", "cat": "K4", "name": "K4.02 – Stufen 400/650 (unten, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/650 mm, b=48 mm, h=64→43→33 mm (h_R,min=19,4 mm), t=0,8/0,8/1,2 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=3,04), w_Timo=21,48 mm (κ=0,09), S_Z/D=2,00, S_Steg=1,31, TF=2,53 < Neb=13,29 kg, G_W=110,7 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 650, "b1": 48, "b2": 48, "b3": 48, "h1": 64, "h2": 43, "h3": 33, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 6, "nso1": 2, "nso2": 3, "nso3": 2, "nsu1": 2, "nsu2": 3, "nsu3": 2, "bs1": 8, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.03", "cat": "K4", "name": "K4.03 – Stufen 450/650 (unten, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=450/650 mm, b=56 mm, h=62→41→39 mm (h_R,min=23,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=3,08), w_Timo=21,54 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,31, TF=6,15 < Neb=9,61 kg, G_W=112,0 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 450, "x_S2": 650, "b1": 56, "b2": 56, "b3": 56, "h1": 62, "h2": 41, "h3": 39, "n_vor": 3, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 5, "nso2": 3, "nso3": 2, "nsu1": 5, "nsu2": 3, "nsu3": 2, "bs1": 5, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.04", "cat": "K4", "name": "K4.04 – Stufen 500/650 (unten, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=500/650 mm, b=43 mm, h=62→37→33 mm (h_R,min=19,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,24), w_Timo=20,69 mm (κ=0,11), S_Z/D=2,00, S_Steg=1,30, TF=6,10 < Neb=14,53 kg, G_W=113,5 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 500, "x_S2": 650, "b1": 43, "b2": 43, "b3": 43, "h1": 62, "h2": 37, "h3": 33, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.05", "cat": "K4", "name": "K4.05 – Stufen 400/550 (oben, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/550 mm, b=56 mm, h=60→45→41 mm (h_R,min=27,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=3,01), w_Timo=22,46 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,40, TF=6,48 < Neb=9,83 kg, G_W=112,9 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 550, "b1": 56, "b2": 56, "b3": 56, "h1": 60, "h2": 45, "h3": 41, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 4, "nso2": 3, "nso3": 3, "nsu1": 4, "nsu2": 3, "nsu3": 3, "bs1": 6, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.06", "cat": "K4", "name": "K4.06 – Stufen 450/650 (beidseitig, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=450/650 mm, b=62 mm, h=59→36→33 mm (h_R,min=17,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,33), w_Timo=23,06 mm (κ=0,08), S_Z/D=2,00, S_Steg=1,30, TF=6,63 < Neb=16,18 kg, G_W=125,8 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 450, "x_S2": 650, "b1": 62, "b2": 62, "b3": 62, "h1": 59, "h2": 36, "h3": 33, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 7, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.07", "cat": "K4", "name": "K4.07 – Testfeld 0,6 mm (frühes Beulen, Steg 1,2)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=43 mm, h=62→41→35 mm (h_R,min=19,4 mm), t=0,8/0,8/1,2 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,22), w_Timo=22,11 mm (κ=0,08), S_Z/D=2,04, S_Steg=1,32, TF=2,70 < Neb=14,53 kg, G_W=117,6 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 43, "b2": 43, "b3": 43, "h1": 62, "h2": 41, "h3": 35, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 3, "nsu1": 4, "nsu2": 3, "nsu3": 3, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.08", "cat": "K4", "name": "K4.08 – Testfeld 0,8 mm (mittleres Beulen, Steg 1,5)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=53 mm, h=70→38→31 mm (h_R,min=15,4 mm), t=0,8/0,8/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,24), w_Timo=20,82 mm (κ=0,09), S_Z/D=2,01, S_Steg=1,50, TF=4,89 < Neb=18,62 kg, G_W=115,4 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 70, "h2": 38, "h3": 31, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 2, "nso2": 4, "nso3": 2, "nsu1": 2, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.09", "cat": "K4", "name": "K4.09 – Testfeld 1,0 mm (spätes Beulen 8,5 kg, Steg 1,2)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=52 mm, h=72→42→33 mm (h_R,min=19,4 mm), t=0,8/0,8/1,2 mm (TF 1,0 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,32), w_Timo=20,19 mm (κ=0,10), S_Z/D=2,01, S_Steg=1,31, TF=8,53 < Neb=10,17 kg, G_W=108,7 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 72, "h2": 42, "h3": 33, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 40, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 1.0, "be1": 8, "be2": 6, "be3": 6, "nso1": 2, "nso2": 4, "nso3": 2, "nsu1": 2, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.10", "cat": "K4", "name": "K4.10 – Verstärkte Stufenrippen (4× Vertikalsteifen, t_R 2,5)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=44 mm, h=62→41→33 mm (h_R,min=19,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,18), w_Timo=22,53 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,30, TF=6,06 < Neb=14,46 kg, G_W=115,3 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 44, "b2": 44, "b3": 44, "h1": 62, "h2": 41, "h3": 33, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.5, "f_Loch": 50, "n_vert": 4, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.01", "cat": "K5", "name": "K5.01 – Höhe + Breite gestuft (unten, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=53→51→44 mm, h=62→41→39 mm (h_R,min=23,8 mm), t=0,6/0,6/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,18), w_Timo=23,17 mm (κ=0,08), S_Z/D=2,01, S_Steg=1,30, TF=2,65 < Neb=8,95 kg, G_W=112,1 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 51, "b3": 44, "h1": 62, "h2": 41, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 7, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.02", "cat": "K5", "name": "K5.02 – Höhe + Breite gestuft (oben, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=49→42→39 mm, h=61→44→40 mm (h_R,min=24,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,20), w_Timo=22,08 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,33, TF=6,29 < Neb=9,48 kg, G_W=110,6 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 49, "b2": 42, "b3": 39, "h1": 61, "h2": 44, "h3": 40, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.03", "cat": "K5", "name": "K5.03 – Höhe + Breite gestuft (beidseitig, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=44→42→29 mm, h=61→46→38 mm (h_R,min=24,4 mm), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,23), w_Timo=21,19 mm (κ=0,10), S_Z/D=2,00, S_Steg=1,51, TF=6,26 < Neb=15,53 kg, G_W=106,1 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 44, "b2": 42, "b3": 29, "h1": 61, "h2": 46, "h3": 38, "n_vor": 3, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 4, "nso2": 4, "nso3": 1, "nsu1": 4, "nsu2": 4, "nsu3": 1, "bs1": 6, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.04", "cat": "K5", "name": "K5.04 – Maximale Schubsicherheit (S_Steg 2,03, Steg 2,0, TF 0,9)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=78 mm, h=64→34→31 mm (h_R,min=17,8 mm), t=0,6/0,6/2,0 mm (TF 0,9 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,29), w_Timo=21,83 mm (κ=0,06), S_Z/D=2,03, S_Steg=2,03, TF=8,14 < Neb=48,66 kg, G_W=143,9 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 78, "b2": 78, "b3": 78, "h1": 64, "h2": 34, "h3": 31, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 40, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 2.0, "t_st_tf": 0.9, "be1": 8, "be2": 7, "be3": 6, "nso1": 4, "nso2": 5, "nso3": 4, "nsu1": 4, "nsu2": 5, "nsu3": 4, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.05", "cat": "K5", "name": "K5.05 – Breite Bauweise (b ≥ 60, beidseitig)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=66 mm, h=66→39→33 mm (h_R,min=17,0 mm), t=1,0/1,0/1,2 mm (TF 0,6 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,24), w_Timo=22,21 mm (κ=0,08), S_Z/D=2,01, S_Steg=1,31, TF=2,50 < Neb=13,24 kg, G_W=117,1 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 66, "b2": 66, "b3": 66, "h1": 66, "h2": 39, "h3": 33, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.2, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 7, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.06", "cat": "K5", "name": "K5.06 – 1,0-mm-Einheitsbau (oben, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=43 mm, h=65→41→39 mm (h_R,min=25,0 mm), t=1,0/1,0/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,22), w_Timo=21,84 mm (κ=0,09), S_Z/D=2,01, S_Steg=1,32, TF=5,66 < Neb=8,37 kg, G_W=107,3 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 43, "b2": 43, "b3": 43, "h1": 65, "h2": 41, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 2, "nso2": 4, "nso3": 1, "nsu1": 2, "nsu2": 4, "nsu3": 1, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.07", "cat": "K5", "name": "K5.07 – Hohe Festigkeitsreserve (S ≥ 2,25, unten)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=56 mm, h=64→38→33 mm (h_R,min=19,0 mm), t=1,0/1,0/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,57), w_Timo=21,23 mm (κ=0,07), S_Z/D=2,25, S_Steg=1,32, TF=5,98 < Neb=15,15 kg, G_W=128,0 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 56, "b2": 56, "b3": 56, "h1": 64, "h2": 38, "h3": 33, "n_vor": 3, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 3, "nso2": 5, "nso3": 2, "nsu1": 3, "nsu2": 5, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.08", "cat": "K5", "name": "K5.08 – Große Durchbiegung (w ≥ 23 mm, beidseitig)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=74 mm, h=54→41→39 mm (h_R,min=21,4 mm), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Knoten 40×4,0 mm (S=2,47), w_Timo=25,00 mm (κ=0,07), S_Z/D=2,00, S_Steg=1,31, TF=7,26 < Neb=12,83 kg, G_W=137,6 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 74, "b2": 74, "b3": 74, "h1": 54, "h2": 41, "h3": 39, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 3, "nso2": 3, "nso3": 3, "nsu1": 3, "nsu2": 3, "nsu3": 3, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.09", "cat": "K5", "name": "K5.09 – Wenige Rippen (1+0+0, 8×8-Stringer, unten)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=66 mm, h=56→46→33 mm (h_R,min=15,8 mm), t=0,6/0,6/1,5 mm (TF 0,8 mm), Spitze b_s3=8 mm, Knoten 40×4,0 mm (S=2,56), w_Timo=20,47 mm (κ=0,05), S_Z/D=2,00, S_Steg=1,55, TF=6,76 < Neb=32,84 kg, G_W=171,4 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 66, "b2": 66, "b3": 66, "h1": 56, "h2": 46, "h3": 33, "n_vor": 1, "n_rib2": 0, "n_rib3": 0, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 4, "nso2": 5, "nso3": 3, "nsu1": 4, "nsu2": 5, "nsu3": 3, "bs1": 8, "bs2": 8, "bs3": 8, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.10", "cat": "K5", "name": "K5.10 – Referenz Thore-Geometrie [h_R3 < 15, Stegschub prüfen]", "note": "Vergleichsreferenz aus Thores Vorstudie: 80→35→23 mm (h_R,3=5,0 mm < 15 mm, S_Steg=0,66, S_Knoten=1,41), w_Timo=24,90 mm, G_W=143,3 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 80, "h2": 35, "h3": 23, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 0, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 8, "nso1": 2, "nso2": 3, "nso3": 3, "nsu1": 2, "nsu2": 3, "nsu3": 3, "bs1": 8, "bs2": 8, "bs3": 8, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}];
+const PRESETS = [{"code": "K1.01", "cat": "K1", "name": "K1.01 – Unten gestuft (Leichtbau, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=61 mm, h=72→41→41 mm (h_R,min=27,8 mm, A_Stirn≥2501 mm²), t=0,6/0,6/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/2v+3h) & Knoten 40×4,0 (S=2,20), w_Timo=21,28 mm, TF=2,12<6,96 kg, G_W=110,8 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 61, "b2": 61, "b3": 61, "h1": 72, "h2": 41, "h3": 41, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 3, "nsu1": 3, "nsu2": 4, "nsu3": 3, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.02", "cat": "K1", "name": "K1.02 – Unten gestuft (0,8/1,0, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=40 mm, h=63→45→39 mm (h_R,min=25,4 mm, A_Stirn≥1560 mm²), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/3v+3h) & Knoten 40×4,0 (S=2,45), w_Timo=21,86 mm, TF=2,61<8,82 kg, G_W=107,2 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 40, "b2": 40, "b3": 40, "h1": 63, "h2": 45, "h3": 39, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 1, "nsu1": 3, "nsu2": 3, "nsu3": 1, "bs1": 7, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.03", "cat": "K1", "name": "K1.03 – Unten gestuft (0,8/1,0, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=46 mm, h=62→51→42 mm (h_R,min=28,4 mm, A_Stirn≥1932 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (4/4v+3h) & Knoten 40×4,0 (S=2,10), w_Timo=20,77 mm, TF=6,08<9,13 kg, G_W=108,2 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 46, "b2": 46, "b3": 46, "h1": 62, "h2": 51, "h3": 42, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 2, "nso3": 2, "nsu1": 3, "nsu2": 2, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.04", "cat": "K1", "name": "K1.04 – Unten gestuft (Steg 1,5, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=46 mm, h=61→38→34 mm (h_R,min=16,8 mm, A_Stirn≥1564 mm²), t=0,6/0,6/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+3h) & Knoten 40×4,0 (S=2,27), w_Timo=21,99 mm, TF=6,10<25,77 kg, G_W=128,1 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 46, "b2": 46, "b3": 46, "h1": 61, "h2": 38, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.05", "cat": "K1", "name": "K1.05 – Unten gestuft (Steg 2,0, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=55 mm, h=62→38→29 mm (h_R,min=15,4 mm, A_Stirn≥1595 mm²), t=0,8/0,8/2,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+3h) & Knoten 40×4,0 (S=2,31), w_Timo=21,59 mm, TF=6,02<47,56 kg, G_W=126,3 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 55, "b2": 55, "b3": 55, "h1": 62, "h2": 38, "h3": 29, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 2.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.06", "cat": "K1", "name": "K1.06 – Unten gestuft (1,0-mm-Haut, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=40 mm, h=62→46→41 mm (h_R,min=27,0 mm, A_Stirn≥1640 mm²), t=1,0/1,0/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+3h) & Knoten 40×4,0 (S=3,04), w_Timo=21,34 mm, TF=6,16<9,28 kg, G_W=111,8 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 40, "b2": 40, "b3": 40, "h1": 62, "h2": 46, "h3": 41, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 7, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.07", "cat": "K1", "name": "K1.07 – Unten gestuft (8×8 durchgehend)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=53 mm, h=62→44→34 mm (h_R,min=16,4 mm, A_Stirn≥1802 mm²), t=0,8/0,8/1,2 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (4/4v+3h) & Knoten 40×4,0 (S=2,22), w_Timo=21,87 mm, TF=2,72<15,05 kg, G_W=118,5 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 62, "h2": 44, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 8, "nso1": 5, "nso2": 2, "nso3": 2, "nsu1": 5, "nsu2": 2, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.08", "cat": "K1", "name": "K1.08 – Unten gestuft (weich, ≥ 22 mm)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=60 mm, h=64→38→35 mm (h_R,min=21,4 mm, A_Stirn≥2100 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/5v+3h) & Knoten 40×4,0 (S=2,27), w_Timo=22,57 mm, TF=5,78<13,40 kg, G_W=123,6 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 60, "b2": 60, "b3": 60, "h1": 64, "h2": 38, "h3": 35, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 3, "nsu1": 3, "nsu2": 4, "nsu3": 3, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.09", "cat": "K1", "name": "K1.09 – Unten gestuft (Reserve S ≥ 2,15)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=50 mm, h=59→39→31 mm (h_R,min=15,8 mm, A_Stirn≥1550 mm²), t=0,6/0,6/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+3h) & Knoten 40×4,0 (S=2,37), w_Timo=22,18 mm, TF=6,61<28,53 kg, G_W=130,7 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 50, "b2": 50, "b3": 50, "h1": 59, "h2": 39, "h3": 31, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 7, "nso1": 5, "nso2": 4, "nso3": 2, "nsu1": 5, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K1.10", "cat": "K1", "name": "K1.10 – Unten gestuft (100-mm-Rippenraster)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=52 mm, h=62→42→39 mm (h_R,min=23,4 mm, A_Stirn≥2028 mm²), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=2,17), w_Timo=22,47 mm, TF=2,72<9,27 kg, G_W=117,2 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 62, "h2": 42, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.01", "cat": "K2", "name": "K2.01 – Oben gestuft (Leichtbau, TF 0,6)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=46 mm, h=62→51→39 mm (h_R,min=25,4 mm, A_Stirn≥1794 mm²), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (4/5v+3h) & Knoten 40×4,0 (S=2,10), w_Timo=21,46 mm, TF=2,68<9,13 kg, G_W=111,5 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 46, "b2": 46, "b3": 46, "h1": 62, "h2": 51, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 2, "nso3": 3, "nsu1": 3, "nsu2": 2, "nsu3": 3, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.02", "cat": "K2", "name": "K2.02 – Oben gestuft (0,8/1,0, TF 0,6)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=43 mm, h=62→47→39 mm (h_R,min=23,4 mm, A_Stirn≥1677 mm²), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=2,99), w_Timo=21,79 mm, TF=2,70<9,15 kg, G_W=111,2 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 43, "b2": 43, "b3": 43, "h1": 62, "h2": 47, "h3": 39, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 6, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.03", "cat": "K2", "name": "K2.03 – Oben gestuft (0,8/1,0, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=56 mm, h=66→44→39 mm (h_R,min=23,4 mm, A_Stirn≥2184 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (4/4v+3h) & Knoten 40×4,0 (S=2,22), w_Timo=21,10 mm, TF=5,51<8,37 kg, G_W=112,7 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 56, "b2": 56, "b3": 56, "h1": 66, "h2": 44, "h3": 39, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 7, "nso1": 4, "nso2": 2, "nso3": 2, "nsu1": 4, "nsu2": 2, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.04", "cat": "K2", "name": "K2.04 – Oben gestuft (asym. Haut 0,6/1,0)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=50 mm, h=62→46→38 mm (h_R,min=24,4 mm, A_Stirn≥1900 mm²), t=0,6/1,0/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=2,15), w_Timo=20,63 mm, TF=6,05<14,35 kg, G_W=115,8 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 50, "b2": 50, "b3": 50, "h1": 62, "h2": 46, "h3": 38, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 1.0, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.05", "cat": "K2", "name": "K2.05 – Oben gestuft (Steg 1,5, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=53 mm, h=62→41→37 mm (h_R,min=23,8 mm, A_Stirn≥1961 mm²), t=0,6/0,6/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/5v+3h) & Knoten 40×4,0 (S=2,21), w_Timo=21,17 mm, TF=6,00<24,85 kg, G_W=122,0 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 62, "h2": 41, "h3": 37, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 5, "nso2": 4, "nso3": 3, "nsu1": 5, "nsu2": 4, "nsu3": 3, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.06", "cat": "K2", "name": "K2.06 – Oben gestuft (Steg 2,0, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=59 mm, h=64→36→33 mm (h_R,min=15,4 mm, A_Stirn≥1947 mm²), t=0,8/0,8/2,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (7/4v+3h) & Knoten 40×4,0 (S=3,14), w_Timo=20,48 mm, TF=5,69<44,06 kg, G_W=134,6 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 59, "b2": 59, "b3": 59, "h1": 64, "h2": 36, "h3": 33, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 2.0, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 2, "nso2": 5, "nso3": 2, "nsu1": 2, "nsu2": 5, "nsu3": 2, "bs1": 7, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.07", "cat": "K2", "name": "K2.07 – Oben gestuft (asym. Druckstringer)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=61 mm, h=62→42→39 mm (h_R,min=23,4 mm, A_Stirn≥2379 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (4/2v+3h) & Knoten 40×4,0 (S=2,15), w_Timo=21,76 mm, TF=6,03<8,99 kg, G_W=123,7 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 61, "b2": 61, "b3": 61, "h1": 62, "h2": 42, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 7, "nso1": 2, "nso2": 2, "nso3": 0, "nsu1": 3, "nsu2": 4, "nsu3": 4, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.08", "cat": "K2", "name": "K2.08 – Oben gestuft (8×8 durchgehend)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=48 mm, h=63→40→34 mm (h_R,min=16,4 mm, A_Stirn≥1632 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=2,20), w_Timo=22,07 mm, TF=5,96<14,53 kg, G_W=121,0 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 48, "b2": 48, "b3": 48, "h1": 63, "h2": 40, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 5, "nso2": 3, "nso3": 2, "nsu1": 5, "nsu2": 3, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.09", "cat": "K2", "name": "K2.09 – Oben gestuft (weich, ≥ 22 mm)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=76 mm, h=56→40→40 mm (h_R,min=24,4 mm, A_Stirn≥3040 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/2v+3h) & Knoten 40×4,0 (S=3,13), w_Timo=24,59 mm, TF=6,96<12,05 kg, G_W=126,6 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 76, "b2": 76, "b3": 76, "h1": 56, "h2": 40, "h3": 40, "n_vor": 3, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 6, "nso2": 4, "nso3": 3, "nsu1": 6, "nsu2": 4, "nsu3": 3, "bs1": 5, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K2.10", "cat": "K2", "name": "K2.10 – Oben gestuft (Reserve S ≥ 2,15)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=52 mm, h=65→39→33 mm (h_R,min=19,8 mm, A_Stirn≥1716 mm²), t=0,6/0,6/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/5v+3h) & Knoten 40×4,0 (S=2,35), w_Timo=21,87 mm, TF=5,64<13,83 kg, G_W=126,7 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 65, "h2": 39, "h3": 33, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 6, "nso1": 4, "nso2": 4, "nso3": 3, "nsu1": 4, "nsu2": 4, "nsu3": 3, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.01", "cat": "K3", "name": "K3.01 – Beidseitig gestuft (Leichtbau, TF 0,6)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=53 mm, h=62→40→40 mm (h_R,min=22,4 mm, A_Stirn≥2120 mm²), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/2v+4h) & Knoten 40×4,0 (S=2,22), w_Timo=22,83 mm, TF=2,70<9,23 kg, G_W=118,3 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 62, "h2": 40, "h3": 40, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.02", "cat": "K3", "name": "K3.02 – Beidseitig gestuft (0,8/1,0, TF 0,6)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=52 mm, h=62→45→40 mm (h_R,min=26,4 mm, A_Stirn≥2080 mm²), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+4h) & Knoten 40×4,0 (S=2,18), w_Timo=21,99 mm, TF=2,70<9,21 kg, G_W=117,4 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 62, "h2": 45, "h3": 40, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.03", "cat": "K3", "name": "K3.03 – Beidseitig gestuft (0,8/1,0, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=44 mm, h=62→52→39 mm (h_R,min=25,4 mm, A_Stirn≥1716 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (4/4v+4h) & Knoten 40×4,0 (S=2,12), w_Timo=21,04 mm, TF=6,06<9,10 kg, G_W=110,7 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 44, "b2": 44, "b3": 44, "h1": 62, "h2": 52, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 2, "nso3": 2, "nsu1": 3, "nsu2": 2, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.04", "cat": "K3", "name": "K3.04 – Beidseitig gestuft (Steg 1,5, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=55 mm, h=62→38→35 mm (h_R,min=21,4 mm, A_Stirn≥1925 mm²), t=0,8/0,8/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+4h) & Knoten 40×4,0 (S=2,26), w_Timo=21,77 mm, TF=6,01<24,51 kg, G_W=128,5 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 55, "b2": 55, "b3": 55, "h1": 62, "h2": 38, "h3": 35, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 2, "nso2": 4, "nso3": 2, "nsu1": 2, "nsu2": 4, "nsu3": 2, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.05", "cat": "K3", "name": "K3.05 – Beidseitig gestuft (Steg 2,0, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=53 mm, h=58→39→30 mm (h_R,min=16,4 mm, A_Stirn≥1590 mm²), t=0,8/0,8/2,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+4h) & Knoten 40×4,0 (S=2,22), w_Timo=22,25 mm, TF=6,76<57,11 kg, G_W=131,7 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 58, "h2": 39, "h3": 30, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 2.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.06", "cat": "K3", "name": "K3.06 – Beidseitig gestuft (1,0-mm-Haut, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=59 mm, h=64→42→36 mm (h_R,min=22,0 mm, A_Stirn≥2124 mm²), t=1,0/1,0/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+4h) & Knoten 40×4,0 (S=2,21), w_Timo=21,15 mm, TF=5,92<14,36 kg, G_W=120,1 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 59, "b2": 59, "b3": 59, "h1": 64, "h2": 42, "h3": 36, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.07", "cat": "K3", "name": "K3.07 – Beidseitig gestuft (8×8 durchgehend)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=53 mm, h=60→40→34 mm (h_R,min=16,4 mm, A_Stirn≥1802 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+4h) & Knoten 40×4,0 (S=3,11), w_Timo=22,82 mm, TF=6,47<15,60 kg, G_W=129,8 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 60, "h2": 40, "h3": 34, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 4, "nso2": 4, "nso3": 2, "nsu1": 4, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.08", "cat": "K3", "name": "K3.08 – Beidseitig gestuft (weich, ≥ 22 mm)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=58 mm, h=50→41→34 mm (h_R,min=18,4 mm, A_Stirn≥1972 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+4h) & Knoten 40×4,0 (S=2,19), w_Timo=26,19 mm, TF=8,28<24,53 kg, G_W=140,2 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 58, "b2": 58, "b3": 58, "h1": 50, "h2": 41, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.09", "cat": "K3", "name": "K3.09 – Beidseitig gestuft (Reserve S ≥ 2,15)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=52 mm, h=64→41→39 mm (h_R,min=23,4 mm, A_Stirn≥2028 mm²), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+4h) & Knoten 40×4,0 (S=2,39), w_Timo=21,59 mm, TF=2,60<8,82 kg, G_W=127,2 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 64, "h2": 41, "h3": 39, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 4, "nso3": 2, "nsu1": 4, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K3.10", "cat": "K3", "name": "K3.10 – Beidseitig gestuft (kompakt, b ≤ 44)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=41 mm, h=62→43→34 mm (h_R,min=20,4 mm, A_Stirn≥1394 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/6v+4h) & Knoten 40×4,0 (S=2,16), w_Timo=21,95 mm, TF=6,05<14,95 kg, G_W=126,4 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 41, "b2": 41, "b3": 41, "h1": 62, "h2": 43, "h3": 34, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 3, "nso2": 3, "nso3": 4, "nsu1": 3, "nsu2": 3, "nsu3": 4, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.01", "cat": "K4", "name": "K4.01 – Stufen 400/550 (unten, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/550 mm, b=56 mm, h=66→45→41 mm (h_R,min=27,4 mm, A_Stirn≥2296 mm²), t=0,8/0,8/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/5v+3h) & Knoten 40×4,0 (S=3,01), w_Timo=21,33 mm, TF=2,46<8,37 kg, G_W=112,7 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 550, "b1": 56, "b2": 56, "b3": 56, "h1": 66, "h2": 45, "h3": 41, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 6, "nso1": 4, "nso2": 3, "nso3": 3, "nsu1": 4, "nsu2": 3, "nsu3": 3, "bs1": 5, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.02", "cat": "K4", "name": "K4.02 – Stufen 400/650 (unten, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/650 mm, b=48 mm, h=64→43→33 mm (h_R,min=19,4 mm, A_Stirn≥1584 mm²), t=0,8/0,8/1,2 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=3,04), w_Timo=21,48 mm, TF=2,53<13,29 kg, G_W=115,1 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 650, "b1": 48, "b2": 48, "b3": 48, "h1": 64, "h2": 43, "h3": 33, "n_vor": 2, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 6, "nso1": 2, "nso2": 3, "nso3": 2, "nsu1": 2, "nsu2": 3, "nsu3": 2, "bs1": 8, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.03", "cat": "K4", "name": "K4.03 – Stufen 450/650 (unten, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=450/650 mm, b=56 mm, h=62→41→39 mm (h_R,min=23,4 mm, A_Stirn≥2184 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=3,08), w_Timo=21,54 mm, TF=6,15<9,61 kg, G_W=116,6 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 450, "x_S2": 650, "b1": 56, "b2": 56, "b3": 56, "h1": 62, "h2": 41, "h3": 39, "n_vor": 3, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 5, "nso2": 3, "nso3": 2, "nsu1": 5, "nsu2": 3, "nsu3": 2, "bs1": 5, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.04", "cat": "K4", "name": "K4.04 – Stufen 500/650 (unten, TF 0,8)", "note": "Unten gestuft (Oberseite glatt), Stufen x=500/650 mm, b=43 mm, h=62→37→33 mm (h_R,min=19,4 mm, A_Stirn≥1419 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=2,24), w_Timo=20,69 mm, TF=6,10<14,53 kg, G_W=117,1 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 500, "x_S2": 650, "b1": 43, "b2": 43, "b3": 43, "h1": 62, "h2": 37, "h3": 33, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.05", "cat": "K4", "name": "K4.05 – Stufen 400/550 (oben, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/550 mm, b=56 mm, h=60→45→41 mm (h_R,min=27,4 mm, A_Stirn≥2296 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/5v+3h) & Knoten 40×4,0 (S=3,01), w_Timo=22,46 mm, TF=6,48<9,83 kg, G_W=117,5 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 550, "b1": 56, "b2": 56, "b3": 56, "h1": 60, "h2": 45, "h3": 41, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 4, "nso2": 3, "nso3": 3, "nsu1": 4, "nsu2": 3, "nsu3": 3, "bs1": 6, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.06", "cat": "K4", "name": "K4.06 – Stufen 450/650 (beidseitig, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=450/650 mm, b=62 mm, h=59→36→33 mm (h_R,min=17,4 mm, A_Stirn≥2046 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+4h) & Knoten 40×4,0 (S=2,33), w_Timo=23,06 mm, TF=6,63<16,18 kg, G_W=133,0 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 450, "x_S2": 650, "b1": 62, "b2": 62, "b3": 62, "h1": 59, "h2": 36, "h3": 33, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 7, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.07", "cat": "K4", "name": "K4.07 – Testfeld 0,6 mm (frühes Beulen, Steg 1,2)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=43 mm, h=62→41→35 mm (h_R,min=19,4 mm, A_Stirn≥1505 mm²), t=0,8/0,8/1,2 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/5v+3h) & Knoten 40×4,0 (S=2,22), w_Timo=22,11 mm, TF=2,70<14,53 kg, G_W=122,0 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 43, "b2": 43, "b3": 43, "h1": 62, "h2": 41, "h3": 35, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 3, "nsu1": 4, "nsu2": 3, "nsu3": 3, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.08", "cat": "K4", "name": "K4.08 – Testfeld 0,8 mm (mittleres Beulen, Steg 1,5)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=53 mm, h=70→38→31 mm (h_R,min=15,4 mm, A_Stirn≥1643 mm²), t=0,8/0,8/1,5 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+3h) & Knoten 40×4,0 (S=2,24), w_Timo=20,82 mm, TF=4,89<18,62 kg, G_W=120,3 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 53, "b3": 53, "h1": 70, "h2": 38, "h3": 31, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 2, "nso2": 4, "nso3": 2, "nsu1": 2, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.09", "cat": "K4", "name": "K4.09 – Testfeld 1,0 mm (spätes Beulen 8,5 kg, Steg 1,2)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=52 mm, h=72→42→33 mm (h_R,min=19,4 mm, A_Stirn≥1716 mm²), t=0,8/0,8/1,2 mm (TF 1,0 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+3h) & Knoten 40×4,0 (S=2,32), w_Timo=20,19 mm, TF=8,53<10,17 kg, G_W=113,3 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 72, "h2": 42, "h3": 33, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 40, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 1.0, "be1": 8, "be2": 6, "be3": 6, "nso1": 2, "nso2": 4, "nso3": 2, "nsu1": 2, "nsu2": 4, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K4.10", "cat": "K4", "name": "K4.10 – Verstärkte Stufenrippen (4× Vertikalsteifen, t_R 2,5)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=44 mm, h=62→41→33 mm (h_R,min=19,4 mm, A_Stirn≥1452 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/4v+3h) & Knoten 40×4,0 (S=2,18), w_Timo=22,53 mm, TF=6,06<14,46 kg, G_W=117,8 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 44, "b2": 44, "b3": 44, "h1": 62, "h2": 41, "h3": 33, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.5, "f_Loch": 50, "n_vert": 4, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 3, "nso2": 4, "nso3": 2, "nsu1": 3, "nsu2": 4, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.01", "cat": "K5", "name": "K5.01 – Höhe + Breite gestuft (unten, TF 0,6)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=53→51→44 mm, h=62→41→39 mm (h_R,min=23,8 mm, A_Stirn≥1716 mm²), t=0,6/0,6/1,0 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=2,18), w_Timo=23,17 mm, TF=2,65<8,95 kg, G_W=116,8 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 53, "b2": 51, "b3": 44, "h1": 62, "h2": 41, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 7, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.02", "cat": "K5", "name": "K5.02 – Höhe + Breite gestuft (oben, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=49→42→39 mm, h=61→44→40 mm (h_R,min=24,4 mm, A_Stirn≥1560 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+3h) & Knoten 40×4,0 (S=2,20), w_Timo=22,08 mm, TF=6,29<9,48 kg, G_W=114,7 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 49, "b2": 42, "b3": 39, "h1": 61, "h2": 44, "h3": 40, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 7, "nso1": 4, "nso2": 3, "nso3": 2, "nsu1": 4, "nsu2": 3, "nsu3": 2, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.03", "cat": "K5", "name": "K5.03 – Höhe + Breite gestuft (beidseitig, TF 0,8)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=44→42→29 mm, h=61→46→38 mm (h_R,min=24,4 mm, A_Stirn≥1102 mm²), t=0,8/0,8/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/3v+4h) & Knoten 40×4,0 (S=2,23), w_Timo=21,19 mm, TF=6,26<15,53 kg, G_W=111,2 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 44, "b2": 42, "b3": 29, "h1": 61, "h2": 46, "h3": 38, "n_vor": 3, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 4, "nso2": 4, "nso3": 1, "nsu1": 4, "nsu2": 4, "nsu3": 1, "bs1": 6, "bs2": 5, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.04", "cat": "K5", "name": "K5.04 – Maximale Schubsicherheit (S_Steg 2,03, Steg 2,0, TF 0,9)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=78 mm, h=64→34→31 mm (h_R,min=17,8 mm, A_Stirn≥2418 mm²), t=0,6/0,6/2,0 mm (TF 0,9 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (7/6v+3h) & Knoten 40×4,0 (S=2,29), w_Timo=21,83 mm, TF=8,14<48,66 kg, G_W=149,9 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 78, "b2": 78, "b3": 78, "h1": 64, "h2": 34, "h3": 31, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 40, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 2.0, "t_st_tf": 0.9, "be1": 8, "be2": 7, "be3": 6, "nso1": 4, "nso2": 5, "nso3": 4, "nsu1": 4, "nsu2": 5, "nsu3": 4, "bs1": 6, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.05", "cat": "K5", "name": "K5.05 – Breite Bauweise (b ≥ 60, beidseitig)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=66 mm, h=66→39→33 mm (h_R,min=17,0 mm, A_Stirn≥2178 mm²), t=1,0/1,0/1,2 mm (TF 0,6 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/4v+4h) & Knoten 40×4,0 (S=2,24), w_Timo=22,21 mm, TF=2,50<13,24 kg, G_W=124,3 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 66, "b2": 66, "b3": 66, "h1": 66, "h2": 39, "h3": 33, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.2, "t_st_tf": 0.6, "be1": 8, "be2": 7, "be3": 7, "nso1": 3, "nso2": 3, "nso3": 2, "nsu1": 3, "nsu2": 3, "nsu3": 2, "bs1": 5, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.06", "cat": "K5", "name": "K5.06 – 1,0-mm-Einheitsbau (oben, TF 0,8)", "note": "Oben gestuft (Druckgurt glatt), Stufen x=400/600 mm, b=43 mm, h=65→41→39 mm (h_R,min=25,0 mm, A_Stirn≥1677 mm²), t=1,0/1,0/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (6/3v+3h) & Knoten 40×4,0 (S=2,22), w_Timo=21,84 mm, TF=5,66<8,37 kg, G_W=111,1 g.", "p": {"L": 800, "stufen_dir": "oben", "x_S1": 400, "x_S2": 600, "b1": 43, "b2": 43, "b3": 43, "h1": 65, "h2": 41, "h3": 39, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 6, "be3": 6, "nso1": 2, "nso2": 4, "nso3": 1, "nsu1": 2, "nsu2": 4, "nsu3": 1, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.07", "cat": "K5", "name": "K5.07 – Hohe Festigkeitsreserve (S ≥ 2,25, unten)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=56 mm, h=64→38→33 mm (h_R,min=19,0 mm, A_Stirn≥1848 mm²), t=1,0/1,0/1,2 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (7/4v+3h) & Knoten 40×4,0 (S=2,57), w_Timo=21,23 mm, TF=5,98<15,15 kg, G_W=133,0 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 56, "b2": 56, "b3": 56, "h1": 64, "h2": 38, "h3": 33, "n_vor": 3, "n_rib2": 2, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.2, "t_st_tf": 0.8, "be1": 8, "be2": 7, "be3": 6, "nso1": 3, "nso2": 5, "nso3": 2, "nsu1": 3, "nsu2": 5, "nsu3": 2, "bs1": 7, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.08", "cat": "K5", "name": "K5.08 – Große Durchbiegung (w ≥ 23 mm, beidseitig)", "note": "Beidseitig symmetrisch gestuft, Stufen x=400/600 mm, b=74 mm, h=54→41→39 mm (h_R,min=21,4 mm, A_Stirn≥2886 mm²), t=0,8/0,8/1,0 mm (TF 0,8 mm), Spitze b_s3=6 mm, Schubfeld-Rahmen (5/5v+4h) & Knoten 40×4,0 (S=2,47), w_Timo=25,00 mm, TF=7,26<12,83 kg, G_W=146,1 g.", "p": {"L": 800, "stufen_dir": "beide", "x_S1": 400, "x_S2": 600, "b1": 74, "b2": 74, "b3": 74, "h1": 54, "h2": 41, "h3": 39, "n_vor": 3, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.8, "t_hu": 0.8, "t_st": 1.0, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 3, "nso2": 3, "nso3": 3, "nsu1": 3, "nsu2": 3, "nsu3": 3, "bs1": 8, "bs2": 6, "bs3": 6, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.09", "cat": "K5", "name": "K5.09 – Wenige Rippen (1+0+0, 8×8-Stringer, unten)", "note": "Unten gestuft (Oberseite glatt), Stufen x=400/600 mm, b=66 mm, h=56→46→33 mm (h_R,min=15,8 mm, A_Stirn≥2178 mm²), t=0,6/0,6/1,5 mm (TF 0,8 mm), Spitze b_s3=8 mm, Schubfeld-Rahmen (7/5v+3h) & Knoten 40×4,0 (S=2,56), w_Timo=20,47 mm, TF=6,76<32,84 kg, G_W=177,5 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 66, "b2": 66, "b3": 66, "h1": 56, "h2": 46, "h3": 33, "n_vor": 1, "n_rib2": 0, "n_rib3": 0, "t_R": 2.0, "f_Loch": 50, "n_vert": 2, "b_vert": 6, "t_ho": 0.6, "t_hu": 0.6, "t_st": 1.5, "t_st_tf": 0.8, "be1": 8, "be2": 8, "be3": 8, "nso1": 4, "nso2": 5, "nso3": 3, "nsu1": 4, "nsu2": 5, "nsu3": 3, "bs1": 8, "bs2": 8, "bs3": 8, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}, {"code": "K5.10", "cat": "K5", "name": "K5.10 – Referenz Thore-Geometrie [h_R3 < 15, Stegschub prüfen]", "note": "Vergleichsreferenz aus Thores Vorstudie: 80→35→23 mm (h_R,3=5,0 mm < 15 mm, S_Steg=0,66, S_Knoten=1,41), w_Timo=24,90 mm, G_W=148,6 g.", "p": {"L": 800, "stufen_dir": "unten", "x_S1": 400, "x_S2": 600, "b1": 52, "b2": 52, "b3": 52, "h1": 80, "h2": 35, "h3": 23, "n_vor": 2, "n_rib2": 1, "n_rib3": 1, "t_R": 2.0, "f_Loch": 0, "n_vert": 2, "b_vert": 6, "t_ho": 1.0, "t_hu": 1.0, "t_st": 1.0, "t_st_tf": 0.6, "be1": 8, "be2": 8, "be3": 8, "nso1": 2, "nso2": 3, "nso3": 3, "nsu1": 2, "nsu2": 3, "nsu3": 3, "bs1": 8, "bs2": 8, "bs3": 8, "min_hR_tip": 15.0, "l_ueb": 40.0, "t_knot": 4.0}}];
 
 const CAT_NAMES = {
   K1: 'K1 – Unten gestuft (Oberseite glatt)',
@@ -669,7 +750,7 @@ const DEFAULT_MAT = {
   beul_e_modus: 'orthotrop', progE: 'E_Balsa', min_hR_tip: 15.0
 };
 
-const labState = { w_max: null, F_krit: null, m_vor: null, m_nach: null };
+const labState = { w_max: null, F_krit: null, m_vor: null, m_nach: null, m_ges: null };
 const DEF_CODE = 'K1.03';
 let state = Object.assign({}, PRESETS.find(x => x.code === DEF_CODE).p, DEFAULT_MAT);
 let activePresetCode = DEF_CODE;
@@ -898,13 +979,15 @@ function evaluateBeam(st, lab = {}) {
     });
   }
 
-  // 6 Construction Rules
+  // 6 Construction Rules (incl. Prof. Linke Mindest-Stirnfläche >= 1000 mm²)
   const hR1 = h1 - t_ho - t_hu - 2 * be1;
   const hR2 = h2 - t_ho - t_hu - 2 * be2;
   const hR3 = h3 - t_ho - t_hu - 2 * be3;
   const hR_min = Math.min(hR1, hR2, hR3);
+  const A_stirn_1 = b1 * h1, A_stirn_3 = b3 * h3, A_stirn_min = Math.min(A_stirn_1, A_stirn_3);
   const r1 = (L > 0 && L <= 800 && b1 > 0 && b1 <= 150 && b2 > 0 && b2 <= b1 && b3 > 0 && b3 <= b2 &&
               h1 > 0 && h1 <= 80 && h2 > 0 && h2 <= h1 && h3 > 0 && h3 <= h2 &&
+              A_stirn_min >= 1000.0 - 1e-9 &&
               x_S1 >= x_R2 && x_S1 < x_S2 && x_S2 < L && n_vor >= 0 && n_vor <= 3 && n_rib2 >= 0 && n_rib2 <= 2 && n_rib3 >= 0 && n_rib3 <= 2);
   const r2 = (Math.min(t_ho, t_hu, t_st, t_st_tf) > 0 && Math.max(t_ho, t_hu, t_st, t_st_tf) <= t_max_zul + 1e-9);
   const r3 = true;
@@ -921,7 +1004,7 @@ function evaluateBeam(st, lab = {}) {
              secFit(b3, be3, nso3, nsu3, bs3, t_st);
   const r6 = (hR1 > 15 && hR_min >= min_hR_tip - 1e-9);
   const rules = [
-    { ok: r1, title: '1. Außenmaße & Stufenlagen', desc: `${L}×${b1}×${h1}→${h2}→${h3} (x=${x_S1}/${x_S2})` },
+    { ok: r1, title: '1. Außenmaße, Stufen & Stirnfläche ≥ 1.000 mm²', desc: `${L}×${b1}×${h1}→${h2}→${h3} · A_Stirn=${Math.round(A_stirn_1)}/${Math.round(A_stirn_3)} mm²` },
     { ok: r2, title: `2. Max. Wandstärke ≤ ${fmt(t_max_zul, 1)} mm`, desc: `max = ${fmt(Math.max(t_ho, t_hu, t_st, t_st_tf), 1)} mm` },
     { ok: r3, title: '3. Pflichtrippen Testfeld', desc: '300 & 400 mm' },
     { ok: r4, title: '4. Stringer Wurzel → Spitze (Zw3 ≥ 6)', desc: `Eck ${be1}→${be2}→${be3} · Zw3 ${bs3} mm` },
@@ -937,21 +1020,31 @@ function evaluateBeam(st, lab = {}) {
   const S_Beul_Haut = Math.min(...activeCh.map(c => c.S_Beul_H));
   const S_Steg = Math.min(...activeCh.map(c => c.S_Steg));
 
-  // Step-transition through-stringers & longitudinal shear gussets (Knotenbleche)
+  // Step-transition Schubfeldträger framing + through-stringers (corner & mid) + longitudinal shear gussets
   const dh1 = Math.max(0, h1 - h2), dh2 = Math.max(0, h2 - h3);
-  let n_k1 = 0, n_k2 = 0, dh_k1 = dh1, dh_k2 = dh2;
+  let n_k1 = 0, n_k2 = 0, dh_k1 = dh1, dh_k2 = dh2, n_mv1 = 0, n_mv2 = 0, n_eck_k1 = 0, n_eck_k2 = 0, n_hr = 3;
   if (stufen_dir === 'oben') {
     n_k1 = dh1 > 0 ? nso2 : 0; n_k2 = dh2 > 0 ? nso3 : 0;
+    n_mv1 = dh1 > 0 ? nso2 : 0; n_mv2 = dh2 > 0 ? nso3 : 0;
+    n_eck_k1 = dh1 > 0 ? 2 : 0; n_eck_k2 = dh2 > 0 ? 2 : 0;
+    n_hr = 3;
   } else if (stufen_dir === 'beide') {
     n_k1 = dh1 > 0 ? (nso2 + nsu2) : 0; n_k2 = dh2 > 0 ? (nso3 + nsu3) : 0;
     dh_k1 = dh1 / 2; dh_k2 = dh2 / 2;
+    n_mv1 = dh1 > 0 ? Math.max(nso2, nsu2) : 0; n_mv2 = dh2 > 0 ? Math.max(nso3, nsu3) : 0;
+    n_eck_k1 = dh1 > 0 ? 4 : 0; n_eck_k2 = dh2 > 0 ? 4 : 0;
+    n_hr = 4;
   } else {
     n_k1 = dh1 > 0 ? nsu2 : 0; n_k2 = dh2 > 0 ? nsu3 : 0;
+    n_mv1 = dh1 > 0 ? nsu2 : 0; n_mv2 = dh2 > 0 ? nsu3 : 0;
+    n_eck_k1 = dh1 > 0 ? 2 : 0; n_eck_k2 = dh2 > 0 ? 2 : 0;
+    n_hr = 3;
   }
   const hs2 = Math.min(bs2, be2), hs3 = Math.min(bs3, be3);
-  const V_ueb = l_ueb * (n_k1 * bs2 * hs2 + n_k2 * bs3 * hs3);
+  const V_ueb_mid = l_ueb * (n_k1 * bs2 * hs2 + n_k2 * bs3 * hs3);
+  const V_ueb_eck = l_ueb * (n_eck_k1 * be2 * be2 + n_eck_k2 * be3 * be3);
   const V_knot = l_ueb * t_knot * (n_k1 * (dh_k1 + hs2) + n_k2 * (dh_k2 + hs3));
-  const m_Knoten = (V_ueb + V_knot) * (rho / 1e6);
+  const m_Knoten = (V_ueb_mid + V_ueb_eck + V_knot) * (rho / 1e6);
 
   const stepStrForce = (ch, dh_s) => {
     if (dh_s <= 1e-6 || ch.D <= 0) return 0;
@@ -971,16 +1064,21 @@ function evaluateBeam(st, lab = {}) {
   const n_active = activeCh.length;
   const n_ch_ok = activeCh.filter(c => c.ch_ok).length;
 
-  // Mass breakdown
+  // Mass breakdown (plane end ribs with flush stringers + full Schubfeldträger step-rib framing)
   const m_Kasten = chambers.reduce((s, c) => s + c.m_K, 0);
   const bi1 = b1 - 2 * t_st, hst1 = h1 - t_ho - t_hu;
   const bi2 = b2 - 2 * t_st, hst2 = h2 - t_ho - t_hu;
-  const bi3 = b3 - 2 * t_st;
+  const bi3 = b3 - 2 * t_st, hst3 = h3 - t_ho - t_hu;
   const fl = (f_Loch > 0 && f_Loch < 1) ? f_Loch : f_Loch / 100;
   const keep = Math.max(0, 1 - fl);
   const m_Endrippen = (b1 * h1 + b3 * h3) * t_R * (rho / 1e6);
   const m_Stufenrippen = (bi1 * hst1 + bi2 * hst2) * t_R * (rho / 1e6);
-  const m_Vert = n_vert * b_vert * b_vert * (hst1 + hst2) * (rho / 1e6);
+  const n_v1 = dh1 > 0 ? Math.max(n_vert, 2 + n_mv1) : n_vert;
+  const n_v2 = dh2 > 0 ? Math.max(n_vert, 2 + n_mv2) : n_vert;
+  const L_rahmen_1 = n_v1 * hst1 + (dh1 > 0 ? n_hr * Math.max(0, bi1 - n_v1 * b_vert) : 0);
+  const L_rahmen_2 = n_v2 * hst2 + (dh2 > 0 ? n_hr * Math.max(0, bi2 - n_v2 * b_vert) : 0);
+  const L_rahmen_ges = L_rahmen_1 + L_rahmen_2;
+  const m_Vert = L_rahmen_ges * b_vert * b_vert * (rho / 1e6);
   const n_int1 = n_vor + 1 + (x_S1 > x_R2 + 0.01 ? 1 : 0);
   const m_Innenrippen = (n_int1 * bi1 * hR1 + n_rib2 * bi2 * hR2 + n_rib3 * bi3 * hR3) * keep * t_R * (rho / 1e6);
   const n_Rippen = 4 + n_int1 + n_rib2 + n_rib3;
@@ -1010,12 +1108,13 @@ function evaluateBeam(st, lab = {}) {
   const kappa_min = Math.min(...activeCh.map(c => c.kappa));
   const kappa_max = Math.max(...activeCh.map(c => c.kappa));
 
-  // Labor-Abgleich
-  const m_End = 180.0;
+  // LBL 3-Schritt-Wägeprotokoll
   const hasLabMass = (lab.m_vor > 0 && lab.m_nach >= lab.m_vor);
+  const hasLabEnd = (lab.m_ges > 0 && lab.m_nach > 0 && lab.m_ges >= lab.m_nach);
   const m_Leim_eff = hasLabMass ? (lab.m_nach - lab.m_vor) : G_L;
   const G_W_eff = hasLabMass ? lab.m_nach : G_W;
-  const m_Bauteil_ges = G_W_eff + m_End;
+  const m_End = hasLabEnd ? (lab.m_ges - lab.m_nach) : 180.0;
+  const m_Bauteil_ges = lab.m_ges > 0 ? lab.m_ges : (G_W_eff + m_End);
   const fTol = (A, Apred) => Math.max(0, Math.abs(A - Apred) / Math.max(1e-9, Apred) - 0.1);
   const hasLabW = (lab.w_max > 0), hasLabF = (lab.F_krit > 0);
   const pktW = hasLabW ? Math.max(0, 10 * (1 - fTol(lab.w_max, w_prog))) : 10.0;
@@ -1078,9 +1177,11 @@ function evaluateBeam(st, lab = {}) {
 
   return {
     chambers, activeCh, rules, rules_ok, n_active, n_ch_ok, all_ok,
+    A_stirn_1, A_stirn_3, A_stirn_min,
+    n_v1, n_v2, n_hr, n_k1, n_k2, n_eck_k1, n_eck_k2, dh_k1, dh_k2, L_rahmen_ges, n_int1,
     S_Zug, S_Druck, S_Knick, S_Beul_Haut, S_Steg, S_Knoten, F_knot_max, tau_knot, S_min_all, S_min_norm,
     m_Kasten, m_Endrippen, m_Stufenrippen, m_Innenrippen, m_Vert, m_Knoten, m_Rippen, n_Rippen, m_Balsa, G_L, G_W, Score,
-    m_End, hasLabMass, m_Leim_eff, G_W_eff, m_Bauteil_ges, hasLabW, hasLabF, pktW, pktF, leichtbauPkt, Score_eff,
+    m_End, hasLabMass, hasLabEnd, m_Leim_eff, G_W_eff, m_Bauteil_ges, hasLabW, hasLabF, pktW, pktF, leichtbauPkt, Score_eff,
     m_beul_I, m_beul_II, m_beul_III, m_beul_active, F_prog, minOtherWeb, tfFirst,
     w_M, w_Q, w_Q_exakt, w_Q_simp, w_ges, w_Her20, w_prog, kappa_min, kappa_max,
     curve, wAt, ribXs, geoAt, F_Last, E_Platte, E_Beul, hR1, hR2, hR3, hR_min
@@ -1198,13 +1299,23 @@ function draw3D(res) {
   const COL_RIB = '#3b82f6', COL_RIB_STEP = '#1e40af', COL_VERT = '#0d9488', COL_TF = '#ef4444', COL_END = '#64748b';
 
   // External test-rig clamping end plates (x < 0 & x > L)
+  // Prof. Linke: Einspannung mittig im Rechteck, Lasteinleitung mit LÖCHERN UNTEN (Gewichte hängen dort!)
   if (showEnd) {
     const g0 = res.geoAt(0.5), gL = res.geoAt(L - 0.5);
     const epW = Math.max(g0.b + 30, 86), epH = Math.max(g0.h + 26, 102);
     const epA = (wallsTrans || wallsOff) ? 0.18 : 0.80;
     const epSt = (wallsTrans || wallsOff) ? 'rgba(100,116,139,0.35)' : null;
     addBox(-8, 0, -epW / 2, epW / 2, -epH / 2, epH / 2, COL_END, epA, {}, epSt, 0.6);
-    addBox(L, L + 5, -(gL.b + 8) / 2, (gL.b + 8) / 2, gL.zTop - 5, gL.zBot + 5, COL_END, epA, {}, epSt, 0.6);
+    const lpW = gL.b + 12, lpTop = gL.zTop - 5, lpBot = gL.zBot + 18;
+    addBox(L, L + 5, -lpW / 2, lpW / 2, lpTop, lpBot, COL_END, epA, {}, epSt, 0.6);
+    // Hanging holes at BOTTOM of Lasteinleitung end plate (Prof. Linke!)
+    const wL = res.wAt(L) * deformScale;
+    const hyOff = Math.min(13, Math.max(7, gL.b * 0.28));
+    const hz = gL.zBot + 10.5, hr = 3.2;
+    for (const yc of [-hyOff, +hyOff]) {
+      addQuad([L + 5.2, yc - hr, hz - hr + wL], [L + 5.2, yc + hr, hz - hr + wL], [L + 5.2, yc + hr, hz + hr + wL], [L + 5.2, yc - hr, hz + hr + wL], '#0f172a', Math.min(0.95, epA + 0.15), '#020617', 0.9);
+      addQuad([L - 0.1, yc - hr, hz - hr + wL], [L - 0.1, yc + hr, hz - hr + wL], [L - 0.1, yc + hr, hz + hr + wL], [L - 0.1, yc - hr, hz + hr + wL], '#0f172a', Math.min(0.95, epA + 0.15), '#020617', 0.9);
+    }
   }
 
   const strAlpha = (wallsTrans || wallsOff) ? 1.0 : 0.98;
@@ -1230,13 +1341,10 @@ function draw3D(res) {
         const webSt = (inTF && showTF) ? 'rgba(220,38,38,0.48)' : 'rgba(160,115,60,0.28)';
         const webCol = (inTF && showTF) ? COL_TF : COL_WEB;
         const webA = (inTF && showTF) ? 0.18 : 0.11;
-        // Outer bottom skin (y in [-bi/2, +bi/2], z = zB - t_hu/2)
         addQuad([x0, -g.bi / 2, zB - t_hu * 0.5 + wa], [x1, -g.bi / 2, zB - t_hu * 0.5 + wb], [x1, g.bi / 2, zB - t_hu * 0.5 + wb], [x0, g.bi / 2, zB - t_hu * 0.5 + wa], COL_SKIN, 0.12, skinSt, 0.55);
-        // Outer top skin (y in [-bi/2, +bi/2], z = zT + t_ho/2)
         if (showTop) {
           addQuad([x0, -g.bi / 2, zT + t_ho * 0.5 + wa], [x1, -g.bi / 2, zT + t_ho * 0.5 + wb], [x1, g.bi / 2, zT + t_ho * 0.5 + wb], [x0, g.bi / 2, zT + t_ho * 0.5 + wa], COL_SKIN, 0.12, skinSt, 0.55);
         }
-        // Back web (y = +b/2) & Front web (y = -b/2, facing viewer)
         addQuad([x0, g.b / 2, zTi + wa], [x1, g.b / 2, zTi + wb], [x1, g.b / 2, zBi + wb], [x0, g.b / 2, zBi + wa], webCol, webA, webSt, 0.55);
         if (frontWebMode !== 'off') {
           if (inTF && showTF && res.m_beul_active < state.m_Pruef) {
@@ -1254,13 +1362,10 @@ function draw3D(res) {
           }
         }
       } else {
-        // Solid outer bottom skin (flush to corner stringers: [-bi/2, +bi/2] x [zBi, zB])
         addBox(x0, x1, -g.bi / 2, g.bi / 2, zBi, zB, COL_SKIN, 0.94, { left: true, right: true });
         if (showTop) addBox(x0, x1, -g.bi / 2, g.bi / 2, zT, zTi, COL_SKIN, 0.84, { left: true, right: true });
         const webCol = (inTF && showTF) ? COL_TF : COL_WEB;
-        // Back web (y in [+bi/2, +b/2])
         addBox(x0, x1, g.bi / 2, g.b / 2, zTi, zBi, webCol, (inTF && showTF) ? 0.68 : 0.92, { left: true, right: true });
-        // Front web (y in [-b/2, -bi/2], facing viewer -> controlled by frontWebMode)
         if (frontWebMode !== 'off') {
           const fA = frontWebMode === 'solid' ? ((inTF && showTF) ? 0.86 : 0.94) : ((inTF && showTF) ? 0.42 : 0.22);
           if (inTF && showTF && res.m_beul_active < state.m_Pruef) {
@@ -1308,7 +1413,7 @@ function draw3D(res) {
     }
   }
 
-  // Draw Ribs: Solid outer End Ribs (0 & L), Massive Step Ribs (x_S1 & x_S2) + Vertical Stiffeners, Regular Internal Ribs
+  // Draw Ribs: Plane End Ribs (0 & L, flush stringers through end ribs!), Massive Step Ribs (x_S1 & x_S2) + FULL Schubfeldträger Framing, Regular Internal Ribs
   const ribFade = (wallsTrans || wallsOff) ? 0.55 : 1.0;
   for (const xr of res.ribXs) {
     const isEnd0 = (xr < 0.5), isEndL = (xr > L - 0.5);
@@ -1318,29 +1423,101 @@ function draw3D(res) {
     const wOff = res.wAt(xr) * deformScale;
 
     if (isEnd0 || isEndL) {
-      // Solid outer end rib covering FULL outer cross-section b x h (encloses stringers from outside!)
+      // Plane end rib covering FULL outer cross-section b x h + flush end-grain caps for stringers passing through!
       const xa = isEnd0 ? 0 : L - t_R, xb = isEnd0 ? t_R : L;
       addBox(xa, xb, -g.b / 2, g.b / 2, g.zTop, g.zBot, COL_RIB_STEP, 0.88 * ribFade, {}, '#1e3a8a', 1.1);
-    } else if (isStep) {
-      // Massive step rib (0% cutout) flush inside the deeper section [xr - t_R, xr] (no overhang past step!)
-      addBox(xr - t_R, xr, -g.bi / 2, g.bi / 2, g.zTop + t_ho, g.zBot - t_hu, COL_RIB_STEP, 0.86 * ribFade, {}, '#1e3a8a', 1.1);
-      // Corner vertical stiffener stringers glued flush behind the step rib
-      const nv = Math.round(Number(state.n_vert)), bv = Number(state.b_vert);
-      if (nv > 0 && bv > 0) {
-        const span = Math.max(bv, g.bi - bv);
-        for (let i = 0; i < nv; i++) {
-          const yc = nv === 1 ? 0 : (-span / 2 + span * i / (nv - 1));
-          addBox(xr - t_R - bv, xr - t_R, yc - bv / 2, yc + bv / 2, g.zTop + t_ho, g.zBot - t_hu, COL_VERT, strAlpha, {}, '#115e59', 0.9);
+      const xf = isEnd0 ? -0.2 : L + 0.2;
+      const zTi = g.zTop + t_ho, zBi = g.zBot - t_hu;
+      const drawCap = (y0, y1, z0, z1, col) => addQuad([xf, y0, z0 + wOff], [xf, y1, z0 + wOff], [xf, y1, z1 + wOff], [xf, y0, z1 + wOff], col, 0.96, '#78350f', 0.7);
+      drawCap(-g.bi / 2, -g.bi / 2 + g.be, zTi, zTi + g.be, COL_CORNER);
+      drawCap(g.bi / 2 - g.be, g.bi / 2, zTi, zTi + g.be, COL_CORNER);
+      drawCap(-g.bi / 2, -g.bi / 2 + g.be, zBi - g.be, zBi, COL_CORNER);
+      drawCap(g.bi / 2 - g.be, g.bi / 2, zBi - g.be, zBi, COL_CORNER);
+      if (g.nso > 0 && g.bs > 0) {
+        const gap = (g.bi - 2 * g.be - g.nso * g.bs) / (g.nso + 1);
+        for (let s = 0; s < g.nso; s++) {
+          const ya = -g.bi / 2 + g.be + gap * (s + 1) + g.bs * s;
+          drawCap(ya, ya + g.bs, zTi, zTi + g.hso, COL_INTER);
         }
       }
-      // Through-stringers & longitudinal shear gussets (Knotenbleche) for EVERY stepped intermediate stringer!
+      if (g.nsu > 0 && g.bs > 0) {
+        const gap = (g.bi - 2 * g.be - g.nsu * g.bs) / (g.nsu + 1);
+        for (let s = 0; s < g.nsu; s++) {
+          const ya = -g.bi / 2 + g.be + gap * (s + 1) + g.bs * s;
+          drawCap(ya, ya + g.bs, zBi - g.hsu, zBi, COL_INTER);
+        }
+      }
+    } else if (isStep) {
       const gR = res.geoAt(xr + 0.5);
+      const hasStepH = (g.h > gR.h + 0.1);
+      // Massive step rib (0% cutout) flush inside the deeper section [xr - t_R, xr] (no overhang past step!)
+      addBox(xr - t_R, xr, -g.bi / 2, g.bi / 2, g.zTop + t_ho, g.zBot - t_hu, COL_RIB_STEP, 0.86 * ribFade, {}, '#1e3a8a', 1.1);
+
+      // COMPLETE Schubfeldträger stringer framing on step rib (Prof. Linke: all shear panels fully framed!)
+      const bv = Number(state.b_vert);
+      if (bv > 0) {
+        // 1) Collect exact y-positions for vertical rib stringers: 2 side corners + behind EVERY stepped intermediate stringer!
+        const yVerts = [-g.bi / 2 + bv / 2, g.bi / 2 - bv / 2];
+        const addMidVerts = (nStr, bStr) => {
+          if (nStr <= 0 || bStr <= 0) return;
+          const gap = (gR.bi - 2 * gR.be - nStr * bStr) / (nStr + 1);
+          for (let s = 0; s < nStr; s++) {
+            const yc = -gR.bi / 2 + gR.be + gap * (s + 1) + bStr * s + bStr / 2;
+            if (yVerts.every(yv => Math.abs(yv - yc) > bv * 0.7)) yVerts.push(yc);
+          }
+        };
+        if (hasStepH) {
+          if (state.stufen_dir === 'unten' || state.stufen_dir === 'beide') addMidVerts(gR.nsu, gR.bs);
+          if (state.stufen_dir === 'oben' || state.stufen_dir === 'beide') addMidVerts(gR.nso, gR.bs);
+        }
+        const nTarget = Math.max(Math.round(Number(state.n_vert)), hasStepH ? yVerts.length : 0);
+        if (nTarget > yVerts.length && nTarget >= 2) {
+          const span = Math.max(bv, g.bi - bv);
+          for (let i = 1; i < nTarget - 1; i++) {
+            const yc = -span / 2 + span * i / (nTarget - 1);
+            if (yVerts.every(yv => Math.abs(yv - yc) > bv * 0.7)) yVerts.push(yc);
+          }
+        }
+        yVerts.sort((a, b) => a - b);
+        for (const yc of yVerts) {
+          addBox(xr - t_R - bv, xr - t_R, yc - bv / 2, yc + bv / 2, g.zTop + t_ho, g.zBot - t_hu, COL_VERT, strAlpha, {}, '#115e59', 0.9);
+        }
+        // 2) Horizontal cross-stringers spanning clear gaps between verticals (frames EVERY shear panel on all 4 sides!)
+        if (hasStepH) {
+          const zBars = [
+            [g.zTop + t_ho, g.zTop + t_ho + bv],
+            [g.zBot - t_hu - bv, g.zBot - t_hu]
+          ];
+          if (state.stufen_dir === 'unten' || state.stufen_dir === 'beide') {
+            zBars.push([gR.zBot - t_hu - bv, gR.zBot - t_hu]);
+          }
+          if (state.stufen_dir === 'oben' || state.stufen_dir === 'beide') {
+            zBars.push([gR.zTop + t_ho, gR.zTop + t_ho + bv]);
+          }
+          for (const [zb0, zb1] of zBars) {
+            for (let iv = 0; iv < yVerts.length - 1; iv++) {
+              const ya = yVerts[iv] + bv / 2, yb = yVerts[iv + 1] - bv / 2;
+              if (yb > ya + 0.5) {
+                addBox(xr - t_R - bv, xr - t_R, ya, yb, zb0, zb1, COL_VERT, strAlpha, {}, '#115e59', 0.85);
+              }
+            }
+          }
+        }
+      }
+
+      // Through-stringers (stepped CORNER + INTERMEDIATE stringers!) & bilateral shear gussets (Knotenbleche)
       const lUeb = Number(state.l_ueb !== undefined ? state.l_ueb : 40);
       const tK = Number(state.t_knot !== undefined ? state.t_knot : 4.0);
       const xU0 = Math.max(t_R, xr - lUeb);
       const xG1 = Math.max(xU0 + 1, xr - t_R);
-      if (lUeb > 1 && g.h > gR.h + 0.1) {
+      if (lUeb > 1 && hasStepH) {
         const COL_KNOT = '#059669';
+        const drawStepCorners = (isBot) => {
+          const zS0 = isBot ? (gR.zBot - t_hu - gR.be) : (gR.zTop + t_ho);
+          const zS1 = isBot ? (gR.zBot - t_hu) : (gR.zTop + t_ho + gR.be);
+          addBox(xU0, xr, -gR.bi / 2, -gR.bi / 2 + gR.be, zS0, zS1, COL_CORNER, strAlpha, {}, '#78350f', 0.85);
+          addBox(xU0, xr, gR.bi / 2 - gR.be, gR.bi / 2, zS0, zS1, COL_CORNER, strAlpha, {}, '#78350f', 0.85);
+        };
         const drawStepMid = (isBot, nStr, bStr, hStr) => {
           if (nStr <= 0 || bStr <= 0) return;
           const gap = (gR.bi - 2 * gR.be - nStr * bStr) / (nStr + 1);
@@ -1361,8 +1538,14 @@ function draw3D(res) {
             }
           }
         };
-        if (state.stufen_dir === 'unten' || state.stufen_dir === 'beide') drawStepMid(true, gR.nsu, gR.bs, gR.hsu);
-        if (state.stufen_dir === 'oben' || state.stufen_dir === 'beide') drawStepMid(false, gR.nso, gR.bs, gR.hso);
+        if (state.stufen_dir === 'unten' || state.stufen_dir === 'beide') {
+          drawStepCorners(true);
+          drawStepMid(true, gR.nsu, gR.bs, gR.hsu);
+        }
+        if (state.stufen_dir === 'oben' || state.stufen_dir === 'beide') {
+          drawStepCorners(false);
+          drawStepMid(false, gR.nso, gR.bs, gR.hso);
+        }
       }
     } else {
       // Regular internal rib with lightening cutout f_Loch
@@ -1841,7 +2024,7 @@ function renderOverview(res) {
   };
 
   const checkRows = [
-    { k: '1. Außenmaße & 2 Treppenstufen', sym: 'L×b×h', val: dimStr, unit: 'mm', req: `≤ 800×150×80 | ${DIR_LONG[state.stufen_dir]} (x=${state.x_S1}/${state.x_S2})`, st: pill(res.rules[0].ok, res.rules[0].ok ? 'ok' : 'prüfen') },
+    { k: '1. Außenmaße, Stufen & Stirnfläche', sym: 'L×b×h', val: dimStr, unit: 'mm', req: `A_Stirn=${Math.round(res.A_stirn_1)}/${Math.round(res.A_stirn_3)} mm² (≥ 1.000) | ${DIR_LONG[state.stufen_dir]} (x=${state.x_S1}/${state.x_S2})`, st: pill(res.rules[0].ok, res.rules[0].ok ? 'ok' : 'prüfen') },
     { k: '2. Max. Wandstärke (Außenhäute & Stege)', sym: 't_max', val: fmt(tMax, 2), unit: 'mm', req: `≤ ${fmt(state.t_max_zul, 1)} mm (angehoben 2 mm+; TF ${fmt(state.t_st_tf, 1)} mm)`, st: pill(res.rules[1].ok, res.rules[1].ok ? 'ok' : 'prüfen') },
     { k: '3. Zugfestigkeit Obergurt (außen)', sym: 'S_Zug,min', val: fmt(res.S_Zug, 2), unit: '[-]', req: `≥ ${fmt(state.S_min, 1)} (R_m,Z = ${fmt(state.R_m_Z, 1)} MPa, ${state.iy_modus === 'voll' ? 'volles I_y' : 'Schubfeld'})`, st: pill(res.S_Zug >= state.S_min, res.S_Zug >= state.S_min ? 'ok' : 'prüfen') },
     { k: '4. Druckfestigkeit Untergurt (außen)', sym: 'S_Druck,min', val: fmt(res.S_Druck, 2), unit: '[-]', req: `≥ ${fmt(state.S_min, 1)} (R_m,D = ${fmt(state.R_m_D, 1)} MPa)`, st: pill(res.S_Druck >= state.S_min, res.S_Druck >= state.S_min ? 'ok' : 'prüfen') },
@@ -1850,8 +2033,8 @@ function renderOverview(res) {
     { k: `7. Seitenwandbeulen Testfeld (300–400, ${lagLbl})`, sym: 'm_Beul,TF', val: fmt(res.m_beul_active, 2), unit: 'kg', req: `< ${fmt(state.m_Pruef, 0)} kg & zuerst (Fall I: ${fmt(res.m_beul_I, 2)} | III: ${fmt(res.m_beul_III, 2)} | Neb: ${nw ? fmt(nw.m_beul_web, 2) : '—'} kg)`, st: pill(res.m_beul_active < state.m_Pruef && res.tfFirst, res.m_beul_active >= state.m_Pruef ? 'beult nicht' : (res.tfFirst ? 'ok (TF zuerst)' : 'Neb früher!')) },
     { k: '8. Spitzendurchbiegung (Timoshenko-Balken)', sym: 'w_Timo(L)', val: fmt(res.w_ges, 2), unit: 'mm', req: `≥ 20 mm @ ${state.E_Balsa} MPa | w_M=${fmt(res.w_M, 2)} + w_Q=${fmt(res.w_Q, 2)} mm (κ=${fmt(res.kappa_min, 2)}–${fmt(res.kappa_max, 2)} | 2 GPa: ${fmt(res.w_Her20, 1)})`, st: pill(res.w_ges >= 20, res.w_ges >= 20 ? 'ok (≥ 20 mm)' : '< 20 mm') },
     { k: '9. Steg-Schubfestigkeit (exakt + Torsion)', sym: 'S_Steg,min', val: fmt(res.S_Steg, 2), unit: '[-]', req: `≥ ${fmt(state.S_min_steg, 1)} (τ_B = ${fmt(state.tau_B, 1)} MPa; 45°-Stegfaser für Reserve ≥ 2,0)`, st: pill(res.S_Steg >= state.S_min_steg, res.S_Steg >= state.S_min_steg ? (res.S_Steg >= 2.0 ? 'ok (≥ 2,0)' : 'ok') : 'prüfen') },
-    { k: '10. Stufenübergang (Durchstecken + Knotenblech)', sym: 'S_Knoten', val: fmt(Math.min(res.S_Knoten, 99), 2), unit: '[-]', req: `≥ ${fmt(state.S_min, 1)} (${state.l_ueb}×${fmt(state.t_knot, 1)} mm Längs-Schubsteg; F_max = ${Math.round(res.F_knot_max)} N, +${fmt(res.m_Knoten, 2)} g)`, st: pill(res.S_Knoten >= state.S_min, res.S_Knoten >= state.S_min ? 'ok' : 'prüfen') },
-    { k: '11. Baubarkeit & Konstruktionsregeln', sym: 'Prüfung', val: `${res.rules_ok}/6 | ${res.n_ch_ok}/${res.n_active}`, unit: '[-]', req: `b_s3 = ${state.bs3} mm (≥ 6) · h_R,min = ${fmt(res.hR_min, 1)} mm (≥ 15 mm) & alle Kammern`, st: pill(res.rules_ok === 6 && res.n_ch_ok === res.n_active, (res.rules_ok === 6 && res.n_ch_ok === res.n_active) ? 'ok' : 'prüfen') }
+    { k: '10. Stufenübergang (Schubfeld-Rahmen & Knoten)', sym: 'S_Knoten', val: fmt(Math.min(res.S_Knoten, 99), 2), unit: '[-]', req: `≥ ${fmt(state.S_min, 1)} (Rahmen ${res.n_v1}/${res.n_v2}v+${res.n_hr}h; Durchst. ${state.l_ueb}×${fmt(state.t_knot, 1)}; F_max = ${Math.round(res.F_knot_max)} N)`, st: pill(res.S_Knoten >= state.S_min, res.S_Knoten >= state.S_min ? 'ok' : 'prüfen') },
+    { k: '11. Baubarkeit & Konstruktionsregeln', sym: 'Prüfung', val: `${res.rules_ok}/6 | ${res.n_ch_ok}/${res.n_active}`, unit: '[-]', req: `A_Stirn≥1000 · b_s3=${state.bs3} mm (≥6) · h_R,min=${fmt(res.hR_min, 1)} mm (≥15)`, st: pill(res.rules_ok === 6 && res.n_ch_ok === res.n_active, (res.rules_ok === 6 && res.n_ch_ok === res.n_active) ? 'ok' : 'prüfen') }
   ];
   document.getElementById('ovChecksTbody').innerHTML = checkRows.map(r => `
     <tr class="border-b border-[var(--border)] hover:bg-[var(--background)]">
@@ -1866,14 +2049,14 @@ function renderOverview(res) {
 
   const massRows = [
     { k: 'Kastenstruktur (ohne Rippen)', sym: 'm_Kasten', val: fmt(res.m_Kasten, 2) + ' g', note: `${res.n_active} Kammern (L − 2·t_R)` },
-    { k: 'Massive Endrippen (x = 0 & L)', sym: 'm_Endr.', val: fmt(res.m_Endrippen, 2) + ' g', note: `2 Stk voll, t_R=${fmt(state.t_R, 1)} mm` },
-    { k: 'Stufenrippen + Eck-Vertikalsteifen', sym: 'm_Stufe', val: fmt(res.m_Stufenrippen + res.m_Vert, 2) + ' g', note: `2 Stufenrippen + ${state.n_vert}×${state.b_vert} Steifen` },
-    { k: 'Durchstecken + Längs-Knotenbleche', sym: 'm_Knoten', val: fmt(res.m_Knoten, 2) + ' g', note: `l_ueb=${state.l_ueb} mm, t_knot=${fmt(state.t_knot, 1)} mm` },
+    { k: 'Plane Endrippen (x = 0 & L)', sym: 'm_Endr.', val: fmt(res.m_Endrippen, 2) + ' g', note: `2 Stk plan, Stringer durchgef. (${Math.round(res.A_stirn_1)}/${Math.round(res.A_stirn_3)} mm²)` },
+    { k: 'Stufenrippen + Schubfeld-Rahmen', sym: 'm_Stufe', val: fmt(res.m_Stufenrippen + res.m_Vert, 2) + ' g', note: `2 Stufenrippen + Rahmen ${res.n_v1}/${res.n_v2}v+${res.n_hr}h (${fmt(res.m_Vert, 2)} g)` },
+    { k: 'Durchsteck-Stringer + Knotenbleche', sym: 'm_Knoten', val: fmt(res.m_Knoten, 2) + ' g', note: `Eck+Zw., l_ueb=${state.l_ueb} mm, t_knot=${fmt(state.t_knot, 1)} mm` },
     { k: `Innenrippen (${res.n_Rippen - 4} Stk, Loch ${state.f_Loch} %)`, sym: 'm_Innenr.', val: fmt(res.m_Innenrippen, 2) + ' g', note: `t_R=${fmt(state.t_R, 1)} mm` },
-    { k: 'Balsaholz gesamt', sym: 'm_Balsa', val: fmt(res.m_Balsa, 2) + ' g', note: 'alle Holzteile', bold: true },
-    { k: 'Leimmasse', sym: 'G_L', val: fmt(res.m_Leim_eff, 2) + ' g', note: res.hasLabMass ? 'Laborwägung' : 'Pauschale 25 % von G_W' },
-    { k: 'Kastengewicht (Wettbewerb)', sym: 'G_W', val: fmt(res.G_W_eff, 2) + ' g', note: 'ohne Prüfstand-Endplatten', hi: true },
-    { k: 'Gesamt inkl. Prüfstand-Endplatten', sym: 'm_ges', val: fmt(res.m_Bauteil_ges, 2) + ' g', note: '+ 180 g Endplatten', bold: true }
+    { k: 'Balsaholz gesamt (Schritt 1)', sym: 'm_Balsa', val: fmt(res.m_Balsa, 2) + ' g', note: 'identisch mit Teileliste Tab 6 & Blatt 07', bold: true },
+    { k: 'Leimmasse (Schritt 2 − Schritt 1)', sym: 'G_L', val: fmt(res.m_Leim_eff, 2) + ' g', note: res.hasLabMass ? 'LBL-Wägung' : 'Pauschale 25 % von G_W' },
+    { k: 'Kastengewicht (Wettbewerb, Schritt 2)', sym: 'G_W', val: fmt(res.G_W_eff, 2) + ' g', note: 'ohne Prüfstand-Endplatten', hi: true },
+    { k: 'Gesamt inkl. Endplatten (Schritt 3)', sym: 'm_ges', val: fmt(res.m_Bauteil_ges, 2) + ' g', note: res.hasLabEnd ? `LBL-Endplatten: +${fmt(res.m_End, 1)} g` : '+ 180 g Vorgabe', bold: true }
   ];
   document.getElementById('ovMassTbody').innerHTML = massRows.map(r => `
     <tr class="border-b border-[var(--border)] ${r.bold || r.hi ? 'font-semibold' : ''}" style="${r.hi ? 'background:color-mix(in srgb, var(--primary) 12%, transparent)' : ''}">
@@ -1890,17 +2073,18 @@ function renderOverview(res) {
   document.getElementById('ov_fprog').textContent = String(res.F_prog);
   document.getElementById('ov_fprog_note').textContent = `Erste ganze Stufe ≥ ${fmt(res.m_beul_active, 2)} kg (${lagLbl})`;
   document.getElementById('ov_pktf').innerHTML = res.hasLabF ? `${fmt(res.pktF, 2)} Pkt` : `<span style="color:var(--success)">10,00 Pkt</span> <span class="font-normal text-[var(--muted-foreground)]">(offen)</span>`;
-  document.getElementById('ov_lab_mass').textContent = res.hasLabMass ? `Δm Leim = ${fmt(res.m_Leim_eff, 2)} g` : `Pauschale 25 % (${fmt(res.G_L, 2)} g)`;
+  document.getElementById('ov_lab_mass').textContent = res.hasLabMass ? `Δm Leim = ${fmt(res.m_Leim_eff, 2)} g (${fmt(100 * res.m_Leim_eff / res.G_W_eff, 1)} %)` : `Pauschale 25 % (${fmt(res.G_L, 2)} g)`;
+  document.getElementById('ov_lab_end').textContent = res.hasLabEnd ? `Endplatten = ${fmt(res.m_End, 2)} g (Schritt 3 − 2)` : `offen (Vorgabe ~180 g)`;
   document.getElementById('ov_leichtbau').textContent = fmt(res.leichtbauPkt, 2);
   document.getElementById('ov_gw_gl').textContent = `G_W = ${fmt(res.G_W_eff / 1000, 4)} kg · G_L = ${fmt(res.m_Leim_eff / 1000, 4)} kg`;
   document.getElementById('ov_score').textContent = fmt(res.Score_eff, 2);
-  document.getElementById('ov_score_st').textContent = (res.hasLabW || res.hasLabF || res.hasLabMass) ? 'mit Laborwerten' : 'mit Prognose (Labor offen)';
+  document.getElementById('ov_score_st').textContent = (res.hasLabW || res.hasLabF || res.hasLabMass || res.hasLabEnd) ? 'mit Laborwerten' : 'mit Prognose (Labor offen)';
 
   document.getElementById('ovBuckleStrip').innerHTML = [
     { lbl: 'Testfeld Fall I (gelenkig)', val: `${fmt(res.m_beul_I, 2)} kg`, ok: res.m_beul_I < state.m_Pruef },
     { lbl: 'Testfeld Fall III (eingesp.)', val: `${fmt(res.m_beul_III, 2)} kg`, ok: res.m_beul_III < state.m_Pruef },
     { lbl: 'Kritischste Nebenkammer', val: nw ? `${fmt(nw.m_beul_web, 2)} kg (${nw.label})` : '—', ok: res.tfFirst },
-    { lbl: 'Schubkorrekturfaktor κ', val: `${fmt(res.kappa_min, 3)} – ${fmt(res.kappa_max, 3)}`, ok: true }
+    { lbl: 'Stirnfläche A_Stirn (min)', val: `${Math.round(res.A_stirn_min)} mm² (≥ 1.000)`, ok: res.A_stirn_min >= 1000 }
   ].map(b => `
     <div class="px-2.5 py-2 rounded-lg border border-[var(--border)] bg-[var(--background)]">
       <div class="text-[var(--muted-foreground)]">${b.lbl}</div>
@@ -1927,6 +2111,151 @@ function renderOverview(res) {
     </tr>
   `).join('');
   document.querySelectorAll('#ovWinnersTbody tr').forEach(tr => tr.addEventListener('click', () => loadPreset(tr.dataset.wcode)));
+}
+
+let lastOrderEmail = '';
+
+function renderBOM(res) {
+  const L = Number(state.L), x1 = Number(state.x_S1), x2 = Number(state.x_S2);
+  const b1 = Number(state.b1), b2 = Number(state.b2), b3 = Number(state.b3);
+  const h1 = Number(state.h1), h2 = Number(state.h2), h3 = Number(state.h3);
+  const tho = Number(state.t_ho), thu = Number(state.t_hu), tst = Number(state.t_st), ttf = Number(state.t_st_tf);
+  const tR = Number(state.t_R), bv = Number(state.b_vert), lU = Number(state.l_ueb), tK = Number(state.t_knot);
+  const be1 = Number(state.be1), be2 = Number(state.be2), be3 = Number(state.be3);
+  const bs1 = Number(state.bs1), bs2 = Number(state.bs2), bs3 = Number(state.bs3);
+  const nso1 = Math.round(state.nso1), nsu1 = Math.round(state.nsu1);
+  const nso2 = Math.round(state.nso2), nsu2 = Math.round(state.nsu2);
+  const nso3 = Math.round(state.nso3), nsu3 = Math.round(state.nsu3);
+  const nrib2 = Math.round(state.n_rib2), nrib3 = Math.round(state.n_rib3);
+  const rhoF = Number(state.rho) / 1e6;
+  const bi1 = b1 - 2 * tst, bi1tf = b1 - 2 * ttf, bi2 = b2 - 2 * tst, bi3 = b3 - 2 * tst;
+  const hs1 = h1 - tho - thu, hs2 = h2 - tho - thu, hs3 = h3 - tho - thu;
+  const hso1 = Math.min(bs1, be1), hso2 = Math.min(bs2, be2), hso3 = Math.min(bs3, be3);
+  const fl = (state.f_Loch > 0 && state.f_Loch < 1) ? state.f_Loch : state.f_Loch / 100;
+  const keep = Math.max(0, 1 - fl);
+  const A0 = res.chambers[0].A, AL = res.chambers[11].A;
+
+  const items = [
+    [1, 'Deckhaut außen (Abschn. 1)', `Brett ${fmt(tho, 1)} mm`, `${fmt(bi1, 1)} × ${fmt(tho, 1)}`, `${x1}`, 1, ((x1 - 100) * bi1 + 100 * bi1tf) * tho * rhoF, 'außen auf Stringer, ohne Ecküberlappung'],
+    [2, 'Deckhaut außen (Abschn. 2)', `Brett ${fmt(tho, 1)} mm`, `${fmt(bi2, 1)} × ${fmt(tho, 1)}`, `${x2 - x1}`, 1, (x2 - x1) * bi2 * tho * rhoF, 'bündig an Stufenrippen (Folie 17)'],
+    [3, 'Deckhaut außen (Abschn. 3)', `Brett ${fmt(tho, 1)} mm`, `${fmt(bi3, 1)} × ${fmt(tho, 1)}`, `${L - x2}`, 1, (L - x2) * bi3 * tho * rhoF, 'plan an Endrippe x = L'],
+    [4, 'Bodenhaut außen (Abschn. 1)', `Brett ${fmt(thu, 1)} mm`, `${fmt(bi1, 1)} × ${fmt(thu, 1)}`, `${x1}`, 1, ((x1 - 100) * bi1 + 100 * bi1tf) * thu * rhoF, 'außen auf Stringer, ohne Ecküberlappung'],
+    [5, 'Bodenhaut außen (Abschn. 2)', `Brett ${fmt(thu, 1)} mm`, `${fmt(bi2, 1)} × ${fmt(thu, 1)}`, `${x2 - x1}`, 1, (x2 - x1) * bi2 * thu * rhoF, 'bündig an Stufenrippen'],
+    [6, 'Bodenhaut außen (Abschn. 3)', `Brett ${fmt(thu, 1)} mm`, `${fmt(bi3, 1)} × ${fmt(thu, 1)}`, `${L - x2}`, 1, (L - x2) * bi3 * thu * rhoF, 'plan an Endrippe x = L'],
+    [7, 'Seitenwände Testfeld (300–400)', `Brett ${fmt(ttf, 1)} mm`, `${fmt(hs1, 1)} × ${fmt(ttf, 1)}`, '100', 2, 2 * 100 * hs1 * ttf * rhoF, 'Beulfeld (0°-Faser, KEINE Seiten-Stringer)'],
+    [8, 'Seitenwände Abschn. 1 (außerh. TF)', `Brett ${fmt(tst, 1)} mm`, `${fmt(hs1, 1)} × ${fmt(tst, 1)}`, `${x1 - 100}`, 2, 2 * (x1 - 100) * hs1 * tst * rhoF, '0–300 (+ 400–x_S1); opt. ±45°-Faser'],
+    [9, 'Seitenwände Abschn. 2', `Brett ${fmt(tst, 1)} mm`, `${fmt(hs2, 1)} × ${fmt(tst, 1)}`, `${x2 - x1}`, 2, 2 * (x2 - x1) * hs2 * tst * rhoF, 'opt. ±45°-Faser für extra Schubreserve'],
+    [10, 'Seitenwände Abschn. 3', `Brett ${fmt(tst, 1)} mm`, `${fmt(hs3, 1)} × ${fmt(tst, 1)}`, `${L - x2}`, 2, 2 * (L - x2) * hs3 * tst * rhoF, 'opt. ±45°-Faser, plan an Endrippe x = L'],
+    [11, 'Eckstringer Abschn. 1 (Wurzel)', `Leiste ${be1}×${be1}`, `${be1} × ${be1}`, `${x1}`, 4, 4 * x1 * be1 * be1 * rhoF, 'durch Endrippe x=0, außen plan abfeilen'],
+    [12, 'Eckstringer Abschn. 2 (inkl. Durchst.)', `Leiste ${be2}×${be2}`, `${be2} × ${be2}`, `${x2 - x1} / +${lU}`, 4, (4 * (x2 - x1) + res.n_eck_k1 * lU) * be2 * be2 * rhoF, 'gestufte Ecken +l_ueb durch Stufenrippe 1'],
+    [13, 'Eckstringer Abschn. 3 (Spitze, Durchst.)', `Leiste ${be3}×${be3}`, `${be3} × ${be3}`, `${L - x2} / +${lU}`, 4, (4 * (L - x2) + res.n_eck_k2 * lU) * be3 * be3 * rhoF, 'durch Endrippe x=L (plan) & +l_ueb Rippe 2'],
+    [14, 'Zwischenstringer Abschn. 1 (o + u)', `Leiste ${bs1}×${bs1}`, `${bs1} × ${hso1}`, `${x1}`, nso1 + nsu1, (nso1 + nsu1) * x1 * bs1 * hso1 * rhoF, 'durch Endrippe x=0 plan; nur Oben/Unten'],
+    [15, 'Zwischenstringer Abschn. 2 (inkl. Durchst.)', `Leiste ${bs2}×${bs2}`, `${bs2} × ${hso2}`, `${x2 - x1} / +${lU}`, nso2 + nsu2, ((nso2 + nsu2) * (x2 - x1) + res.n_k1 * lU) * bs2 * hso2 * rhoF, 'gestufte +l_ueb durch Stufenrippe 1'],
+    [16, 'Zwischenstringer Abschn. 3 (Spitze ≥ 6 mm)', `Leiste ${bs3}×${bs3}`, `${bs3} × ${hso3}`, `${L - x2} / +${lU}`, nso3 + nsu3, ((nso3 + nsu3) * (L - x2) + res.n_k2 * lU) * bs3 * hso3 * rhoF, '≥ 6 mm, durch Endrippe x=L & +l_ueb Rippe 2'],
+    [17, 'Plane Endrippen (x = 0 & L, netto)', `Brett ${fmt(tR, 1)} mm`, `${b1}×${h1} & ${b3}×${h3}`, `${fmt(tR, 1)} (Dicke)`, 2, ((b1 * h1 - A0) + (b3 * h3 - AL)) * tR * rhoF, 'plane Klebefläche ≥ 1000 mm², Ausschn. f. Str.'],
+    [18, 'Massive Stufenrippen (x_S1 & x_S2)', `Brett ${fmt(tR, 1)} mm`, `${Math.round(bi1)}×${Math.round(hs1)} & ${Math.round(bi2)}×${Math.round(hs2)}`, `${fmt(tR, 1)} (Dicke)`, 2, (bi1 * hs1 + bi2 * hs2) * tR * rhoF, '0 % Loch, Ausschnitte für Durchsteck-Stringer'],
+    [19, 'Innenrippen (Pflicht- & reguläre)', `Brett ${fmt(tR, 1)} mm`, `Loch ${state.f_Loch} %`, `${fmt(tR, 1)} (Dicke)`, res.n_int1 + nrib2 + nrib3, (res.n_int1 * bi1 * res.hR1 + nrib2 * bi2 * res.hR2 + nrib3 * bi3 * res.hR3) * keep * tR * rhoF, 'inkl. Pflichtrippe 300 mm (u. 400 falls x_S1>400)'],
+    [20, 'Schubfeld-Rahmenstringer (Stufenrippen)', `Leiste ${bv}×${bv}`, `${bv} × ${bv}`, `${Math.round(res.L_rahmen_ges)} ges.`, res.n_v1 + res.n_v2 + 2 * res.n_hr, res.m_Vert, 'rahmt alle Schubfelder d. Stufenrippen ein!'],
+    [21, 'Längs-Knotenbleche (beidseitig)', `Brett ${fmt(tK / 2, 1)} mm`, `(Δh+b_s) × ${fmt(tK / 2, 1)}`, `${lU}`, 2 * (res.n_k1 + res.n_k2), lU * tK * (res.n_k1 * (res.dh_k1 + hso2) + res.n_k2 * (res.dh_k2 + hso3)) * rhoF, 'je 2× beidseitig an gestuften Zw.-Stringern']
+  ];
+  const totStk = items.reduce((s, r) => s + r[5], 0);
+  const totMass = items.reduce((s, r) => s + r[6], 0);
+
+  document.getElementById('bomSumTag').textContent = `Summe Schritt 1: ${totStk} Teile · ${fmt(totMass, 2)} g (= m_Balsa ${fmt(res.m_Balsa, 2)} g)`;
+  document.getElementById('bomItemsTbody').innerHTML = items.map(r => `
+    <tr class="border-b border-[var(--border)] hover:bg-[var(--background)]">
+      <td class="py-1 px-2 text-center text-[var(--muted-foreground)]">${r[0]}</td>
+      <td class="py-1 px-2 font-medium">${r[1]}</td>
+      <td class="py-1 px-2 font-mono">${r[2]}</td>
+      <td class="py-1 px-2 text-center font-mono">${r[3]}</td>
+      <td class="py-1 px-2 text-center font-mono">${r[4]}</td>
+      <td class="py-1 px-2 text-center font-semibold">${r[5]}</td>
+      <td class="py-1 px-2 text-right font-semibold">${fmt(r[6], 2)}</td>
+      <td class="py-1 px-2 text-[var(--muted-foreground)]">${r[7]}</td>
+    </tr>
+  `).join('') + `
+    <tr class="font-bold" style="background:color-mix(in srgb, var(--primary) 12%, transparent)">
+      <td class="py-1.5 px-2 text-center">Σ</td>
+      <td class="py-1.5 px-2" colspan="4">SUMME SCHRITT 1 (alle Balsa-Einzelteile vor Einbau)</td>
+      <td class="py-1.5 px-2 text-center">${totStk}</td>
+      <td class="py-1.5 px-2 text-right">${fmt(totMass, 2)} g</td>
+      <td class="py-1.5 px-2">${Math.abs(totMass - res.m_Balsa) < 0.05 ? '= m_Balsa exakt' : 'prüfen'}</td>
+    </tr>`;
+
+  // Aggregate order list dynamically (handles ANY bar size or board thickness!)
+  const barMap = new Map();
+  const addBar = (sz, len) => { if (len > 0.1 && sz > 0) barMap.set(sz, (barMap.get(sz) || 0) + len); };
+  addBar(be1, 4 * x1);
+  addBar(be2, 4 * (x2 - x1) + res.n_eck_k1 * lU);
+  addBar(be3, 4 * (L - x2) + res.n_eck_k2 * lU);
+  addBar(bs1, (nso1 + nsu1) * x1);
+  addBar(bs2, (nso2 + nsu2) * (x2 - x1) + res.n_k1 * lU);
+  addBar(bs3, (nso3 + nsu3) * (L - x2) + res.n_k2 * lU);
+  addBar(bv, res.L_rahmen_ges);
+  const barsSorted = [...barMap.entries()].sort((a, b) => b[0] - a[0]);
+
+  const sheetMap = new Map();
+  const addSheet = (th, areaMm2) => {
+    if (areaMm2 <= 0.1 || th <= 0) return;
+    const key = Math.round(th * 10) / 10;
+    sheetMap.set(key, (sheetMap.get(key) || 0) + areaMm2 / 100); // cm²
+  };
+  const skinArea = ((x1 - 100) * bi1 + 100 * bi1tf) + (x2 - x1) * bi2 + (L - x2) * bi3;
+  addSheet(tho, skinArea);
+  addSheet(thu, skinArea);
+  addSheet(ttf, 2 * 100 * hs1);
+  addSheet(tst, 2 * ((x1 - 100) * hs1 + (x2 - x1) * hs2 + (L - x2) * hs3));
+  addSheet(tR, (b1 * h1 + b3 * h3) + (bi1 * hs1 + bi2 * hs2) + (res.n_int1 * bi1 * res.hR1 + nrib2 * bi2 * res.hR2 + nrib3 * bi3 * res.hR3));
+  addSheet(tK / 2, 2 * lU * (res.n_k1 * (res.dh_k1 + hso2) + res.n_k2 * (res.dh_k2 + hso3)));
+  const sheetsSorted = [...sheetMap.entries()].sort((a, b) => a[0] - b[0]);
+
+  document.getElementById('bomBarsTbody').innerHTML = barsSorted.map(([sz, len]) => {
+    const cnt = Math.ceil(len * 1.3 / 1000);
+    return `<tr class="border-b border-[var(--border)]"><td class="py-1 px-2 font-medium">Balsa-Leiste ${sz} × ${sz} mm</td><td class="py-1 px-2 text-right font-mono">${Math.round(len).toLocaleString('de-DE')}</td><td class="py-1 px-2 text-right font-bold" style="color:var(--primary)">${cnt} × 1000 mm</td></tr>`;
+  }).join('');
+
+  document.getElementById('bomSheetsTbody').innerHTML = sheetsSorted.map(([th, cm2]) => {
+    const cnt = Math.ceil(cm2 * 1.3 / 1000);
+    return `<tr class="border-b border-[var(--border)]"><td class="py-1 px-2 font-medium">Balsa-Brett ${fmt(th, 1)} mm</td><td class="py-1 px-2 text-right font-mono">${Math.round(cm2).toLocaleString('de-DE')}</td><td class="py-1 px-2 text-right font-bold" style="color:var(--primary)">${cnt} × (100×1000)</td></tr>`;
+  }).join('');
+
+  const actPreset = PRESETS.find(v => v.code === activePresetCode);
+  const varLabel = actPreset ? actPreset.name : 'Benutzerdefiniert';
+  lastOrderEmail = [
+    `An: markus.linke@haw-hamburg.de`,
+    `Betreff: HFL WiSe 2026/27 – Gruppe 5 – Balsaholz-Teileliste (${activePresetCode})`,
+    ``,
+    `Sehr geehrter Herr Prof. Linke,`,
+    ``,
+    `anbei unsere gewünschte Balsaholz-Teileliste für Gruppe 5 (Variante ${varLabel}, inkl. ca. 30 % Verschnitt):`,
+    ``,
+    `Vierkantleisten (Länge 1.000 mm):`,
+    ...barsSorted.map(([sz, len]) => `- ${Math.ceil(len * 1.3 / 1000)}× Balsaholz-Leiste ${sz} × ${sz} mm (Nettobedarf ${Math.round(len)} mm)`),
+    ``,
+    `Balsabrettchen (100 × 1.000 mm):`,
+    ...sheetsSorted.map(([th, cm2]) => `- ${Math.ceil(cm2 * 1.3 / 1000)}× Balsaholz-Brett ${fmt(th, 1)} mm (Nettobedarf ${Math.round(cm2)} cm²)`),
+    ``,
+    `Eckdaten Träger: L=${L} mm, b=${b1} mm, h=${h1}→${h2}→${h3} mm (${DIR_LONG[state.stufen_dir]}), A_Stirn=${Math.round(res.A_stirn_1)}/${Math.round(res.A_stirn_3)} mm² (≥ 1.000 mm²), G_W ≈ ${fmt(res.G_W, 1)} g.`,
+    `Die vorgegebenen Endplatten übernehmen wir wie angekündigt am Termin des Trägerbaus.`,
+    ``,
+    `Mit freundlichen Grüßen`,
+    `Gruppe 5 (HFL WiSe 2026/27)`
+  ].join('\n');
+  document.getElementById('bomEmailText').textContent = lastOrderEmail;
+
+  const chkItems = [
+    { ok: res.A_stirn_min >= 1000, t: 'Endplatten-Stirnfläche ≥ 1.000 mm²', d: `Wurzel = ${Math.round(res.A_stirn_1)} mm² · Spitze = ${Math.round(res.A_stirn_3)} mm² (Mindestfläche 1.000 mm²).` },
+    { ok: true, t: 'Plane Endrippen & bündige Stringer', d: 'An beiden Enden (x = 0 & L) ebene Endrippe; alle Längsstringer durch die Endrippen hindurchführen und außen plan abfeilen.' },
+    { ok: true, t: 'Ausrichtung der Endplatten (LÖCHER UNTEN!)', d: 'Einspannung & Lasteinleitung mittig im angezeichneten Rechteck aufkleben — Lasteinleitung mit Löchern UNTEN (Gewichte hängen dort!).' },
+    { ok: res.S_Knoten >= state.S_min, t: 'Querschnittssprünge nach Schubfeldträgertheorie', d: `Stufenrippen vollständig durch Schubfeld-Rahmen (${res.n_v1}/${res.n_v2} vert. + ${res.n_hr} horiz. Leisten) eingefasst; gestufte Eck- & Zwischenstringer um ${lU} mm durchgesteckt & über Knotenbleche abgestützt (S_Knoten = ${fmt(Math.min(res.S_Knoten, 99), 2)}).` },
+    { ok: true, t: '3-Schritt-Massenmessung im LBL', d: 'Schritt 1: Alle Einzelteile vor Einbau wiegen (Tabelle unten / Blatt 07). Schritt 2: Getrockneter Träger ohne Endplatten. Schritt 3: Mit aufgeklebten Endplatten.' }
+  ];
+  document.getElementById('bomChecklist').innerHTML = chkItems.map(c => `
+    <div class="p-2 rounded-lg border border-[var(--border)] bg-[var(--background)] space-y-0.5">
+      <div class="font-semibold" style="color:${c.ok ? 'var(--success)' : 'var(--error)'}">${c.ok ? '✓' : '✕'} ${c.t}</div>
+      <div class="text-[var(--muted-foreground)]">${c.d}</div>
+    </div>
+  `).join('');
 }
 
 function getMatState() {
@@ -1978,9 +2307,9 @@ function updateAll() {
   const sEl = document.getElementById('kpiSafety');
   sEl.textContent = `${fmt(res.S_min_norm, 2)} / ${fmt(res.S_Steg, 2)}`;
   sEl.style.color = (res.S_min_norm >= state.S_min && res.S_Steg >= state.S_min_steg && res.S_Knoten >= state.S_min) ? 'var(--success)' : 'var(--error)';
-  document.getElementById('kpiSafetySub').textContent = `Knoten S=${fmt(Math.min(res.S_Knoten, 99), 2)} · Steg ≥ ${fmt(state.S_min_steg, 1)}`;
+  document.getElementById('kpiSafetySub').textContent = `Knoten S=${fmt(Math.min(res.S_Knoten, 99), 2)} · Rahmen ${res.n_v1}/${res.n_v2}v+${res.n_hr}h`;
   document.getElementById('kpiGeo').textContent = `${state.h1}→${state.h2}→${state.h3} mm`;
-  document.getElementById('kpiGeoSub').textContent = `${DIR_SHORT[state.stufen_dir]} · h_R=${fmt(res.hR_min, 1)} · Zw3=${state.bs3}`;
+  document.getElementById('kpiGeoSub').textContent = `A_St=${Math.round(res.A_stirn_3)} · h_R=${fmt(res.hR_min, 1)} · Zw3=${state.bs3}`;
 
   const checks = [
     { lbl: 'S_Zug', val: fmt(res.S_Zug, 2), ok: res.S_Zug >= state.S_min },
@@ -1990,7 +2319,7 @@ function updateAll() {
     { lbl: 'S_Steg', val: fmt(res.S_Steg, 2), ok: res.S_Steg >= state.S_min_steg },
     { lbl: 'S_Knoten', val: fmt(Math.min(res.S_Knoten, 99), 2), ok: res.S_Knoten >= state.S_min },
     { lbl: 'TF < Neb', val: `${fmt(res.m_beul_active, 1)}/${res.minOtherWeb ? fmt(res.minOtherWeb.m_beul_web, 1) : '—'}`, ok: res.m_beul_active < state.m_Pruef && res.tfFirst },
-    { lbl: 'h_R,min', val: `${fmt(res.hR_min, 1)} mm`, ok: res.hR_min >= state.min_hR_tip },
+    { lbl: 'A_Stirn', val: `${Math.round(res.A_stirn_min)} mm²`, ok: res.A_stirn_min >= 1000 },
     { lbl: 'w_Timo', val: `${fmt(res.w_ges, 2)} mm`, ok: res.w_ges >= 20 }
   ];
   document.getElementById('miniChecks').innerHTML = checks.map(c => `
@@ -2001,6 +2330,7 @@ function updateAll() {
   `).join('');
 
   renderOverview(res);
+  renderBOM(res);
 
   document.getElementById('rulesBox').innerHTML = res.rules.map(r => `
     <div class="flex items-center justify-between px-2 py-1 rounded border border-[var(--border)] bg-[var(--background)]">
@@ -2090,10 +2420,10 @@ function init() {
   const bindLab = (id, key) => document.getElementById(id).addEventListener('input', e => {
     const v = parseFloat(e.target.value); labState[key] = (!isNaN(v) && v > 0) ? v : null; updateAll();
   });
-  bindLab('in_lab_w', 'w_max'); bindLab('in_lab_F', 'F_krit'); bindLab('in_lab_mvor', 'm_vor'); bindLab('in_lab_mnach', 'm_nach');
+  bindLab('in_lab_w', 'w_max'); bindLab('in_lab_F', 'F_krit'); bindLab('in_lab_mvor', 'm_vor'); bindLab('in_lab_mnach', 'm_nach'); bindLab('in_lab_mges', 'm_ges');
   document.getElementById('btnResetLab').addEventListener('click', () => {
-    labState.w_max = labState.F_krit = labState.m_vor = labState.m_nach = null;
-    ['in_lab_w', 'in_lab_F', 'in_lab_mvor', 'in_lab_mnach'].forEach(id => { document.getElementById(id).value = ''; });
+    labState.w_max = labState.F_krit = labState.m_vor = labState.m_nach = labState.m_ges = null;
+    ['in_lab_w', 'in_lab_F', 'in_lab_mvor', 'in_lab_mnach', 'in_lab_mges'].forEach(id => { document.getElementById(id).value = ''; });
     updateAll();
   });
 
@@ -2169,10 +2499,11 @@ function init() {
 
   document.querySelectorAll('[data-viewtab]').forEach(btn => btn.addEventListener('click', () => {
     document.querySelectorAll('[data-viewtab]').forEach(b => b.classList.toggle('active', b === btn));
-    ['overview', 'views2d', 'plots', 'chambers', 'matrix'].forEach(t => document.getElementById('view-' + t).classList.toggle('hidden', t !== btn.dataset.viewtab));
+    ['overview', 'views2d', 'plots', 'chambers', 'matrix', 'bom'].forEach(t => document.getElementById('view-' + t).classList.toggle('hidden', t !== btn.dataset.viewtab));
     if (btn.dataset.viewtab === 'views2d' && lastResult) draw2DViews(lastResult);
     if (btn.dataset.viewtab === 'plots' && lastResult) drawPlots(lastResult);
     if (btn.dataset.viewtab === 'matrix') renderMatrix();
+    if (btn.dataset.viewtab === 'bom' && lastResult) renderBOM(lastResult);
   }));
 
   const ctrBody = document.getElementById('controlsBody'), btnToggleCtr = document.getElementById('btnToggleControls');
@@ -2189,15 +2520,22 @@ function init() {
     renderMatrix();
   }));
 
+  document.getElementById('btnCopyOrder').addEventListener('click', () => {
+    navigator.clipboard?.writeText(lastOrderEmail).then(() => {
+      const btn = document.getElementById('btnCopyOrder'), old = btn.textContent;
+      btn.textContent = '✓ Bestell-E-Mail kopiert'; setTimeout(() => btn.textContent = old, 1800);
+    });
+  });
+
   document.getElementById('btnCopyParams').addEventListener('click', () => {
     const r = lastResult;
     const txt = [
       `Variante: ${activePresetCode} (${DIR_LONG[state.stufen_dir]})`,
-      `Stufen: x=${state.x_S1}/${state.x_S2} mm | h=${state.h1}→${state.h2}→${state.h3} mm | b=${state.b1}→${state.b2}→${state.b3} mm`,
-      `Rippen: n_vor=${state.n_vor}, n_rib2=${state.n_rib2}, n_rib3=${state.n_rib3}, t_R=${state.t_R} mm, Loch=${state.f_Loch}%, Vertikalsteifen=${state.n_vert}×${state.b_vert}`,
+      `Stufen: x=${state.x_S1}/${state.x_S2} mm | h=${state.h1}→${state.h2}→${state.h3} mm | b=${state.b1}→${state.b2}→${state.b3} mm | A_Stirn=${Math.round(r.A_stirn_1)}/${Math.round(r.A_stirn_3)} mm²`,
+      `Rippen: n_vor=${state.n_vor}, n_rib2=${state.n_rib2}, n_rib3=${state.n_rib3}, t_R=${state.t_R} mm, Loch=${state.f_Loch}%, Rahmen=${r.n_v1}/${r.n_v2}v+${r.n_hr}h×${state.b_vert}`,
       `Außenhäute: t_ho=${state.t_ho}, t_hu=${state.t_hu}, t_Steg=${state.t_st}, t_TF=${state.t_st_tf} mm`,
       `Stringer: Eck=${state.be1}/${state.be2}/${state.be3} | Zw.o=${state.nso1}/${state.nso2}/${state.nso3} | Zw.u=${state.nsu1}/${state.nsu2}/${state.nsu3} | b_s=${state.bs1}/${state.bs2}/${state.bs3}`,
-      `Ergebnis: G_W=${fmt(r.G_W_eff,2)} g | Score=${fmt(r.Score_eff,2)} | w_Timo=${fmt(r.w_ges,2)} mm (M=${fmt(r.w_M,2)}+Q=${fmt(r.w_Q,2)}, κ=${fmt(r.kappa_min,3)}) | TF=${fmt(r.m_beul_active,2)} kg | S_Z/D=${fmt(r.S_min_norm,2)} | S_Steg=${fmt(r.S_Steg,2)}`
+      `Ergebnis: G_W=${fmt(r.G_W_eff,2)} g | Score=${fmt(r.Score_eff,2)} | w_Timo=${fmt(r.w_ges,2)} mm (M=${fmt(r.w_M,2)}+Q=${fmt(r.w_Q,2)}, κ=${fmt(r.kappa_min,3)}) | TF=${fmt(r.m_beul_active,2)} kg | S_Z/D=${fmt(r.S_min_norm,2)} | S_Steg=${fmt(r.S_Steg,2)} | S_Knoten=${fmt(r.S_Knoten,2)}`
     ].join('\n');
     navigator.clipboard?.writeText(txt).then(() => {
       const btn = document.getElementById('btnCopyParams'), old = btn.textContent;
